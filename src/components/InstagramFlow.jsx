@@ -79,6 +79,7 @@ import bike2 from "../assets/bike/bike2.jpg";
 import bike3 from "../assets/bike/bike3.avif";
 import bike4 from "../assets/bike/bike4.webp";
 import bike5 from "../assets/bike/bike5.webp";
+import VideoHeroSection from "./VideoHeroSection";
 
 const posts = [bike1, bike2, bike3, bike4, bike5];
 

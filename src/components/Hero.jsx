@@ -93,6 +93,10 @@ import {
   FaExpand,
 } from "react-icons/fa";
 import { GiCheckeredFlag } from "react-icons/gi";
+import bike1 from "../assets/bike/bike1.jpg";
+import bike2 from "../assets/bike/bike2.jpg";
+import bike3 from "../assets/bike/bike3.avif";
+import video from "../assets/videos/video1.mp4";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -106,18 +110,18 @@ const Hero = () => {
   // Array of bike racing videos
   const videos = [
     {
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-      poster: "https://picsum.photos/seed/bike1/1920/1080.jpg",
+      src: video,
+      poster: bike1,
       title: "Street Racing",
     },
     {
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      poster: "https://picsum.photos/seed/bike2/1920/1080.jpg",
+      src: video,
+      poster: bike2,
       title: "Track Day",
     },
     {
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-      poster: "https://picsum.photos/seed/bike3/1920/1080.jpg",
+      src: video,
+      poster: bike3,
       title: "Mountain Pass",
     },
   ];

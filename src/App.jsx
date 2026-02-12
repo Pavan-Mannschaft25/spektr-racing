@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProductModal from "./components/ProductModal";
 import { products } from "./data/products";
+import VideoHeroSection from "./components/VideoHeroSection";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
