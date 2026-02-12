@@ -34,8 +34,8 @@ const Header = ({ isScrolled }) => {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-black/90 backdrop-blur-xl py-3 shadow-2xl shadow-black/50"
-            : " py-6 bg-black/20"
+            ? "bg-black/90 backdrop-blur-xl py-2 shadow-2xl shadow-black/50"
+            : " py-2 bg-black/20"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
