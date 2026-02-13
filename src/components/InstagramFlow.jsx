@@ -1,97 +1,47 @@
-// // components/InstagramFlow.jsx
-// import React from "react";
-// import { motion } from "framer-motion";
-// import { FaInstagram } from "react-icons/fa";
-
-// const InstagramFlow = () => {
-//   const posts = [
-//     { id: 1, image: "https://picsum.photos/seed/insta1/300/300.jpg" },
-//     { id: 2, image: "https://picsum.photos/seed/insta2/300/300.jpg" },
-//     { id: 3, image: "https://picsum.photos/seed/insta3/300/300.jpg" },
-//     { id: 4, image: "https://picsum.photos/seed/insta4/300/300.jpg" },
-//     { id: 5, image: "https://picsum.photos/seed/insta5/300/300.jpg" },
-//     { id: 6, image: "https://picsum.photos/seed/insta6/300/300.jpg" },
-//   ];
-
-//   return (
-//     <section className="py-20 px-4 bg-gray-950">
-//       <div className="container mx-auto">
-//         <motion.div
-//           className="text-center mb-12"
-//           initial={{ opacity: 0, y: 30 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           viewport={{ once: true }}
-//           transition={{ duration: 0.6 }}
-//         >
-//           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-//             INSTAGRAM FLOW
-//           </h2>
-//           <p className="text-gray-400 text-lg">Follow Us @RACEX</p>
-//         </motion.div>
-
-//         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-//           {posts.map((post, index) => (
-//             <motion.div
-//               key={post.id}
-//               className="relative aspect-square overflow-hidden rounded-lg cursor-pointer"
-//               initial={{ opacity: 0, scale: 0.9 }}
-//               whileInView={{ opacity: 1, scale: 1 }}
-//               viewport={{ once: true }}
-//               transition={{ duration: 0.5, delay: index * 0.1 }}
-//               whileHover={{ scale: 1.05 }}
-//             >
-//               <img
-//                 src={post.image}
-//                 alt={`Instagram post ${post.id}`}
-//                 className="w-full h-full object-cover"
-//               />
-//               <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-//                 <FaInstagram size={30} className="text-white" />
-//               </div>
-//             </motion.div>
-//           ))}
-//         </div>
-
-//         <motion.div
-//           className="text-center mt-10"
-//           initial={{ opacity: 0 }}
-//           whileInView={{ opacity: 1 }}
-//           viewport={{ once: true }}
-//           transition={{ duration: 0.5, delay: 0.6 }}
-//         >
-//           <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-md hover:shadow-lg transition-shadow">
-//             Follow on Instagram
-//           </button>
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default InstagramFlow;
-
 // components/InstagramFlow.jsx
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaInstagram } from "react-icons/fa";
-import bike1 from "../assets/bike/bike1.jpg";
+import { FaInstagram, FaPlay } from "react-icons/fa";
+// import bike1 from "../assets/bike/bike1.jpg";
 import bike2 from "../assets/bike/bike2.jpg";
 import bike3 from "../assets/bike/bike3.avif";
 import bike4 from "../assets/bike/bike4.webp";
 import bike5 from "../assets/bike/bike5.webp";
-import VideoHeroSection from "./VideoHeroSection";
+import video1 from "../assets/videos/short2.mp4";
+import video2 from "../assets/videos/short2.mp4";
+import video3 from "../assets/videos/short2.mp4";
+import video4 from "../assets/videos/short2.mp4";
+import video5 from "../assets/videos/short2.mp4";
+import logo from "../assets/images/gold-logo.png";
 
-const posts = [bike1, bike2, bike3, bike4, bike5];
+// Combine images and videos into post objects
+const posts = [
+  { image: bike3, video: video1 },
+  { image: bike2, video: video2 },
+  { image: bike3, video: video3 },
+  { image: bike4, video: video4 },
+  { image: bike5, video: video5 },
+];
 
 const InstagramFlow = () => {
   return (
-    <section className="py-16 bg-black overflow-hidden">
+    <section id="insta" className="py-16 bg-black overflow-hidden">
       {/* Heading */}
-      <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
+      <div className="text-center mb-10 flex flex-col items-center">
+        {/* Logo */}
+        <img
+          src={logo}
+          alt="Spektr Racing Logo"
+          className="w-20 md:w-24 mb-4 opacity-90"
+        />
+
+        {/* Title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-wider">
           INSTAGRAM FLOW
         </h2>
-        <p className="text-gray-400 mt-2">Follow us @RACEX</p>
+
+        {/* Subtitle */}
+        <p className="mt-2 text-red-600">@spectr_racing</p>
       </div>
 
       {/* Slider */}
@@ -102,26 +52,12 @@ const InstagramFlow = () => {
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 30, // 👈 speed (higher = slower)
+            duration: 30, // Speed of the carousel
           }}
         >
           {/* Duplicate posts for seamless loop */}
-          {[...posts, ...posts].map((img, index) => (
-            <div
-              key={index}
-              className="relative min-w-[200px] h-[200px] rounded-xl overflow-hidden group cursor-pointer"
-            >
-              <img
-                src={img}
-                alt="Instagram"
-                className="w-full h-full object-cover"
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                <FaInstagram className="text-white text-3xl" />
-              </div>
-            </div>
+          {[...posts, ...posts].map((post, index) => (
+            <PostItem key={index} post={post} />
           ))}
         </motion.div>
       </div>
@@ -129,13 +65,71 @@ const InstagramFlow = () => {
       {/* CTA */}
       <div className="text-center mt-8">
         <a
-          href="#"
+          href="https://instagram.com/spectr_racing"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition"
         >
           Follow on Instagram
         </a>
       </div>
     </section>
+  );
+};
+
+// Separate component for each post item to handle video state
+const PostItem = ({ post }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef(null);
+
+  // Play video on hover
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isHovered) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0; // Reset to beginning
+      }
+    }
+  }, [isHovered]);
+
+  return (
+    <div
+      className="relative min-w-[200px] h-[200px] md:min-w-[250px] md:h-[250px] rounded-xl overflow-hidden group cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Image - shown by default */}
+      <img
+        src={post.image}
+        alt="Instagram"
+        className={`w-full h-full object-cover transition-opacity duration-300 ${
+          isHovered ? "opacity-0" : "opacity-100"
+        }`}
+      />
+
+      {/* Video - shown on hover */}
+      <video
+        ref={videoRef}
+        src={post.video}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+          isHovered ? "opacity-100" : "opacity-0"
+        }`}
+        muted
+        loop
+        playsInline
+      />
+
+      {/* Overlay with Instagram icon */}
+      <div
+        className={`absolute inset-0 bg-black/40 transition-opacity duration-300 flex items-center justify-center ${
+          isHovered ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <FaInstagram className="text-white text-3xl md:text-4xl" />
+      </div>
+    </div>
   );
 };
 

@@ -2,7 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
-import logo from "../assets/images/spektr.jpeg";
+// import logo from "../assets/images/spektr.jpeg";
+import logo from "../assets/images/white-spectr-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,10 +30,10 @@ const Footer = () => {
               {/* Logo Container */}
               <div className="relative">
                 {/* Glow */}
-                <div className="absolute inset-0 rounded-xl bg-red-600/30 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0  blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 {/* Logo */}
-                <div className="relative bg-black rounded-xl p-1 border border-red-600/40">
+                <div className="relative">
                   <img
                     src={logo}
                     alt="Spektr Racing"
@@ -51,7 +52,7 @@ const Footer = () => {
                 </span>
               </div>
             </motion.a>
-            <p className="text-gray-400 pt-4">
+            <p className="text-gray-400 pt-4 md:pl-4">
               Built for Speed. Designed for Champions.
             </p>
           </motion.div>

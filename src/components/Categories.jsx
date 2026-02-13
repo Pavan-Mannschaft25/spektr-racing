@@ -11,7 +11,10 @@ const Categories = ({ products, openProductModal }) => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section
+      id="stickers"
+      className="py-16 px-4 bg-gradient-to-br from-black via-gray-900 to-black"
+    >
       <div className="container mx-auto">
         {categories.map((category, categoryIndex) => {
           const categoryProducts = products.filter(
@@ -44,7 +47,7 @@ const Categories = ({ products, openProductModal }) => {
                     <ProductCard
                       product={product}
                       index={index}
-                      openProductModal={openProductModal}
+                      // openProductModal={openProductModal}
                     />
                   </div>
                 ))}

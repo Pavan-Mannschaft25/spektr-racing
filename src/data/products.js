@@ -1,4 +1,4 @@
-import bike1 from "../assets/bike/bike1.jpg";
+// import bike3 from "../assets/bike/bike3.jpg";
 import bike2 from "../assets/bike/bike2.jpg";
 import bike3 from "../assets/bike/bike3.avif";
 import bike4 from "../assets/bike/bike4.webp";
@@ -10,7 +10,7 @@ export const products = [
     id: 1,
     name: "Racing Helmet Pro",
     price: 299.99,
-    image: bike1,
+    image: bike3,
     category: "accessories",
     description:
       "Professional racing helmet with advanced aerodynamics and maximum safety features.",
@@ -65,7 +65,7 @@ export const products = [
     id: 6,
     name: "Racing Gloves Pro",
     price: 119.99,
-    image: bike1,
+    image: bike3,
     category: "gloves",
     description:
       "Professional racing gloves with carbon fiber knuckle protection.",
@@ -84,7 +84,7 @@ export const products = [
   },
   {
     id: 8,
-    name: "Racing Sticker Collection",
+    name: "Racing Sticker",
     price: 14.99,
     image: bike3,
     category: "stickers",
@@ -103,5 +103,71 @@ export const products = [
       "Limited edition racing gloves with exclusive design and premium materials.",
     sizes: ["S", "M", "L", "XL"],
     colors: ["#000000", "#FF0000"],
+  },
+  {
+    id: 9,
+    name: "Racing Helmet Pro",
+    price: 299.99,
+    image: bike3,
+    category: "accessories",
+    description:
+      "Professional racing helmet with advanced aerodynamics and maximum safety features.",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["#000000", "#FF0000", "#FFFFFF"],
+  },
+  {
+    id: 11,
+    name: "Racing Gloves Elite",
+    price: 89.99,
+    image: bike2,
+    category: "gloves",
+    description:
+      "High-performance racing gloves with enhanced grip and protection.",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["#000000", "#FF0000"],
+  },
+  {
+    id: 12,
+    name: "Racing Sticker Pack",
+    price: 19.99,
+    image: bike3,
+    category: "stickers",
+    description:
+      "Premium vinyl sticker pack featuring exclusive racing designs.",
+    sizes: ["One Size"],
+    colors: ["#000000"],
+  },
+  {
+    id: 13,
+    name: "Racing Helmet Pro",
+    price: 299.99,
+    image: bike5,
+    category: "accessories",
+    description:
+      "Professional racing helmet with advanced aerodynamics and maximum safety features.",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["#000000", "#FF0000", "#FFFFFF"],
+  },
+  {
+    id: 14,
+    name: "Racing Gloves Elite",
+    price: 89.99,
+    image: bike4,
+    category: "gloves",
+    description:
+      "High-performance racing gloves with enhanced grip and protection.",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["#000000", "#FF0000"],
+  },
+  {
+    id: 15,
+    name: "Racing Sticker Pack",
+    price: 19.99,
+    image: bike2,
+    category: "stickers",
+    description:
+      "Premium vinyl sticker pack featuring exclusive racing designs.",
+    sizes: ["One Size"],
+    colors: ["#000000"],
   },
 ];

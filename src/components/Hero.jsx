@@ -1,88 +1,3 @@
-// // components/Hero.jsx
-// import React from "react";
-// import { motion } from "framer-motion";
-// import { FaPlay } from "react-icons/fa";
-
-// const Hero = () => {
-//   return (
-//     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-//       {/* Background Video */}
-//       <div className="absolute inset-0 z-0">
-//         <div className="w-full h-full bg-gray-900">
-//           {/* Placeholder for video - in a real app, you'd use a video element */}
-//           <img
-//             src="https://picsum.photos/seed/racing/1920/1080.jpg"
-//             alt="Racing Background"
-//             className="w-full h-full object-cover"
-//           />
-//         </div>
-//         <div className="absolute inset-0 bg-black/60"></div>
-//       </div>
-
-//       {/* Hero Content */}
-//       <div className="relative z-10 text-center px-4">
-//         <motion.h1
-//           className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter"
-//           initial={{ opacity: 0, y: 50 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8, delay: 0.2 }}
-//         >
-//           DEFY THE NORM
-//         </motion.h1>
-//         <motion.h2
-//           className="text-4xl md:text-6xl font-bold mb-10 tracking-tighter text-red-600"
-//           initial={{ opacity: 0, y: 50 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8, delay: 0.4 }}
-//         >
-//           RACE THE STREETS
-//         </motion.h2>
-
-//         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//           <motion.button
-//             className="px-8 py-4 bg-red-600 text-white font-bold rounded-md hover:bg-red-700 transition-colors"
-//             whileHover={{
-//               scale: 1.05,
-//               boxShadow: "0 0 15px rgba(225, 6, 0, 0.7)",
-//             }}
-//             whileTap={{ scale: 0.95 }}
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.5, delay: 0.6 }}
-//           >
-//             Shop Now
-//           </motion.button>
-
-//           <motion.button
-//             className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-md hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
-//             whileHover={{ scale: 1.05 }}
-//             whileTap={{ scale: 0.95 }}
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.5, delay: 0.8 }}
-//           >
-//             <FaPlay className="text-sm" /> Watch Clips
-//           </motion.button>
-//         </div>
-//       </div>
-
-//       {/* Scroll Indicator */}
-//       <motion.div
-//         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-//         animate={{ y: [0, 10, 0] }}
-//         transition={{ repeat: Infinity, duration: 2 }}
-//       >
-//         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-//           <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-//         </div>
-//       </motion.div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
-// components/Hero.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -96,7 +11,7 @@ import { GiCheckeredFlag } from "react-icons/gi";
 import bike1 from "../assets/bike/bike1.jpg";
 import bike2 from "../assets/bike/bike2.jpg";
 import bike3 from "../assets/bike/bike3.avif";
-import video from "../assets/videos/video1.mp4";
+import video from "../assets/videos/hero-video.mp4";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -104,6 +19,7 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [raindrops, setRaindrops] = useState([]);
   const videoRef = useRef(null);
   const controlsTimeout = useRef(null);
 
@@ -114,17 +30,23 @@ const Hero = () => {
       poster: bike1,
       title: "Street Racing",
     },
-    {
-      src: video,
-      poster: bike2,
-      title: "Track Day",
-    },
-    {
-      src: video,
-      poster: bike3,
-      title: "Mountain Pass",
-    },
   ];
+
+  // Generate raindrops
+  useEffect(() => {
+    const drops = [];
+    for (let i = 0; i < 100; i++) {
+      drops.push({
+        id: i,
+        left: `${Math.random() * 100}%`,
+        animationDuration: `${0.5 + Math.random() * 1}s`,
+        animationDelay: `${Math.random() * 2}s`,
+        opacity: Math.random() * 0.5 + 0.3,
+        height: `${Math.random() * 15 + 10}px`,
+      });
+    }
+    setRaindrops(drops);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -201,7 +123,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-[88vh] flex items-center justify-center overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Video Background */}
@@ -245,6 +167,57 @@ const Hero = () => {
 
         {/* Vignette Effect */}
         <div className="absolute inset-0 shadow-[inset_0_0_100px_20px_rgba(0,0,0,0.5)]" />
+      </div>
+
+      {/* Water Drops Animation */}
+      <div className="absolute inset-0 z-5 overflow-hidden pointer-events-none">
+        {raindrops.map((drop) => (
+          <motion.div
+            key={drop.id}
+            className="absolute bg-gradient-to-b from-transparent via-blue-400/30 to-blue-400/30 rounded-full"
+            style={{
+              left: drop.left,
+              width: "6px",
+              height: drop.height,
+              opacity: drop.opacity,
+            }}
+            initial={{ top: "-20px" }}
+            animate={{ top: "100vh" }}
+            transition={{
+              duration: parseFloat(drop.animationDuration),
+              delay: parseFloat(drop.animationDelay),
+              repeat: Infinity,
+              repeatDelay: Math.random() * 10,
+              ease: "linear",
+            }}
+          />
+        ))}
+
+        {/* Water splash effect at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20">
+          {raindrops.slice(0, 30).map((drop, index) => (
+            <motion.div
+              key={`splash-${index}`}
+              className="absolute bottom-0 bg-blue-400/30 rounded-full"
+              style={{
+                left: drop.left,
+                width: "8px",
+                height: "8px",
+              }}
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: [0, 1.5, 0], opacity: [0, 0.7, 0] }}
+              transition={{
+                duration: 0.5,
+                delay: parseFloat(drop.animationDuration) - 0.2,
+                repeat: Infinity,
+                repeatDelay:
+                  parseFloat(drop.animationDuration) +
+                  parseFloat(drop.animationDelay),
+                ease: "easeOut",
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Video Controls */}
@@ -339,47 +312,9 @@ const Hero = () => {
       )}
 
       {/* Hero Content */}
-      {/* <motion.div
-        className="relative z-10 text-center px-4 max-w-5xl mx-auto"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <motion.button
-            className="group relative px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold rounded-full overflow-hidden shadow-2xl shadow-red-600/30"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.1 }}
-          >
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              Shop Now
-              <GiCheckeredFlag className="text-lg" />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.button>
-
-          <motion.button
-            className="group px-8 py-4 bg-transparent border-2 border-white/50 text-white font-bold rounded-full hover:border-white hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.3 }}
-            onClick={togglePlay}
-          >
-            <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
-              <FaPlay className="text-sm ml-0.5" />
-            </div>
-            {isPlaying ? "Pause Video" : "Watch Race"}
-          </motion.button>
-        </div>
-      </motion.div> */}
 
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
@@ -387,7 +322,7 @@ const Hero = () => {
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };

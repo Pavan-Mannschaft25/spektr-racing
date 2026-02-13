@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProductModal from "./components/ProductModal";
 import { products } from "./data/products";
+import { FaWhatsapp } from "react-icons/fa";
 import VideoHeroSection from "./components/VideoHeroSection";
 
 function App() {
@@ -46,6 +47,14 @@ function App() {
       <InstagramFlow />
       <Contact />
       <Footer />
+      <a
+        href="https://wa.me/916305070487"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-2 rounded-full shadow-xl px-3 py-3 font-semibold z-100 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white transition"
+      >
+        <FaWhatsapp size={35} />
+      </a>
 
       <AnimatePresence>
         {isModalOpen && (
