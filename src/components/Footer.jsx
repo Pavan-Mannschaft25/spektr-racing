@@ -20,7 +20,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <motion.a
-              href="/"
+              href="#"
               className="flex items-center gap-3 group select-none"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}

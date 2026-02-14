@@ -373,7 +373,7 @@ const Header = ({ isScrolled }) => {
           <div className="flex items-center justify-between relative">
             {/* Logo - Left on mobile, Centered on desktop */}
             <motion.a
-              href="/"
+              href="#"
               className="flex items-center gap-2 group select-none lg:absolute lg:left-1/2 xl:transform lg:-translate-x-1/2"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
