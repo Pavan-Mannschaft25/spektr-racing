@@ -1,9 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       fontFamily: {
-        aviano: ["'Bebas Neue'", "sans-serif"],
+        myfont: ["MyFont", "sans-serif"],
       },
     },
   },

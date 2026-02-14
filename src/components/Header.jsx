@@ -11,7 +11,7 @@ const Header = ({ isScrolled }) => {
 
   // Navigation items split into left and right sections
   const leftNavItems = [
-    { name: "Store", href: "#store" },
+    { name: "STORE", href: "#store" },
     // { name: "Accessories", href: "#accessories" },
     { name: "Contact", href: "#contact" },
   ];
@@ -55,12 +55,12 @@ const Header = ({ isScrolled }) => {
         <div className="container mx-auto">
           <div className="flex items-center justify-between relative">
             {/* Left Navigation */}
-            <nav className="hidden xl:flex items-center space-x-1 flex-1">
+            <nav className="hidden xl:flex items-center space-x-1 flex-1 uppercase">
               {leftNavItems.map((item, index) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="relative px-4 py-2 text-white font-bold hover:bg-white/20 rounded-xl group md:text-xl"
+                  className="relative px-4 py-2 text-white font-bold hover:bg-white/20 rounded-xl group md:text-lg"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -118,9 +118,10 @@ const Header = ({ isScrolled }) => {
               </div>
 
               {/* Brand Text */}
-              <div className="flex flex-col leading-none font-aviano">
-                <h1 className="text-3xl font-extrabold tracking-[0.12em] text-white">
-                  SPEKTR<span className="text-red-600 ml-1">RACING</span>
+              <div className="flex flex-col leading-none">
+                <h1 className="font-myfont text-3xl font-extrabold tracking-[0.12em] text-white">
+                  SPEKTR
+                  <span className="text-red-600 ml-1 font-myfont">RACING</span>
                 </h1>
                 <span className="text-[10px] tracking-[0.35em] text-gray-400 uppercase mt-1">
                   Built For Speed
@@ -129,12 +130,12 @@ const Header = ({ isScrolled }) => {
             </motion.a>
 
             {/* Right Navigation */}
-            <nav className="hidden xl:flex items-center space-x-1 flex-1 justify-end">
+            <nav className="hidden xl:flex items-center space-x-1 flex-1 justify-end uppercase">
               {rightNavItems.map((item, index) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="relative px-4 py-2 text-white font-bold hover:bg-white/20 rounded-xl group md:text-lg"
+                  className="relative px-4 py-2 text-white font-extrabold hover:bg-white/20 rounded-xl group md:text-lg"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{

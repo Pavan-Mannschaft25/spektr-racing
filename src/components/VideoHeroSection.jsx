@@ -167,13 +167,13 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
               </div> */}
 
               {/* PLAY / PAUSE */}
-              <div className="absolute top-4 right-4 z-30 bg-black/60 rounded-full p-3 text-white">
+              {/* <div className="absolute top-4 right-4 z-30 bg-black/60 rounded-full p-3 text-white">
                 {activeVideo === item.id ? (
                   <FiPause className="w-5 h-5" />
                 ) : (
                   <FiPlay className="w-5 h-5 ml-0.5" />
                 )}
-              </div>
+              </div> */}
 
               {/* LOADER */}
               {!videosReady[item.id] && (

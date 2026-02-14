@@ -43,7 +43,7 @@ const Categories = ({ products, openProductModal }) => {
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {categoryProducts.map((product, index) => (
-                  <div key={product.id} className="flex-shrink-0 w-64">
+                  <div key={product.id} className="flex-shrink-0 w-70">
                     <ProductCard
                       product={product}
                       index={index}
