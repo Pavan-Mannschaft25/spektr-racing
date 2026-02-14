@@ -142,19 +142,19 @@ const PopularPicks = ({ products, openProductModal }) => {
           >
             {/* LEFT: Heading */}
             <div className="flex items-center">
-              <FaFire className="text-3xl mr-4 text-red-500" />
+              <FaFire className="text-xl md:text-3xl mr-1 text-red-500" />
               <h2 className="text-2xl md:text-4xl font-black tracking-wider text-white">
                 POPULAR
                 <span className="text-red-500 ml-2">PICKS</span>
               </h2>
-              <FaFire className="text-3xl ml-4 text-red-500" />
+              <FaFire className="text-2xl md:text-3xl ml-1 text-red-500" />
             </div>
 
             {/* RIGHT: Shop Button */}
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-red-600 text-white font-bold tracking-wide rounded-full
+              className="px-2 md:px-6 py-2 bg-red-600 text-white font-bold tracking-wide rounded-full
                hover:bg-red-700 transition-all shadow-lg"
             >
               SHOP NOW

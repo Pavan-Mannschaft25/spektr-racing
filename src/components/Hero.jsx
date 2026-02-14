@@ -12,6 +12,7 @@ import bike1 from "../assets/bike/bike1.jpg";
 import bike2 from "../assets/bike/bike2.jpg";
 import bike3 from "../assets/bike/bike3.avif";
 import video from "../assets/videos/hero-video.mp4";
+import logo from "../assets/images/black-logo.png";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -123,7 +124,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative h-[88vh] flex items-center justify-center overflow-hidden"
+      className="relative h-[70vh] lg:h-[88vh] flex items-center justify-center overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Video Background */}
@@ -147,6 +148,18 @@ const Hero = () => {
             Your browser does not support the video tag.
           </motion.video>
         </AnimatePresence>
+
+        {/* LOGO OVERLAY */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+          <motion.img
+            src={logo}
+            alt="Spektr Racing Logo"
+            className="w-20 md:w-40 opacity-10 select-none"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 0.2, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          />
+        </div>
 
         {/* Video Overlay Effects */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />

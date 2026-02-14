@@ -9,8 +9,11 @@ import bike3 from "../assets/bike/bike3.avif";
 import bike4 from "../assets/bike/bike4.webp";
 import bike5 from "../assets/bike/bike5.webp";
 
-import short1 from "../assets/videos/short1.mp4";
-import short2 from "../assets/videos/short2.mp4";
+import short1 from "../assets/videos/short7.mp4";
+import short2 from "../assets/videos/short3.mp4";
+import short3 from "../assets/videos/short4.mp4";
+import short4 from "../assets/videos/short5.mp4";
+import short5 from "../assets/videos/short6.mp4";
 
 const RacingVideos = () => {
   const scrollContainerRef = useRef(null);
@@ -27,9 +30,9 @@ const RacingVideos = () => {
       videoUrl: short1,
     },
     { id: 2, title: "Drift Masters 2023", thumbnail: bike2, videoUrl: short2 },
-    { id: 3, title: "Night Run Tokyo", thumbnail: bike3, videoUrl: short1 },
-    { id: 4, title: "Mountain Pass", thumbnail: bike4, videoUrl: short2 },
-    { id: 5, title: "Extreme Run", thumbnail: bike5, videoUrl: short1 },
+    { id: 3, title: "Night Run Tokyo", thumbnail: bike3, videoUrl: short3 },
+    { id: 4, title: "Mountain Pass", thumbnail: bike4, videoUrl: short4 },
+    { id: 5, title: "Extreme Run", thumbnail: bike5, videoUrl: short5 },
   ];
 
   /* ---------------- INIT MUTE ---------------- */

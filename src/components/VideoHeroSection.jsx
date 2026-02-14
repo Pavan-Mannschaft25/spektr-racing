@@ -4,7 +4,7 @@ import { FiPlay, FiPause } from "react-icons/fi";
 
 import bike1 from "../assets/bike/bike1.jpg";
 import bike2 from "../assets/bike/bike2.jpg";
-import short1 from "../assets/videos/short1.mp4";
+import short1 from "../assets/videos/short4.mp4";
 import short2 from "../assets/videos/short2.mp4";
 
 const VideoHeroSection = ({ items = [], className = "" }) => {
@@ -18,7 +18,7 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
       id: 1,
       title: "Bikes For Sale",
       subtitle: "Discover More",
-      link: "/for-sale",
+      // link: "/for-sale",
       videoSrc: short1,
       posterImage: bike1,
     },
@@ -26,7 +26,7 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
       id: 2,
       title: "Sell Us Your Bike",
       subtitle: "Discover More",
-      link: "/sell-us-your-bike",
+      // link: "/sell-us-your-bike",
       videoSrc: short2,
       posterImage: bike2,
     },
@@ -36,9 +36,28 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
 
   /* -------------------- VIDEO CONTROLS -------------------- */
 
+  // const playVideo = (id) => {
+  //   const video = videoRefs.current[id];
+  //   if (!video) return;
+
+  //   clearTimeout(hoverTimeouts.current[id]);
+
+  //   hoverTimeouts.current[id] = setTimeout(() => {
+  //     video
+  //       .play()
+  //       .then(() => setActiveVideo(id))
+  //       .catch((err) => console.log("Play blocked:", err));
+  //   }, 120);
+  // };
+
   const playVideo = (id) => {
     const video = videoRefs.current[id];
     if (!video) return;
+
+    if (isMobile) {
+      video.play().then(() => setActiveVideo(id));
+      return;
+    }
 
     clearTimeout(hoverTimeouts.current[id]);
 
@@ -46,7 +65,7 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
       video
         .play()
         .then(() => setActiveVideo(id))
-        .catch((err) => console.log("Play blocked:", err));
+        .catch(() => {});
     }, 120);
   };
 
@@ -86,6 +105,8 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
     },
   };
 
+  const isMobile = window.matchMedia("(pointer: coarse)").matches;
+
   /* -------------------- JSX -------------------- */
 
   return (
@@ -101,12 +122,18 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
             key={item.id}
             className="relative flex-1 group cursor-pointer"
             variants={itemVariants}
-            onMouseEnter={() => playVideo(item.id)}
-            onMouseLeave={() => stopVideo(item.id)}
-            onClick={() => playVideo(item.id)} // mobile tap
+            onMouseEnter={!isMobile ? () => playVideo(item.id) : undefined}
+            onMouseLeave={!isMobile ? () => stopVideo(item.id) : undefined}
+            onClick={() => {
+              if (isMobile) {
+                activeVideo === item.id
+                  ? stopVideo(item.id)
+                  : playVideo(item.id);
+              }
+            }}
           >
             <a
-              href={item.link}
+              // href={item.link}
               className="block w-full h-full relative overflow-hidden"
               onClick={(e) => {
                 if (activeVideo === item.id) e.preventDefault();

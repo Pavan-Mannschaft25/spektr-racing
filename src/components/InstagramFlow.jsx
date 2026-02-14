@@ -2,16 +2,27 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaInstagram, FaPlay } from "react-icons/fa";
+
+//images
 // import bike1 from "../assets/bike/bike1.jpg";
 import bike2 from "../assets/bike/bike2.jpg";
 import bike3 from "../assets/bike/bike3.avif";
 import bike4 from "../assets/bike/bike4.webp";
 import bike5 from "../assets/bike/bike5.webp";
+import bike6 from "../assets/bike/pop1.jpg";
+import bike7 from "../assets/bike/pop2.jpg";
+import bike8 from "../assets/bike/pop3.jpg";
+
+//videos
 import video1 from "../assets/videos/short2.mp4";
-import video2 from "../assets/videos/short2.mp4";
-import video3 from "../assets/videos/short2.mp4";
-import video4 from "../assets/videos/short2.mp4";
-import video5 from "../assets/videos/short2.mp4";
+import video2 from "../assets/videos/short3.mp4";
+import video3 from "../assets/videos/short5.mp4";
+import video4 from "../assets/videos/short6.mp4";
+import video5 from "../assets/videos/short7.mp4";
+import video6 from "../assets/videos/short8.mp4";
+import video8 from "../assets/videos/short9.mp4";
+import video9 from "../assets/videos/short10.mp4";
+
 import logo from "../assets/images/gold-logo.png";
 
 // Combine images and videos into post objects
@@ -21,6 +32,9 @@ const posts = [
   { image: bike3, video: video3 },
   { image: bike4, video: video4 },
   { image: bike5, video: video5 },
+  { image: bike6, video: video6 },
+  { image: bike7, video: video8 },
+  { image: bike8, video: video9 },
 ];
 
 const InstagramFlow = () => {
