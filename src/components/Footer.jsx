@@ -44,7 +44,7 @@ const Footer = () => {
 
               {/* Brand Text */}
               <div className="flex flex-col leading-none">
-                <h1 className="text-2xl font-extrabold tracking-tight text-white">
+                <h1 className="text-xl font-extrabold tracking-tight text-white">
                   SPEKTR<span className="text-red-600">RACING</span>
                 </h1>
                 <span className="text-[10px] tracking-widest text-gray-400 uppercase">
@@ -64,7 +64,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-extralight mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <a

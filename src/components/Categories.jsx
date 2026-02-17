@@ -30,7 +30,7 @@ const Categories = ({ products, openProductModal }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold">
+                <h2 className="text-xl md:text-3xl font-bold">
                   {category.name.toUpperCase()}
                 </h2>
                 <button className="text-red-600 font-medium hover:underline">

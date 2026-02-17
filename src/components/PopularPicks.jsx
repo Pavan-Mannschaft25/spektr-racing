@@ -142,19 +142,19 @@ const PopularPicks = ({ products, openProductModal }) => {
           >
             {/* LEFT: Heading */}
             <div className="flex items-center">
-              <FaFire className="text-xl md:text-3xl mr-1 text-red-500" />
-              <h2 className="text-2xl md:text-4xl font-black tracking-wider text-white">
+              <FaFire className="text-2xl md:text-3xl text-red-500" />
+              <h2 className="text-xl md:text-3xl font-black tracking-wider text-white">
                 POPULAR
                 <span className="text-red-500 ml-2">PICKS</span>
               </h2>
-              <FaFire className="text-2xl md:text-3xl ml-1 text-red-500" />
+              <FaFire className="text-xl md:text-3xl ml-1 text-red-500" />
             </div>
 
             {/* RIGHT: Shop Button */}
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              className="px-2 md:px-6 py-2 bg-red-600 text-white font-bold tracking-wide rounded-full
+              className="hidden md:inline-flex px-2 md:px-4 py-2 bg-red-600 text-white font-medium tracking-wide rounded-full
                hover:bg-red-700 transition-all shadow-lg"
             >
               SHOP NOW
@@ -205,7 +205,7 @@ const PopularPicks = ({ products, openProductModal }) => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <motion.button
-            className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold text-lg rounded-full flex items-center mx-auto shadow-2xl"
+            className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-extralight text-sm md:text-md rounded-full flex items-center mx-auto shadow-2xl"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(220, 38, 38, 0.4)",

@@ -107,19 +107,17 @@ const Contact = () => {
             whileHover={{ scale: 1.05 }}
           >
             <GiCheckeredFlag className="w-4 h-4 text-red-600" />
-            <span className="text-red-600 text-sm font-semibold">
-              GET IN TOUCH
-            </span>
+            <span className="text-red-600 text-sm font-mono">GET IN TOUCH</span>
           </motion.div>
 
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-6">
+          <h2 className="text-2xl md:text-2xl lg:text-3xl font-black mb-6">
             <span className="text-white">LET'S</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 ml-4">
               RACE TOGETHER
             </span>
           </h2>
 
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto font-mono">
             Ready to elevate your racing experience? Our team is here to help
             you find the perfect gear and answer all your questions.
           </p>
@@ -157,7 +155,7 @@ const Contact = () => {
                     <p className="text-gray-500 text-sm font-medium">
                       {info.label}
                     </p>
-                    <p className="text-white font-semibold">{info.value}</p>
+                    <p className="text-white font-mono">{info.value}</p>
                   </div>
                   <FaArrowRight className="w-5 h-5 text-gray-600 group-hover:text-red-600 transition-colors" />
                 </motion.a>
@@ -235,7 +233,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                      className="w-full font-mono px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
                       placeholder="John Doe"
                       required
                     />
@@ -259,7 +257,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                      className="w-full font-mono px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
                       placeholder="john@example.com"
                       required
                     />
@@ -284,7 +282,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                    className="w-full font-mono px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
                     placeholder="+1 (555) 123-4567"
                   />
                 </motion.div>
@@ -307,7 +305,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none"
+                    className="w-full font-mono px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none"
                     placeholder="Tell us about your racing needs..."
                     required
                   ></textarea>

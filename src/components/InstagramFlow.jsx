@@ -23,8 +23,6 @@ import video6 from "../assets/videos/short8.mp4";
 import video8 from "../assets/videos/short9.mp4";
 import video9 from "../assets/videos/short10.mp4";
 
-import logo from "../assets/images/gold-logo.png";
-
 // Combine images and videos into post objects
 const posts = [
   { image: bike3, video: video1 },
@@ -39,25 +37,7 @@ const posts = [
 
 const InstagramFlow = () => {
   return (
-    <section id="insta" className="py-16 bg-black overflow-hidden">
-      {/* Heading */}
-      <div className="text-center mb-10 flex flex-col items-center">
-        {/* Logo */}
-        <img
-          src={logo}
-          alt="Spektr Racing Logo"
-          className="w-20 md:w-24 mb-4 opacity-90"
-        />
-
-        {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-wider">
-          INSTAGRAM FLOW
-        </h2>
-
-        {/* Subtitle */}
-        <p className="mt-2 text-red-600">@spectr_racing</p>
-      </div>
-
+    <section id="insta" className="py-16 overflow-hidden">
       {/* Slider */}
       <div className="relative w-full overflow-hidden">
         <motion.div

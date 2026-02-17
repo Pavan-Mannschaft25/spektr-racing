@@ -45,7 +45,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
           <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
             {product.isNew && (
               <motion.div
-                className="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg"
+                className="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-extralight px-3 py-1.5 rounded-full shadow-lg"
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.2 + index * 0.1 }}
@@ -55,7 +55,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
             )}
             {product.isTopRated && (
               <motion.div
-                className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1"
+                className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-extralight px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1"
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
@@ -73,7 +73,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
             transition={{ duration: 0.3 }}
           >
             <motion.button
-              className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold rounded-lg flex items-center gap-2 shadow-xl"
+              className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-extralight rounded-lg flex items-center gap-2 shadow-xl"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 10px 30px rgba(255, 30, 30, 0.4)",
@@ -118,7 +118,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
         {/* Product info with premium styling */}
         <div className="p-5 relative z-20">
           <div className="flex justify-between items-start mb-3">
-            <h3 className="text-xl font-bold text-white tracking-wide">
+            <h3 className="text-sm font-mono text-white tracking-wide">
               {product.name}
             </h3>
             <motion.div
@@ -128,7 +128,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
               transition={{ delay: 0.5 + index * 0.1 }}
             >
               <FaStar className="text-sm" />
-              <span className="text-sm font-semibold">
+              <span className="text-sm font-mono">
                 {product.rating || "4.8"}
               </span>
             </motion.div>
@@ -136,9 +136,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
 
           <div className="flex items-center justify-between">
             <div className="flex items-baseline gap-2">
-              <p className="text-2xl font-bold text-red-500">
-                ${product.price}
-              </p>
+              <p className="text-lg font-mono text-red-500">${product.price}</p>
               {product.originalPrice && (
                 <p className="text-gray-500 line-through text-sm">
                   ${product.originalPrice}

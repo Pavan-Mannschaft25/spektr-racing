@@ -357,9 +357,7 @@ const Header = ({ isScrolled }) => {
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-black/80 backdrop-blur-xl py-2 shadow-2xl shadow-black/20"
-            : "py-2 bg-black/10"
+          scrolled ? "bg-black/70 py-3" : "py-3 bg-black/10"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -390,18 +388,18 @@ const Header = ({ isScrolled }) => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-14 h-12 object-contain"
+                    className="w-10 h-10 md:w-14 md:h-12 object-contain"
                   />
                 </div>
               </div>
 
               {/* Brand Text - Hidden on small mobile, visible on larger screens */}
               <div className="sm:flex flex-col leading-none">
-                <h1 className="font-myfont text-2xl md:text-3xl font-extrabold tracking-[0.12em] text-white">
+                <h1 className="font-myfont text-xl md:text-2xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                   <span className="text-red-600 ml-1 font-myfont">RACING</span>
                 </h1>
-                <span className="text-[10px] tracking-[0.35em] text-gray-400 uppercase mt-1">
+                <span className="text-[7px] md:text-[10px] tracking-[0.35em] text-gray-400 uppercase mt-1">
                   Built For Speed
                 </span>
               </div>
@@ -413,7 +411,7 @@ const Header = ({ isScrolled }) => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="relative px-4 py-2 text-white font-bold hover:bg-white/20 rounded-xl group md:text-lg"
+                  className="relative px-4 py-2 text-white font-extralight hover:bg-white/20 rounded-xl group md:text-md"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -452,7 +450,7 @@ const Header = ({ isScrolled }) => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="relative px-4 py-2 text-white font-extrabold hover:bg-white/20 rounded-xl group md:text-lg"
+                  className="relative px-4 py-2 text-white font-extralight hover:bg-white/20 rounded-xl group md:text-md"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -568,13 +566,13 @@ const Header = ({ isScrolled }) => {
                         <motion.a
                           key={item.name}
                           href={item.href}
-                          className="flex items-center justify-between p-4 text-white font-medium rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
+                          className="flex items-center justify-between p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
                           initial={{ opacity: 0, x: 50 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.05 * index }}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          <span className="text-lg">{item.name}</span>
+                          <span className="text-md">{item.name}</span>
                           <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-red-600 transition-colors">
                             <GiCheckeredFlag className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                           </div>
@@ -593,7 +591,7 @@ const Header = ({ isScrolled }) => {
                         <motion.a
                           key={item.name}
                           href={item.href}
-                          className="flex items-center justify-between p-4 text-white font-medium rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
+                          className="flex items-center justify-between p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
                           initial={{ opacity: 0, x: 50 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{
@@ -601,7 +599,7 @@ const Header = ({ isScrolled }) => {
                           }}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          <span className="text-lg">{item.name}</span>
+                          <span className="text-md">{item.name}</span>
                           <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-red-600 transition-colors">
                             <GiCheckeredFlag className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                           </div>

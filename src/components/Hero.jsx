@@ -124,7 +124,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative h-[70vh] lg:h-[88vh] flex items-center justify-center overflow-hidden"
+      className="relative h-[70vh] lg:h-[70vh] flex items-center justify-center overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Video Background */}
@@ -150,7 +150,7 @@ const Hero = () => {
         </AnimatePresence>
 
         {/* LOGO OVERLAY */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+        <div className="absolute right-1/3 inset-0 z-10 flex items-center justify-center pointer-events-none">
           <motion.img
             src={logo}
             alt="Spektr Racing Logo"
