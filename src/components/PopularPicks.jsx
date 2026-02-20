@@ -192,7 +192,12 @@ const PopularPicks = ({ products, openProductModal }) => {
         {/* Product grid with enhanced spacing */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {featuredProducts.map((product, index) => (
-            <ProductCard key={product.id} product={product} index={index} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              index={index}
+              openProductModal={openProductModal}
+            />
           ))}
         </div>
 

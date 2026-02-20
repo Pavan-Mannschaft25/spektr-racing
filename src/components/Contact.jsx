@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FaEnvelope,
   FaMapMarkerAlt,
+  FaShoppingCart,
   FaPhone,
   FaFacebookF,
   FaTwitter,
@@ -61,16 +62,22 @@ const Contact = () => {
       value: "contact@spektrracing.com",
       href: "mailto:contact@spektrracing.com",
     },
-    {
-      icon: <FaPhone className="w-5 h-5" />,
-      label: "Call Us",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
-    },
+    // {
+    //   icon: <FaPhone className="w-5 h-5" />,
+    //   label: "Call Us",
+    //   value: "+1 (555) 123-4567",
+    //   href: "tel:+15551234567",
+    // },
     {
       icon: <FaMapMarkerAlt className="w-5 h-5" />,
       label: "Visit Us",
       value: "123 Racing Street, Speed City, SC 12345",
+      href: "#",
+    },
+    {
+      icon: <FaShoppingCart className="w-5 h-5" />,
+      label: "Shop Now",
+      value: "Explore Our Store",
       href: "#",
     },
   ];
@@ -163,7 +170,7 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <motion.div
+            {/* <motion.div
               className="pt-8 border-t border-gray-800"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -186,7 +193,7 @@ const Contact = () => {
                   </motion.a>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Decorative Element */}
             <motion.div

@@ -47,7 +47,7 @@ const Categories = ({ products, openProductModal }) => {
                     <ProductCard
                       product={product}
                       index={index}
-                      // openProductModal={openProductModal}
+                      openProductModal={openProductModal}
                     />
                   </div>
                 ))}

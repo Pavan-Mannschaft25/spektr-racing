@@ -150,7 +150,7 @@ const Hero = () => {
         </AnimatePresence>
 
         {/* LOGO OVERLAY */}
-        <div className="absolute right-1/3 inset-0 z-10 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
           <motion.img
             src={logo}
             alt="Spektr Racing Logo"
