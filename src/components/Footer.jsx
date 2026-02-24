@@ -37,19 +37,19 @@ const Footer = () => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-12 h-12 object-contain"
+                    className="w-10 h-10 object-contain"
                   />
                 </div>
               </div>
 
               {/* Brand Text */}
               <div className="flex flex-col leading-none">
-                <h1 className="text-xl font-extrabold tracking-tight text-white">
+                <h1 className="text-2xl font-bold tracking-tight text-white">
                   SPEKTR<span className="text-red-600">RACING</span>
                 </h1>
-                <span className="text-[10px] tracking-widest text-gray-400 uppercase">
+                {/* <span className="text-[10px] tracking-widest text-gray-400 uppercase">
                   Built For Speed
-                </span>
+                </span> */}
               </div>
             </motion.a>
             <p className="text-gray-400 pt-4 md:pl-4">

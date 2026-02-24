@@ -114,7 +114,7 @@ const Contact = () => {
             whileHover={{ scale: 1.05 }}
           >
             <GiCheckeredFlag className="w-4 h-4 text-red-600" />
-            <span className="text-red-600 text-sm font-mono">GET IN TOUCH</span>
+            <span className="text-red-600 text-sm font-bold">GET IN TOUCH</span>
           </motion.div>
 
           <h2 className="text-2xl md:text-2xl lg:text-3xl font-black mb-6">
@@ -124,7 +124,7 @@ const Contact = () => {
             </span>
           </h2>
 
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto font-mono">
+          <p className="text-gray-400 text-md max-w-4xl mx-auto font-bold">
             Ready to elevate your racing experience? Our team is here to help
             you find the perfect gear and answer all your questions.
           </p>
@@ -159,10 +159,10 @@ const Contact = () => {
                     {info.icon}
                   </div>
                   <div className="flex-1">
-                    <p className="text-gray-500 text-sm font-medium">
+                    <p className="text-gray-500 text-md font-bold">
                       {info.label}
                     </p>
-                    <p className="text-white font-mono">{info.value}</p>
+                    <p className="text-white">{info.value}</p>
                   </div>
                   <FaArrowRight className="w-5 h-5 text-gray-600 group-hover:text-red-600 transition-colors" />
                 </motion.a>
@@ -230,7 +230,7 @@ const Contact = () => {
                   >
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-400 mb-2"
+                      className="block text-md font-bold text-gray-400 mb-2"
                     >
                       Your Name
                     </label>
@@ -240,7 +240,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full font-mono px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
                       placeholder="John Doe"
                       required
                     />
@@ -254,7 +254,7 @@ const Contact = () => {
                   >
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-400 mb-2"
+                      className="block text-md font-bold text-gray-400 mb-2"
                     >
                       Email Address
                     </label>
@@ -264,7 +264,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full font-mono px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
                       placeholder="john@example.com"
                       required
                     />
@@ -279,7 +279,7 @@ const Contact = () => {
                 >
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-400 mb-2"
+                    className="block text-md font-bold text-gray-400 mb-2"
                   >
                     Phone Number (Optional)
                   </label>
@@ -289,7 +289,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full font-mono px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
                     placeholder="+1 (555) 123-4567"
                   />
                 </motion.div>
@@ -302,7 +302,7 @@ const Contact = () => {
                 >
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-400 mb-2"
+                    className="block text-md font-bold text-gray-400 mb-2"
                   >
                     Your Message
                   </label>
@@ -312,7 +312,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full font-mono px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none"
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none"
                     placeholder="Tell us about your racing needs..."
                     required
                   ></textarea>
@@ -320,7 +320,7 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold rounded-xl hover:shadow-xl hover:shadow-red-600/25 transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold rounded-xl hover:shadow-xl hover:shadow-red-600/25 transition-all duration-300 flex items-center justify-center gap-2 group"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={isSubmitting}

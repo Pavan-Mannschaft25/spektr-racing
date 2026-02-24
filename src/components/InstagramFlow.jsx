@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaPlay } from "react-icons/fa";
 
 //images
-// import bike1 from "../assets/bike/bike1.jpg";
+import bike1 from "../assets/bike/pop1.jpg";
 import bike2 from "../assets/bike/bike2.jpg";
 import bike3 from "../assets/bike/bike3.avif";
 import bike4 from "../assets/bike/bike4.webp";
@@ -25,6 +25,7 @@ import video9 from "../assets/videos/short10.mp4";
 
 // Combine images and videos into post objects
 const posts = [
+  { image: bike1, video: video4 },
   { image: bike3, video: video1 },
   { image: bike2, video: video2 },
   { image: bike3, video: video3 },

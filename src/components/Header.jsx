@@ -388,20 +388,17 @@ const Header = ({ isScrolled }) => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-10 h-10 md:w-14 md:h-12 object-contain"
+                    className="w-8 h-8 md:w-12 md:h-12 object-contain"
                   />
                 </div>
               </div>
 
               {/* Brand Text - Hidden on small mobile, visible on larger screens */}
               <div className="sm:flex flex-col leading-none">
-                <h1 className="font-myfont text-xl md:text-2xl font-bold tracking-[0.12em] text-white">
+                <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                   <span className="text-red-600 ml-1 font-myfont">RACING</span>
                 </h1>
-                <span className="text-[7px] md:text-[10px] tracking-[0.35em] text-gray-400 uppercase mt-1">
-                  Built For Speed
-                </span>
               </div>
             </motion.a>
 
@@ -411,7 +408,7 @@ const Header = ({ isScrolled }) => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="relative px-4 py-2 text-white font-extralight hover:bg-white/20 rounded-xl group md:text-md"
+                  className="relative px-4 py-2 text-white font-bold hover:bg-white/20 rounded-xl group md:text-md"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -450,7 +447,7 @@ const Header = ({ isScrolled }) => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="relative px-4 py-2 text-white font-extralight hover:bg-white/20 rounded-xl group md:text-md"
+                  className="relative px-4 py-2 text-white hover:bg-white/20 rounded-xl group md:text-md"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{

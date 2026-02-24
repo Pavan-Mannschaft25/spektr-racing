@@ -11,8 +11,14 @@
 @font-face {
   font-family: "MyFont";
   src:
-    url("assets/myfonts/myfont-webfont.woff2") format("woff2"),
-    url("assets/myfonts/myfont-webfont.woff") format("woff");
+    /* url("assets/myfonts/myfont-webfont.woff2") format("woff2"),
+    url("assets/myfonts/myfont-webfont.woff") format("woff"); */
+    /* Font-Bold */
+    url("assets/avianoBold/aviano_future_bold_1-webfont.woff2") format("woff2"),
+    url("assets/avianoBold/aviano_future_bold_1-webfont.woff") format("woff");
+  /* Font-Black */
+  /* url("assets/avianoBlack/aviano_future_black-webfont.woff2") format("woff2"),
+    url("assets/avianoBlack/aviano_future_black-webfont.woff") format("woff"); */
   font-weight: normal;
   font-style: normal;
 }
@@ -31,7 +37,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 h1,
@@ -41,7 +47,7 @@ h4,
 h5,
 h6 {
   /* font-family: "Oswald", sans-serif; */
-  font-weight: 200;
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 

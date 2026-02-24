@@ -118,7 +118,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
         {/* Product info with premium styling */}
         <div className="p-5 relative z-20">
           <div className="flex justify-between items-start mb-3">
-            <h3 className="text-sm font-mono text-white tracking-wide">
+            <h3 className="text-xs font-bold text-white tracking-wide">
               {product.name}
             </h3>
             <motion.div
