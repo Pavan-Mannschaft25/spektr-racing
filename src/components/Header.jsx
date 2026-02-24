@@ -388,14 +388,14 @@ const Header = ({ isScrolled }) => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-8 h-8 md:w-12 md:h-12 object-contain"
+                    className="w-8 h-8 md:w-11 md:h-11 object-contain"
                   />
                 </div>
               </div>
 
               {/* Brand Text - Hidden on small mobile, visible on larger screens */}
               <div className="sm:flex flex-col leading-none">
-                <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
+                <h1 className="font-myfont text-xl md:text-4xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                   <span className="text-red-600 ml-1 font-myfont">RACING</span>
                 </h1>
