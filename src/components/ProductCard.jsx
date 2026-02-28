@@ -1,8 +1,174 @@
+// // components/ProductCard.jsx
+// import React, { useState } from "react";
+// import { motion } from "framer-motion";
+// import { FiEye, FiShoppingCart, FiHeart, FiZap } from "react-icons/fi";
+// import { FaStar, FaTrophy } from "react-icons/fa";
+
+// const ProductCard = ({ product, index, openProductModal }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   return (
+//     <motion.div
+//       className="relative group cursor-pointer"
+//       initial={{ opacity: 0, y: 50 }}
+//       whileInView={{ opacity: 1, y: 0 }}
+//       viewport={{ once: true }}
+//       transition={{ duration: 0.6, delay: index * 0.15 }}
+//       whileHover={{ y: -15 }}
+//       onHoverStart={() => setIsHovered(true)}
+//       onHoverEnd={() => setIsHovered(false)}
+//       onClick={() => openProductModal(product)}
+//     >
+//       {/* Card with premium styling */}
+//       <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+//         {/* Animated gradient border on hover */}
+//         <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none">
+//           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-600 via-orange-500 to-red-600 p-[2px]">
+//             <div className="w-full h-full bg-black rounded-2xl"></div>
+//           </div>
+//         </div>
+
+//         {/* Product image with sophisticated hover effect */}
+//         <div className="relative h-72 overflow-hidden">
+//           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+
+//           <motion.img
+//             src={product.image}
+//             alt={product.name}
+//             className="w-full h-full object-cover"
+//             initial={{ scale: 1 }}
+//             animate={{ scale: isHovered ? 1.2 : 1 }}
+//             transition={{ duration: 0.7, ease: "easeOut" }}
+//           />
+
+//           {/* Premium badges */}
+//           <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
+//             {product.isNew && (
+//               <motion.div
+//                 className="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-extralight px-3 py-1.5 rounded-full shadow-lg"
+//                 initial={{ x: -50, opacity: 0 }}
+//                 animate={{ x: 0, opacity: 1 }}
+//                 transition={{ delay: 0.2 + index * 0.1 }}
+//               >
+//                 NEW
+//               </motion.div>
+//             )}
+//             {product.isTopRated && (
+//               <motion.div
+//                 className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-extralight px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1"
+//                 initial={{ x: -50, opacity: 0 }}
+//                 animate={{ x: 0, opacity: 1 }}
+//                 transition={{ delay: 0.3 + index * 0.1 }}
+//               >
+//                 <FaTrophy className="text-xs" /> TOP RATED
+//               </motion.div>
+//             )}
+//           </div>
+
+//           {/* Quick actions overlay */}
+//           <motion.div
+//             className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center gap-3 z-30"
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: isHovered ? 1 : 0 }}
+//             transition={{ duration: 0.3 }}
+//           >
+//             <motion.button
+//               className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-extralight rounded-lg flex items-center gap-2 shadow-xl"
+//               whileHover={{
+//                 scale: 1.05,
+//                 boxShadow: "0 10px 30px rgba(255, 30, 30, 0.4)",
+//               }}
+//               whileTap={{ scale: 0.95 }}
+//             >
+//               <FiEye /> Quick View
+//             </motion.button>
+
+//             {/* <div className="flex gap-3">
+//               <motion.button
+//                 className="p-3 bg-gray-800 text-white rounded-lg shadow-xl"
+//                 whileHover={{ scale: 1.1, backgroundColor: "#333" }}
+//                 whileTap={{ scale: 0.9 }}
+//                 onClick={(e) => {
+//                   e.stopPropagation();
+//                   // Add to cart functionality
+//                 }}
+//               >
+//                 <FiShoppingCart />
+//               </motion.button>
+
+//               <motion.button
+//                 className="p-3 bg-gray-800 text-white rounded-lg shadow-xl"
+//                 whileHover={{
+//                   scale: 1.1,
+//                   color: "#ef4444",
+//                   backgroundColor: "#333",
+//                 }}
+//                 whileTap={{ scale: 0.9 }}
+//                 onClick={(e) => {
+//                   e.stopPropagation();
+//                   // Add to wishlist functionality
+//                 }}
+//               >
+//                 <FiHeart />
+//               </motion.button>
+//             </div> */}
+//           </motion.div>
+//         </div>
+
+//         {/* Product info with premium styling */}
+//         <div className="p-5 relative z-20">
+//           <div className="flex justify-between items-start mb-3">
+//             <h3 className="text-xs font-bold text-white tracking-wide">
+//               {product.name}
+//             </h3>
+//             <motion.div
+//               className="flex items-center gap-1 text-yellow-500"
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1 }}
+//               transition={{ delay: 0.5 + index * 0.1 }}
+//             >
+//               <FaStar className="text-sm" />
+//               <span className="text-sm font-mono">
+//                 {product.rating || "4.8"}
+//               </span>
+//             </motion.div>
+//           </div>
+
+//           <div className="flex items-center justify-between">
+//             <div className="flex items-baseline gap-2">
+//               <p className="text-lg font-mono text-red-500">${product.price}</p>
+//               {product.originalPrice && (
+//                 <p className="text-gray-500 line-through text-sm">
+//                   ${product.originalPrice}
+//                 </p>
+//               )}
+//             </div>
+
+//             {product.isFastShipping && (
+//               <motion.div
+//                 className="flex items-center gap-1 text-green-500 text-xs font-medium"
+//                 initial={{ opacity: 0 }}
+//                 animate={{ opacity: 1 }}
+//                 transition={{ delay: 0.6 + index * 0.1 }}
+//               >
+//                 <FiZap /> Fast Ship
+//               </motion.div>
+//             )}
+//           </div>
+//         </div>
+//       </div>
+//     </motion.div>
+//   );
+// };
+
+// export default ProductCard;
+
 // components/ProductCard.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiEye, FiShoppingCart, FiHeart, FiZap } from "react-icons/fi";
 import { FaStar, FaTrophy } from "react-icons/fa";
+import logo from "../assets/images/black-logo.png";
 
 const ProductCard = ({ product, index, openProductModal }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -21,11 +187,14 @@ const ProductCard = ({ product, index, openProductModal }) => {
     >
       {/* Card with premium styling */}
       <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
-        {/* Animated gradient border on hover */}
+        {/* Animated white border on hover */}
+        {/* Hover background image + white border */}
         <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none">
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-600 via-orange-500 to-red-600 p-[2px]">
-            <div className="w-full h-full bg-black rounded-2xl"></div>
-          </div>
+          {/* Optional dark overlay for contrast */}
+          <div className="absolute inset-0 rounded-2xl bg-black/40" />
+
+          {/* White border */}
+          <div className="absolute inset-0 rounded-2xl border-2 border-white" />
         </div>
 
         {/* Product image with sophisticated hover effect */}
@@ -37,7 +206,10 @@ const ProductCard = ({ product, index, openProductModal }) => {
             alt={product.name}
             className="w-full h-full object-cover"
             initial={{ scale: 1 }}
-            animate={{ scale: isHovered ? 1.2 : 1 }}
+            animate={{
+              scale: isHovered ? 1.05 : 1,
+              opacity: 1, // Keep image fully visible
+            }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           />
 
@@ -65,9 +237,9 @@ const ProductCard = ({ product, index, openProductModal }) => {
             )}
           </div>
 
-          {/* Quick actions overlay */}
+          {/* Quick actions overlay with light black background */}
           <motion.div
-            className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center gap-3 z-30"
+            className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center gap-3 z-30"
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
             transition={{ duration: 0.3 }}

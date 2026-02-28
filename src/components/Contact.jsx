@@ -240,7 +240,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-mono text-lg"
                       placeholder="John Doe"
                       required
                     />
@@ -264,7 +264,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-mono text-lg"
                       placeholder="john@example.com"
                       required
                     />
@@ -289,7 +289,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600"
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-mono text-lg"
                     placeholder="+1 (555) 123-4567"
                   />
                 </motion.div>
@@ -312,7 +312,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none"
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-mono text-lg"
                     placeholder="Tell us about your racing needs..."
                     required
                   ></textarea>

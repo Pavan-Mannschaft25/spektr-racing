@@ -52,7 +52,7 @@ const Footer = () => {
                 </span> */}
               </div>
             </motion.a>
-            <p className="text-gray-400 pt-4 md:pl-4">
+            <p className="text-gray-400 pt-4 md:pl-4 font-mono text-lg">
               Built for Speed. Designed for Champions.
             </p>
           </motion.div>
@@ -65,7 +65,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h4 className="text-lg font-extralight mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 font-mono text-xl">
               <li>
                 <a
                   href="#"
@@ -109,7 +109,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 className="text-lg font-semibold mb-4">Support</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 font-mono text-xl">
               <li>
                 <a
                   href="#"
