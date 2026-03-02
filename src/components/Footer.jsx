@@ -49,7 +49,7 @@ const Footer = () => {
                 </h2>
               </div>
             </motion.a>
-            <p className="text-gray-400 pt-4 md:pl-4 font-sans text-lg">
+            <p className="text-gray-400 pt-4 md:pl-4 font-sans text-md">
               Built for Speed. Designed for Champions.
             </p>
           </motion.div>
@@ -62,7 +62,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h4 className="text-lg font-extralight mb-4">QUiICK LINKS</h4>
-            <ul className="space-y-2 font-sans text-xl">
+            <ul className="space-y-2 font-sans text-md">
               <li>
                 <a
                   href="#"
@@ -107,7 +107,7 @@ const Footer = () => {
           >
             <h4 className="text-lg font-extralight mb-4">POLICIES</h4>
             {/* <h4 className="text-red-500 font-semibold mb-3">POLICIES</h4> */}
-            <ul className="space-y-2 text-xl font-sans">
+            <ul className="space-y-2 text-md font-sans">
               <li>
                 <Link to="/privacy-policy" className="hover:text-white">
                   Privacy Policy
