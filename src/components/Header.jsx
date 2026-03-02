@@ -317,6 +317,7 @@
 
 // components/Header.jsx
 import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import { GiSteeringWheel, GiCheckeredFlag } from "react-icons/gi";
@@ -325,17 +326,18 @@ import logo from "../assets/images/white-spectr-logo.png";
 const Header = ({ isScrolled }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Navigation items split into left and right sections
   const leftNavItems = [
-    { name: "STORE", href: "#store" },
-    // { name: "Accessories", href: "#accessories" },
-    { name: "Contact", href: "#contact" },
+    { name: "STORE", sectionId: "store" },
+    { name: "Contact", sectionId: "contact" },
   ];
 
   const rightNavItems = [
-    { name: "Racing Clips", href: "#clips" },
-    { name: "Stickers", href: "#stickers" },
+    { name: "Racing Clips", sectionId: "clips" },
+    { name: "Stickers", sectionId: "stickers" },
   ];
 
   // Combine all items for mobile menu
@@ -351,6 +353,23 @@ const Header = ({ isScrolled }) => {
       rotate: 360,
       transition: { duration: 0.6, ease: "easeInOut" },
     },
+  };
+
+  const handleNavigation = (sectionId) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document
+          .getElementById(sectionId)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document
+        .getElementById(sectionId)
+        ?.scrollIntoView({ behavior: "smooth" });
+    }
+
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -370,8 +389,8 @@ const Header = ({ isScrolled }) => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between relative">
             {/* Logo - Left on mobile, Centered on desktop */}
-            <motion.a
-              href="#"
+            <motion.div
+              onClick={() => navigate("/")}
               className="flex items-center gap-2 group select-none lg:absolute lg:left-1/2 xl:transform lg:-translate-x-1/2"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -388,26 +407,28 @@ const Header = ({ isScrolled }) => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-8 h-8 md:w-11 md:h-11 object-contain"
+                    className="w-8 h-8 md:w-14 md:h-16 object-contain"
                   />
                 </div>
               </div>
 
               {/* Brand Text - Hidden on small mobile, visible on larger screens */}
               <div className="sm:flex flex-col leading-none">
-                <h1 className="font-myfont text-xl md:text-4xl font-bold tracking-[0.12em] text-white">
+                <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
-                  <span className="text-red-600 ml-1 font-myfont">RACING</span>
                 </h1>
+                <h2 className="font-myfont text-lg md:text-sm font-bold tracking-[0.12em] text-white text-center">
+                  - RACING -
+                </h2>
               </div>
-            </motion.a>
+            </motion.div>
 
             {/* Desktop Left Navigation - Hidden on mobile/tablet */}
             <nav className="hidden lg:flex items-center space-x-1 flex-1 uppercase">
               {leftNavItems.map((item, index) => (
-                <motion.a
+                <motion.button
+                  onClick={() => handleNavigation(item.sectionId)}
                   key={item.name}
-                  href={item.href}
                   className="relative px-4 py-2 text-white font-bold hover:bg-white/20 rounded-xl group md:text-md"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -437,16 +458,16 @@ const Header = ({ isScrolled }) => {
                       transition: { duration: 0.3 },
                     }}
                   />
-                </motion.a>
+                </motion.button>
               ))}
             </nav>
 
             {/* Desktop Right Navigation - Hidden on mobile/tablet */}
             <nav className="hidden lg:flex items-center space-x-1 flex-1 justify-end uppercase">
               {rightNavItems.map((item, index) => (
-                <motion.a
+                <motion.button
+                  onClick={() => handleNavigation(item.sectionId)}
                   key={item.name}
-                  href={item.href}
                   className="relative px-4 py-2 text-white hover:bg-white/20 rounded-xl group md:text-md"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -476,7 +497,7 @@ const Header = ({ isScrolled }) => {
                       transition: { duration: 0.3 },
                     }}
                   />
-                </motion.a>
+                </motion.button>
               ))}
             </nav>
 
@@ -560,20 +581,19 @@ const Header = ({ isScrolled }) => {
                     </p>
                     <div className="space-y-1">
                       {leftNavItems.map((item, index) => (
-                        <motion.a
+                        <motion.button
                           key={item.name}
-                          href={item.href}
+                          onClick={() => handleNavigation(item.sectionId)}
                           className="flex items-center justify-between p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
                           initial={{ opacity: 0, x: 50 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.05 * index }}
-                          onClick={() => setIsMobileMenuOpen(false)}
                         >
                           <span className="text-md">{item.name}</span>
                           <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-red-600 transition-colors">
                             <GiCheckeredFlag className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                           </div>
-                        </motion.a>
+                        </motion.button>
                       ))}
                     </div>
                   </div>

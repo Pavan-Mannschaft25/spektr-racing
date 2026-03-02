@@ -51,34 +51,67 @@ const Hero = () => {
 
   useEffect(() => {
     const video = videoRef.current;
+    if (!video) return;
 
-    if (video) {
-      // Auto-play when loaded
-      video.play().catch(() => {
+    // HARD RESET
+    video.pause();
+    video.currentTime = 0;
+    video.load();
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
         setIsPlaying(false);
       });
-
-      // Handle video load
-      const handleLoadedData = () => {
-        setIsLoaded(true);
-      };
-
-      // Handle video end to loop to next video
-      const handleEnded = () => {
-        const nextIndex = (currentVideoIndex + 1) % videos.length;
-        setCurrentVideoIndex(nextIndex);
-      };
-
-      video.addEventListener("loadeddata", handleLoadedData);
-      video.addEventListener("ended", handleEnded);
-
-      return () => {
-        video.removeEventListener("loadeddata", handleLoadedData);
-        video.removeEventListener("ended", handleEnded);
-      };
     }
-  }, [currentVideoIndex]);
+  }, []);
 
+  // useEffect(() => {
+  //   const video = videoRef.current;
+
+  //   if (video) {
+  //     // Auto-play when loaded
+  //     video.play().catch(() => {
+  //       setIsPlaying(false);
+  //     });
+
+  //     // Handle video load
+  //     const handleLoadedData = () => {
+  //       setIsLoaded(true);
+  //     };
+
+  //     // Handle video end to loop to next video
+  //     const handleEnded = () => {
+  //       const nextIndex = (currentVideoIndex + 1) % videos.length;
+  //       setCurrentVideoIndex(nextIndex);
+  //     };
+
+  //     video.addEventListener("loadeddata", handleLoadedData);
+  //     video.addEventListener("ended", handleEnded);
+
+  //     return () => {
+  //       video.removeEventListener("loadeddata", handleLoadedData);
+  //       video.removeEventListener("ended", handleEnded);
+  //     };
+  //   }
+  // }, [currentVideoIndex]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    setIsLoaded(false); // 👈 ADD THIS
+
+    const handleLoadedData = () => {
+      setIsLoaded(true);
+    };
+
+    video.addEventListener("loadeddata", handleLoadedData);
+
+    return () => {
+      video.removeEventListener("loadeddata", handleLoadedData);
+    };
+  }, [currentVideoIndex]);
   const togglePlay = () => {
     const video = videoRef.current;
     if (video) {
@@ -135,9 +168,9 @@ const Hero = () => {
             ref={videoRef}
             className="w-full h-full object-cover"
             autoPlay
-            muted={isMuted}
-            loop
+            muted
             playsInline
+            preload="auto"
             poster={videos[currentVideoIndex].poster}
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
