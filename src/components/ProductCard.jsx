@@ -186,19 +186,19 @@ const ProductCard = ({ product, index, openProductModal }) => {
       onClick={() => openProductModal(product)}
     >
       {/* Card with premium styling */}
-      <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+      <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden shadow-2xl">
         {/* Animated white border on hover */}
         {/* Hover background image + white border */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none">
-          {/* Optional dark overlay for contrast */}
-          <div className="absolute inset-0 rounded-2xl bg-black/40" />
+        {/* <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none">
+          
+          <div className="absolute inset-0 bg-black/40" />
 
-          {/* White border */}
-          <div className="absolute inset-0 rounded-2xl border-2 border-white" />
-        </div>
+          
+          <div className="absolute inset-0 border-2 border-white" />
+        </div> */}
 
         {/* Product image with sophisticated hover effect */}
-        <div className="relative h-72 overflow-hidden">
+        <div className="relative h-85 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
 
           <motion.img

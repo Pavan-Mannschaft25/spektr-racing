@@ -4,38 +4,44 @@ import bike3 from "../assets/bike/bike3.avif";
 import bike4 from "../assets/bike/bike4.webp";
 import bike5 from "../assets/bike/bike5.webp";
 
+//spektr popular images
+import sp1 from "../assets/spektr/spektrImges/sp-race-p1.jpeg";
+import sp2 from "../assets/spektr/spektrImges/sp-race-p5.jpeg";
+import sp3 from "../assets/spektr/spektrImges/sp-race-p4.jpeg";
+import sp4 from "../assets/spektr/spektrImges/sp-race-p2.jpeg";
+
 //stic Images
-import stic1 from "../assets/categories/stic/stic1.jpg";
-import stic2 from "../assets/categories/stic/stic2.jpg";
-import stic3 from "../assets/categories/stic/stic3.avif";
-import stic4 from "../assets/categories/stic/stic4.jpg";
-import stic5 from "../assets/categories/stic/stic5.jpg";
-import stic6 from "../assets/categories/stic/stic6.jpg";
+import stic1 from "../assets/spektr/spektrImges/sp-race1.jpeg";
+import stic2 from "../assets/spektr/spektrImges/sp-race2.jpeg";
+import stic3 from "../assets/spektr/spektrImges/sp-race3.jpeg";
+import stic4 from "../assets/spektr/spektrImges/sp-race4.jpeg";
+import stic5 from "../assets/spektr/spektrImges/sp-race5.jpeg";
 
 //Acc Images
-import acc1 from "../assets/categories/acc/acc1.avif";
-import acc2 from "../assets/categories/acc/acc2.jpg";
-import acc3 from "../assets/categories/acc/acc7.avif";
-import acc4 from "../assets/categories/acc/acc4.jpg";
-import acc5 from "../assets/categories/acc/acc5.jpg";
-import acc6 from "../assets/categories/acc/acc6.avif";
+import acc1 from "../assets/spektr/spektrImges/sp-race2.jpeg";
+import acc2 from "../assets/spektr/spektrImges/sp-race2.jpeg";
+import acc3 from "../assets/spektr/spektrImges/sp-race6.jpeg";
+import acc4 from "../assets/spektr/spektrImges/sp-race7.jpeg";
+import acc5 from "../assets/spektr/spektrImges/sp-race8.jpeg";
+import acc6 from "../assets/spektr/spektrImges/sp-race9.jpeg";
 
 //glov Images
-import glov1 from "../assets/categories/glov/glov1.jpg";
-import glov2 from "../assets/categories/glov/glov2.jpg";
-import glov3 from "../assets/categories/glov/glov8.jpg";
-import glov4 from "../assets/categories/glov/glov4.jpg";
-import glov5 from "../assets/categories/glov/glov7.jpg";
-import glov6 from "../assets/categories/glov/glov6.jpg";
+import glov1 from "../assets/spektr/spektrImges/sp-race11.jpeg";
+import glov2 from "../assets/spektr/spektrImges/sp-race11.jpeg";
+import glov3 from "../assets/spektr/spektrImges/sp-race9.jpeg";
+import glov4 from "../assets/spektr/spektrImges/sp-race13.jpeg";
+import glov5 from "../assets/spektr/spektrImges/sp-race10.jpeg";
+import glov6 from "../assets/spektr/spektrImges/sp-race2.jpeg";
 
 // data/products.js
 export const products = [
+  //Popular Pics
   {
     id: 1,
-    name: "Racing Helmet Pro",
+    name: "Racing Jacket",
     price: 299.99,
-    image: acc1,
-    category: "accessories",
+    image: sp1,
+    category: "",
     description:
       "Professional racing helmet with advanced aerodynamics and maximum safety features.",
     sizes: ["S", "M", "L", "XL"],
@@ -43,10 +49,10 @@ export const products = [
   },
   {
     id: 2,
-    name: "Racing Gloves Elite",
+    name: "Racing Jacket",
     price: 89.99,
-    image: glov2,
-    category: "gloves",
+    image: sp2,
+    category: "",
     description:
       "High-performance racing gloves with enhanced grip and protection.",
     sizes: ["S", "M", "L", "XL"],
@@ -54,10 +60,10 @@ export const products = [
   },
   {
     id: 3,
-    name: "Racing Sticker Pack",
+    name: "Racing Jacket",
     price: 19.99,
-    image: stic1,
-    category: "stickers",
+    image: sp4,
+    category: "",
     description:
       "Premium vinyl sticker pack featuring exclusive racing designs.",
     sizes: ["One Size"],
@@ -67,18 +73,30 @@ export const products = [
     id: 4,
     name: "Racing Jacket",
     price: 399.99,
-    image: acc3,
-    category: "accessories",
+    image: sp3,
+    category: "",
     description:
       "Lightweight racing jacket with weather protection and team branding.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF", "#0066CC"],
   },
+  //stickers
   {
     id: 5,
     name: "Racing Decal Set",
     price: 24.99,
     image: stic3,
+    category: "stickers",
+    description:
+      "Custom racing decal set for personalizing your vehicle or gear.",
+    sizes: ["One Size"],
+    colors: ["#000000", "#FF0000", "#FFFFFF"],
+  },
+  {
+    id: 5,
+    name: "Racing Decal Set",
+    price: 24.99,
+    image: stic1,
     category: "stickers",
     description:
       "Custom racing decal set for personalizing your vehicle or gear.",
@@ -100,23 +118,33 @@ export const products = [
     id: 7,
     name: "Racing Cap",
     price: 34.99,
-    image: acc6,
+    image: acc3,
     category: "accessories",
     description: "Adjustable racing cap with embroidered team logo.",
     sizes: ["One Size"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   {
-    id: 8,
-    name: "Racing Sticker",
-    price: 14.99,
-    image: stic5,
-    category: "stickers",
-    description:
-      "Limited edition racing sticker collection from our latest series.",
+    id: 7,
+    name: "Racing Cap",
+    price: 34.99,
+    image: acc6,
+    category: "accessories",
+    description: "Adjustable racing cap with embroidered team logo.",
     sizes: ["One Size"],
-    colors: ["#000000"],
+    colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
+  // {
+  //   id: 8,
+  //   name: "Racing Sticker",
+  //   price: 14.99,
+  //   image: stic5,
+  //   category: "stickers",
+  //   description:
+  //     "Limited edition racing sticker collection from our latest series.",
+  //   sizes: ["One Size"],
+  //   colors: ["#000000"],
+  // },
   {
     id: 9,
     name: "Racing Gloves Limited",
@@ -176,7 +204,7 @@ export const products = [
     id: 14,
     name: "Racing Gloves Elite",
     price: 89.99,
-    image: glov5,
+    image: glov1,
     category: "gloves",
     description:
       "High-performance racing gloves with enhanced grip and protection.",

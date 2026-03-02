@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaPlay } from "react-icons/fa";
 
 //images
-import bike1 from "../assets/bike/pop1.jpg";
-import bike2 from "../assets/bike/bike2.jpg";
-import bike3 from "../assets/bike/bike3.avif";
-import bike4 from "../assets/bike/bike4.webp";
-import bike5 from "../assets/bike/bike5.webp";
-import bike6 from "../assets/bike/pop1.jpg";
-import bike7 from "../assets/bike/pop2.jpg";
-import bike8 from "../assets/bike/pop3.jpg";
+import bike1 from "../assets/spektr/spektrImges/sp-race1.jpeg";
+import bike2 from "../assets/spektr/spektrImges/sp-race2.jpeg";
+import bike3 from "../assets/spektr/spektrImges/sp-race10.jpeg";
+import bike4 from "../assets/spektr/spektrImges/sp-race4.jpeg";
+import bike5 from "../assets/spektr/spektrImges/sp-race5.jpeg";
+import bike6 from "../assets/spektr/spektrImges/sp-race6.jpeg";
+import bike7 from "../assets/spektr/spektrImges/sp-race7.jpeg";
+import bike8 from "../assets/spektr/spektrImges/sp-race8.jpeg";
+import bike9 from "../assets/spektr/spektrImges/sp-race9.jpeg";
 
 //videos
 import video1 from "../assets/videos/short2.mp4";
@@ -26,14 +27,14 @@ import video9 from "../assets/videos/short10.mp4";
 // Combine images and videos into post objects
 const posts = [
   { image: bike1, video: video4 },
-  { image: bike3, video: video1 },
-  { image: bike2, video: video2 },
-  { image: bike3, video: video3 },
-  { image: bike4, video: video4 },
-  { image: bike5, video: video5 },
-  { image: bike6, video: video6 },
-  { image: bike7, video: video8 },
-  { image: bike8, video: video9 },
+  { image: bike2, video: video1 },
+  { image: bike3, video: video2 },
+  { image: bike4, video: video3 },
+  { image: bike5, video: video4 },
+  { image: bike6, video: video5 },
+  { image: bike7, video: video6 },
+  { image: bike8, video: video8 },
+  { image: bike9, video: video9 },
 ];
 
 const InstagramFlow = () => {
@@ -91,7 +92,7 @@ const PostItem = ({ post }) => {
 
   return (
     <div
-      className="relative min-w-[200px] h-[200px] md:min-w-[250px] md:h-[250px] rounded-xl overflow-hidden group cursor-pointer"
+      className="relative min-w-[200px] h-[200px] md:min-w-[270px] md:h-[350px] overflow-hidden group cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

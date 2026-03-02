@@ -2,10 +2,10 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FiPlay, FiPause } from "react-icons/fi";
 
-import bike1 from "../assets/bike/bike1.jpg";
-import bike2 from "../assets/bike/bike2.jpg";
-import short1 from "../assets/videos/short4.mp4";
-import short2 from "../assets/videos/short2.mp4";
+import bike1 from "../assets/spektr/spektrImges/sp-race2.jpeg";
+import bike2 from "../assets/spektr/spektrImges/sp-race13.jpeg";
+import short1 from "../assets/spektr/spektrVideos/sp-race-video1.mp4";
+import short2 from "../assets/spektr/spektrVideos/sp-race-video2.mp4";
 
 const VideoHeroSection = ({ items = [], className = "" }) => {
   const [activeVideo, setActiveVideo] = useState(null);
@@ -19,7 +19,7 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
       title: "Bikes For Sale",
       subtitle: "Discover More",
       // link: "/for-sale",
-      videoSrc: short1,
+      videoSrc: short2,
       posterImage: bike1,
     },
     {
@@ -27,7 +27,7 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
       title: "Sell Us Your Bike",
       subtitle: "Discover More",
       // link: "/sell-us-your-bike",
-      videoSrc: short2,
+      videoSrc: short1,
       posterImage: bike2,
     },
   ];
@@ -111,7 +111,7 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
 
   return (
     <motion.section
-      className={`relative h-screen min-h-[600px] bg-black overflow-hidden ${className}`}
+      className={`relative h-screen min-h-[500px] bg-black overflow-hidden ${className}`}
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -150,7 +150,7 @@ const VideoHeroSection = ({ items = [], className = "" }) => {
                 onCanPlay={() =>
                   setVideosReady((p) => ({ ...p, [item.id]: true }))
                 }
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-fit transition-transform duration-700"
                 style={{
                   transform:
                     activeVideo === item.id ? "scale(1.1)" : "scale(1.05)",

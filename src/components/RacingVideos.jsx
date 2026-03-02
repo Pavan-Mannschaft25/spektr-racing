@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { FaPlay, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import VideoHeroSection from "./VideoHeroSection";
 
-import bike1 from "../assets/bike/bike1.jpg";
-import bike2 from "../assets/bike/bike2.jpg";
-import bike3 from "../assets/bike/bike3.avif";
-import bike4 from "../assets/bike/bike4.webp";
-import bike5 from "../assets/bike/bike5.webp";
+import bike1 from "../assets/spektr/spektrImges/sp-race10.jpeg";
+import bike2 from "../assets/spektr/spektrImges/sp-race9.jpeg";
+import bike3 from "../assets/spektr/spektrImges/sp-race12.jpeg";
+import bike4 from "../assets/spektr/spektrImges/sp-race13.jpeg";
+import bike5 from "../assets/spektr/spektrImges/sp-race14.jpeg";
 
 import short1 from "../assets/videos/short7.mp4";
 import short2 from "../assets/videos/short3.mp4";
@@ -106,7 +106,7 @@ const RacingVideos = () => {
 
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
+            className="flex gap-2 overflow-x-auto scrollbar-hide pb-2"
           >
             {videos.map((video, index) => (
               <motion.div
@@ -128,7 +128,7 @@ const RacingVideos = () => {
                   )
                 }
               >
-                <div className="relative h-72 rounded-lg overflow-hidden bg-black">
+                <div className="relative h-72 md:h-100 rounded-lg overflow-hidden bg-black">
                   <video
                     ref={(el) => (videoRefs.current[video.id] = el)}
                     src={video.videoUrl}
