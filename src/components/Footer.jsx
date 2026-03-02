@@ -1,5 +1,6 @@
 // components/Footer.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 // import logo from "../assets/images/spektr.jpeg";
@@ -27,32 +28,28 @@ const Footer = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
             >
-              {/* Logo Container */}
               <div className="relative">
-                {/* Glow */}
                 <div className="absolute inset-0  blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                {/* Logo */}
                 <div className="relative">
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-10 h-10 object-contain"
+                    className="w-10 h-10 md:w-14 md:h-14 object-contain"
                   />
                 </div>
               </div>
 
-              {/* Brand Text */}
-              <div className="flex flex-col leading-none">
-                <h1 className="text-2xl font-bold tracking-tight text-white">
-                  SPEKTR<span className="text-red-600">RACING</span>
+              <div className="sm:flex flex-col leading-none">
+                <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
+                  SPEKTR
                 </h1>
-                {/* <span className="text-[10px] tracking-widest text-gray-400 uppercase">
-                  Built For Speed
-                </span> */}
+                <h2 className="font-myfont text-lg md:text-sm font-bold tracking-[0.12em] text-white text-center">
+                  - RACING -
+                </h2>
               </div>
             </motion.a>
-            <p className="text-gray-400 pt-4 md:pl-4 font-mono text-lg">
+            <p className="text-gray-400 pt-4 md:pl-4 font-sans text-lg">
               Built for Speed. Designed for Champions.
             </p>
           </motion.div>
@@ -64,8 +61,8 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="text-lg font-extralight mb-4">Quick Links</h4>
-            <ul className="space-y-2 font-mono text-xl">
+            <h4 className="text-lg font-extralight mb-4">QUiICK LINKS</h4>
+            <ul className="space-y-2 font-sans text-xl">
               <li>
                 <a
                   href="#"
@@ -108,39 +105,33 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="text-lg font-semibold mb-4">Support</h4>
-            <ul className="space-y-2 font-mono text-xl">
+            <h4 className="text-lg font-extralight mb-4">POLICIES</h4>
+            {/* <h4 className="text-red-500 font-semibold mb-3">POLICIES</h4> */}
+            <ul className="space-y-2 text-xl font-sans">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Contact Us
-                </a>
+                <Link to="/privacy-policy" className="hover:text-white">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Shipping Info
-                </a>
+                <Link to="/terms-of-service" className="hover:text-white">
+                  Terms of Service
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Returns
-                </a>
+                <Link to="/shipping-policy" className="hover:text-white">
+                  Shipping Policy
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  FAQ
-                </a>
+                <Link to="/refund-return-policy" className="hover:text-white">
+                  Refund & Return
+                </Link>
+              </li>
+              <li>
+                <Link to="/warranty-policy" className="hover:text-white">
+                  Warranty Policy
+                </Link>
               </li>
             </ul>
           </motion.div>

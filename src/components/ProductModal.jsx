@@ -1484,14 +1484,14 @@ const ProductModal = ({ product, onClose }) => {
                       {product.name || "Premium Product"}
                     </h2>
 
-                    <p className="text-gray-300 leading-relaxed font-mono text-lg">
+                    <p className="text-gray-300 leading-relaxed font-sans text-lg">
                       Experience the perfect blend of luxury and innovation with
                       our exclusive collection
                     </p>
                   </div>
 
                   {/* Price Section */}
-                  <div className="bg-gradient-to-r from-red-900/30 to-red-800/30 rounded-2xl p-6 border border-red-500/20 font-mono text-lg">
+                  <div className="bg-gradient-to-r from-red-900/30 to-red-800/30 rounded-2xl p-6 border border-red-500/20 font-sans text-lg">
                     <div className="flex items-end gap-4">
                       <motion.span
                         initial={{ opacity: 0, x: -20 }}
@@ -1521,7 +1521,7 @@ const ProductModal = ({ product, onClose }) => {
 
                   {/* Product Details Grid */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50 font-mono text-md">
+                    <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50 font-sans text-md">
                       <div className="flex items-center gap-3">
                         <div className="p-2 bg-red-500/20 rounded-md">
                           <IoCube className="text-red-400" size={20} />
@@ -1534,7 +1534,7 @@ const ProductModal = ({ product, onClose }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50 font-mono text-md">
+                    <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50 font-sans text-md">
                       <div className="flex items-center gap-3">
                         <div className="p-2 bg-red-500/20 rounded-lg">
                           <MdLocalShipping className="text-red-400" size={20} />
@@ -1550,7 +1550,7 @@ const ProductModal = ({ product, onClose }) => {
                   </div>
 
                   {/* Product Description */}
-                  <div className="bg-gray-800/30 rounded-2xl p-6 border border-gray-700/30 font-mono text-lg">
+                  <div className="bg-gray-800/30 rounded-2xl p-6 border border-gray-700/30 font-sans text-lg">
                     <h3 className="font-bold text-white mb-4 flex items-center gap-2 text-2xl">
                       <IoInformationCircle className="text-red-400" />
                       Product Details
@@ -1581,7 +1581,7 @@ const ProductModal = ({ product, onClose }) => {
                   <div className="space-y-6">
                     {/* Size Selection */}
                     <div>
-                      <div className="flex items-center justify-between mb-3 font-mono text-xl">
+                      <div className="flex items-center justify-between mb-3 font-sans text-xl">
                         <p className="text-white font-semibold flex items-center gap-2">
                           <IoShirt className="text-red-400" />
                           Select Size
@@ -1590,7 +1590,7 @@ const ProductModal = ({ product, onClose }) => {
                           Size Guide
                         </button>
                       </div>
-                      <div className="grid grid-cols-5 gap-2 font-mono text-lg">
+                      <div className="grid grid-cols-5 gap-2 font-sans text-lg">
                         {["XS", "S", "M", "L", "XL"].map((size) => (
                           <motion.button
                             key={size}
@@ -1611,7 +1611,7 @@ const ProductModal = ({ product, onClose }) => {
 
                     {/* Color Selection */}
                     <div>
-                      <p className="text-white font-semibold mb-3 flex items-center gap-2 font-mono text-xl">
+                      <p className="text-white font-semibold mb-3 flex items-center gap-2 font-sans text-xl">
                         <IoColorPalette className="text-red-400" />
                         Choose Color
                       </p>
@@ -1652,7 +1652,7 @@ const ProductModal = ({ product, onClose }) => {
 
                     {/* Quantity Selection */}
                     <div>
-                      <p className="text-white font-semibold mb-3 font-mono text-xl">
+                      <p className="text-white font-semibold mb-3 font-sans text-xl">
                         Quantity
                       </p>
                       <div className="flex items-center gap-4 ">
@@ -1682,7 +1682,7 @@ const ProductModal = ({ product, onClose }) => {
                   </div>
 
                   {/* Premium Features */}
-                  <div className="space-y-4 font-mono text-lg">
+                  <div className="space-y-4 font-sans text-lg">
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
                       <FaAward className="text-red-400 text-xl" />
                       Premium Benefits
@@ -1756,7 +1756,7 @@ const ProductModal = ({ product, onClose }) => {
                   </motion.button>
 
                   {/* Stock Information */}
-                  <div className="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 font-mono text-lg">
+                  <div className="flex items-center justify-between p-4 bg-red-500/10 rounded-xl border border-red-500/20 font-sans text-lg">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
                       <span className="text-red-400 font-medium">In Stock</span>

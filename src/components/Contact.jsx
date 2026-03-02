@@ -92,7 +92,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 lg:py-20 overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black"
+      className="relative py-20 lg:py-20 overflow-hidden bg-black"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -240,7 +240,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-mono text-lg"
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
                       placeholder="John Doe"
                       required
                     />
@@ -264,7 +264,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-mono text-lg"
+                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
                       placeholder="john@example.com"
                       required
                     />
@@ -289,7 +289,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-mono text-lg"
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
                     placeholder="+1 (555) 123-4567"
                   />
                 </motion.div>
@@ -312,7 +312,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-mono text-lg"
+                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-sans text-lg"
                     placeholder="Tell us about your racing needs..."
                     required
                   ></textarea>
