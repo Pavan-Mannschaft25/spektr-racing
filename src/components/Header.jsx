@@ -322,6 +322,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import { GiSteeringWheel, GiCheckeredFlag } from "react-icons/gi";
 import logo from "../assets/images/white-spectr-logo.png";
+// import logo from "../assets/images/sp-l2.png";
 
 const Header = ({ isScrolled }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -417,7 +418,7 @@ const Header = ({ isScrolled }) => {
                 <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                 </h1>
-                <h2 className="font-myfont text-lg md:text-sm font-bold tracking-[0.12em] text-white text-center">
+                <h2 className="font-myfont text-xs md:text-sm font-bold tracking-[0.12em] text-white text-center">
                   - RACING -
                 </h2>
               </div>
@@ -510,9 +511,9 @@ const Header = ({ isScrolled }) => {
             >
               <AnimatePresence mode="wait">
                 {isMobileMenuOpen ? (
-                  <FiX key="close" size={40} className="text-2xl" />
+                  <FiX key="close" size={30} className="text-2xl" />
                 ) : (
-                  <FiMenu key="menu" size={40} className="text-2xl" />
+                  <FiMenu key="menu" size={30} className="text-2xl" />
                 )}
               </AnimatePresence>
             </motion.button>

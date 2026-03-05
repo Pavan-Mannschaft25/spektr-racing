@@ -44,7 +44,7 @@ const Footer = () => {
                 <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                 </h1>
-                <h2 className="font-myfont text-lg md:text-sm font-bold tracking-[0.12em] text-white text-center">
+                <h2 className="font-myfont text-xs md:text-sm font-bold tracking-[0.12em] text-white text-center">
                   - RACING -
                 </h2>
               </div>
