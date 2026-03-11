@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
     <section className="bg-black text-white py-12 px-4 md:px-10 font-sans text-xl">
       <div className="max-w-5xl mx-auto">
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-bold text-red-600 mb-6 uppercase">
+        <h1 className="text-3xl md:text-4xl font-bold text-red-600 mb-6 uppercase pt-10">
           Privacy Policy
         </h1>
 
