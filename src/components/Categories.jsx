@@ -30,8 +30,8 @@ const Categories = ({ products, openProductModal }) => {
                 <h2 className="text-xl md:text-3xl font-bold">
                   {category.name.toUpperCase()}
                 </h2>
-                <button className="text-red-600 font-medium hover:underline">
-                  View All
+                <button className="text-red-600 hover:underline font-sans">
+                  <span className="font-sans text-lg font-bold">View All</span>
                 </button>
               </motion.div>
 

@@ -50,7 +50,7 @@ const Footer = () => {
               </div>
             </motion.a>
             <p className="text-gray-400 pt-4 md:pl-4 font-sans text-md">
-              Built for Speed. Designed for Champions.
+              Wear Confidene. Ride Fearless
             </p>
           </motion.div>
 
@@ -181,8 +181,8 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        <div className="border-t border-gray-900 pt-8 text-center text-gray-400">
-          <p>© {currentYear} Racing Brand. Built for Speed.</p>
+        <div className="border-t border-gray-900 pt-8 text-center text-md text-gray-400 font-sans">
+          <p>© {currentYear} Wear Confidene. Ride Fearless</p>
         </div>
       </div>
     </footer>

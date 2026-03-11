@@ -157,7 +157,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative h-[70vh] lg:h-[70vh] flex items-center justify-center overflow-hidden"
+      className="relative h-[70vh] lg:h-[70vh] flex items-center justify-center overflow-hidden font-sans"
       onMouseMove={handleMouseMove}
     >
       {/* Video Background */}

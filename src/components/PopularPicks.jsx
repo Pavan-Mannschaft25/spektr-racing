@@ -143,9 +143,11 @@ const PopularPicks = ({ products, openProductModal }) => {
             {/* LEFT: Heading */}
             <div className="flex items-center">
               <FaFire className="text-2xl md:text-3xl text-red-500" />
-              <h2 className="text-xl md:text-3xl font-black tracking-wider text-white">
-                POPULAR
-                <span className="text-red-500 ml-2">PICKS</span>
+              <h2 className="text-xl md:text-3xl font-normal tracking-wider text-white">
+                SPEKTR
+                <span className="text-red-500 ml-2 font-black text-2xl md:text-4xl">
+                  SELEKT
+                </span>
               </h2>
               <FaFire className="text-xl md:text-3xl ml-1 text-red-500" />
             </div>
@@ -155,9 +157,9 @@ const PopularPicks = ({ products, openProductModal }) => {
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               className="hidden md:inline-flex px-2 md:px-4 py-2 bg-red-600 text-white font-medium tracking-wide rounded-full
-               hover:bg-red-700 transition-all shadow-lg"
+               hover:bg-red-700 transition-all shadow-lg font-sans"
             >
-              SHOP NOW
+              <span className="text-lg font-sans">SHOP NOW</span>
             </motion.button>
           </motion.div>
 
@@ -210,7 +212,7 @@ const PopularPicks = ({ products, openProductModal }) => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <motion.button
-            className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-extralight text-sm md:text-md rounded-full flex items-center mx-auto shadow-2xl"
+            className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white text-sm md:text-md rounded-full flex items-center mx-auto shadow-2xl"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(220, 38, 38, 0.4)",
@@ -219,7 +221,9 @@ const PopularPicks = ({ products, openProductModal }) => {
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            EXPLORE FULL COLLECTION
+            <span className="font-sans font-bold text-xl">
+              EXPLORE FULL COLLECTION
+            </span>
             <FaMotorcycle className="ml-3 text-xl" />
           </motion.button>
 
@@ -233,7 +237,9 @@ const PopularPicks = ({ products, openProductModal }) => {
           >
             <div className="flex items-center gap-2 text-gray-600">
               <FaFlagCheckered className="text-2xl" />
-              <span className="text-sm font-medium">RACING APPROVED</span>
+              <span className="text-sm font-medium font-sans">
+                RACING APPROVED
+              </span>
               <FaFlagCheckered className="text-2xl" />
             </div>
           </motion.div>

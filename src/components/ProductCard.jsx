@@ -186,7 +186,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
       onClick={() => openProductModal(product)}
     >
       {/* Card with premium styling */}
-      <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden shadow-2xl">
+      <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden shadow-2xl font-sans">
         {/* Animated white border on hover */}
         {/* Hover background image + white border */}
         {/* <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none">
@@ -245,7 +245,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
             transition={{ duration: 0.3 }}
           >
             <motion.button
-              className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-extralight rounded-lg flex items-center gap-2 shadow-xl"
+              className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold rounded-lg flex items-center gap-2 shadow-xl"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 10px 30px rgba(255, 30, 30, 0.4)",
@@ -290,7 +290,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
         {/* Product info with premium styling */}
         <div className="p-5 relative z-20">
           <div className="flex justify-between items-start mb-3">
-            <h3 className="text-xs font-bold text-white tracking-wide">
+            <h3 className="text-sm font-bold text-white tracking-wide">
               {product.name}
             </h3>
             <motion.div
