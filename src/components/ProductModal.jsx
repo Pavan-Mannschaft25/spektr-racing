@@ -2024,7 +2024,7 @@ const ProductModal = ({ product, onClose }) => {
 
           {/* Main Content */}
           <div
-            className={`relative ${isFullscreen ? "h-screen" : "h-[100vh] sm:h-[95vh] md:h-[90vh]"} pt-12 sm:pt-14 md:pt-20`}
+            className={`relative font-sans ${isFullscreen ? "h-screen" : "h-[100vh] sm:h-[95vh] md:h-[90vh]"} pt-12 sm:pt-14 md:pt-20`}
           >
             <div
               className={`flex ${isMobile ? "flex-col" : "lg:flex-row"} h-full`}

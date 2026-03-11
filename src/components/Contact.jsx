@@ -477,7 +477,7 @@ const Contact = () => {
             whileHover={{ scale: 1.05 }}
           >
             <GiCheckeredFlag className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" />
-            <span className="text-red-600 text-xs sm:text-sm font-bold">
+            <span className="text-red-600 text-xs sm:text-sm font-bold font-sans">
               GET IN TOUCH
             </span>
           </motion.div>
@@ -489,14 +489,14 @@ const Contact = () => {
             </span>
           </h2>
 
-          <p className="text-gray-400 text-sm sm:text-md max-w-4xl mx-auto font-bold px-2">
+          <p className="text-gray-400 text-sm sm:text-lg max-w-4xl mx-auto font-bold px-2 font-sans ">
             Ready to elevate your racing experience? Our team is here to help
             you find the perfect gear and answer all your questions.
           </p>
         </motion.div>
 
         {/* <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start"> */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start font-sans">
           {/* Left Column - Contact Info */}
           <motion.div
             className="space-y-6 sm:space-y-8"
@@ -525,10 +525,10 @@ const Contact = () => {
                     {info.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-gray-500 text-xs sm:text-md font-bold">
+                    <p className="block text-sm sm:text-md font-bold text-gray-400 mb-2">
                       {info.label}
                     </p>
-                    <p className="text-white text-sm sm:text-base truncate">
+                    <p className="text-white text-sm sm:text-lg truncate">
                       {info.value}
                     </p>
                   </div>
@@ -540,7 +540,7 @@ const Contact = () => {
             {/* Decorative Element */}
             <motion.div
               // className="hidden lg:block absolute -left-20 top-1/2 -translate-y-1/2"
-              className="hidden lg:block absolute -left-10 top-1/2 -translate-y-1/2 pointer-events-none"
+              className="hidden lg:block absolute -left-10 bottom-1/2 -translate-y-1/2 pointer-events-none"
               initial={{ opacity: 0, rotate: 0 }}
               whileInView={{ opacity: 0.3, rotate: 360 }}
               viewport={{ once: true }}
