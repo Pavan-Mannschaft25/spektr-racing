@@ -42,6 +42,7 @@ export const products = [
     price: 299.99,
     image: sp1,
     category: "",
+    model: "/models/product.glb",
     description:
       "Professional racing helmet with advanced aerodynamics and maximum safety features.",
     sizes: ["S", "M", "L", "XL"],
@@ -53,6 +54,7 @@ export const products = [
     price: 89.99,
     image: sp2,
     category: "",
+    model: "/models/low_poly_racing_bike.glb",
     description:
       "High-performance racing gloves with enhanced grip and protection.",
     sizes: ["S", "M", "L", "XL"],
@@ -64,6 +66,7 @@ export const products = [
     price: 19.99,
     image: sp4,
     category: "",
+    model: "/models/product3.glb",
     description:
       "Premium vinyl sticker pack featuring exclusive racing designs.",
     sizes: ["One Size"],
@@ -75,6 +78,7 @@ export const products = [
     price: 399.99,
     image: sp3,
     category: "",
+    model: "/models/product4.glb",
     description:
       "Lightweight racing jacket with weather protection and team branding.",
     sizes: ["S", "M", "L", "XL", "XXL"],
@@ -87,6 +91,7 @@ export const products = [
     price: 24.99,
     image: stic3,
     category: "stickers",
+    model: "/models/product3.glb",
     description:
       "Custom racing decal set for personalizing your vehicle or gear.",
     sizes: ["One Size"],
@@ -98,6 +103,7 @@ export const products = [
     price: 24.99,
     image: stic1,
     category: "stickers",
+    model: "/models/product3.glb",
     description:
       "Custom racing decal set for personalizing your vehicle or gear.",
     sizes: ["One Size"],
@@ -109,6 +115,7 @@ export const products = [
     price: 119.99,
     image: glov5,
     category: "gloves",
+    model: "/models/product3.glb",
     description:
       "Professional racing gloves with carbon fiber knuckle protection.",
     sizes: ["S", "M", "L", "XL"],
@@ -120,6 +127,7 @@ export const products = [
     price: 34.99,
     image: acc3,
     category: "accessories",
+    model: "/models/product3.glb",
     description: "Adjustable racing cap with embroidered team logo.",
     sizes: ["One Size"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
@@ -130,6 +138,7 @@ export const products = [
     price: 34.99,
     image: acc6,
     category: "accessories",
+    model: "/models/product3.glb",
     description: "Adjustable racing cap with embroidered team logo.",
     sizes: ["One Size"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
@@ -151,6 +160,7 @@ export const products = [
     price: 149.99,
     image: glov3,
     category: "gloves",
+    model: "/models/product3.glb",
     description:
       "Limited edition racing gloves with exclusive design and premium materials.",
     sizes: ["S", "M", "L", "XL"],
@@ -162,6 +172,7 @@ export const products = [
     price: 299.99,
     image: acc4,
     category: "accessories",
+    model: "/models/product3.glb",
     description:
       "Professional racing helmet with advanced aerodynamics and maximum safety features.",
     sizes: ["S", "M", "L", "XL"],
@@ -173,6 +184,7 @@ export const products = [
     price: 89.99,
     image: glov4,
     category: "gloves",
+    model: "/models/product3.glb",
     description:
       "High-performance racing gloves with enhanced grip and protection.",
     sizes: ["S", "M", "L", "XL"],
@@ -184,6 +196,7 @@ export const products = [
     price: 19.99,
     image: stic2,
     category: "stickers",
+    model: "/models/product3.glb",
     description:
       "Premium vinyl sticker pack featuring exclusive racing designs.",
     sizes: ["One Size"],
@@ -195,6 +208,7 @@ export const products = [
     price: 299.99,
     image: acc5,
     category: "accessories",
+    model: "/models/product3.glb",
     description:
       "Professional racing helmet with advanced aerodynamics and maximum safety features.",
     sizes: ["S", "M", "L", "XL"],
@@ -206,6 +220,7 @@ export const products = [
     price: 89.99,
     image: glov1,
     category: "gloves",
+    model: "/models/product3.glb",
     description:
       "High-performance racing gloves with enhanced grip and protection.",
     sizes: ["S", "M", "L", "XL"],
@@ -217,6 +232,7 @@ export const products = [
     price: 19.99,
     image: stic4,
     category: "stickers",
+    model: "/models/product3.glb",
     description:
       "Premium vinyl sticker pack featuring exclusive racing designs.",
     sizes: ["One Size"],
