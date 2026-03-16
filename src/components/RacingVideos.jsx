@@ -128,7 +128,7 @@ const RacingVideos = () => {
                   )
                 }
               >
-                <div className="relative h-72 md:h-100 rounded-lg overflow-hidden bg-black">
+                <div className="relative h-72 md:h-100 overflow-hidden bg-black shadow-lg">
                   <video
                     ref={(el) => (videoRefs.current[video.id] = el)}
                     src={video.videoUrl}

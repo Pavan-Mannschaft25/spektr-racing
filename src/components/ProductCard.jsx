@@ -186,7 +186,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
       onClick={() => openProductModal(product)}
     >
       {/* Card with premium styling */}
-      <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden shadow-2xl font-sans">
+      <div className="relative bg-black overflow-hidden shadow-2xl font-sans">
         {/* Animated white border on hover */}
         {/* Hover background image + white border */}
         {/* <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none">
@@ -288,7 +288,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
         </div>
 
         {/* Product info with premium styling */}
-        <div className="p-5 relative z-20">
+        <div className="p-5 relative z-20 bg-black">
           <div className="flex justify-between items-start mb-3">
             <h3 className="text-sm font-bold text-white tracking-wide">
               {product.name}

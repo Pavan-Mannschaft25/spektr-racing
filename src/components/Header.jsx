@@ -377,7 +377,7 @@ const Header = ({ isScrolled }) => {
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-black/70 py-3" : "py-3 bg-black/10"
+          scrolled ? "bg-black/70 py-4" : "py-4 bg-black/10"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -408,7 +408,7 @@ const Header = ({ isScrolled }) => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-8 h-8 md:w-14 md:h-16 object-contain"
+                    className="w-10 h-10 md:w-16 md:h-16 object-contain"
                   />
                 </div>
               </div>

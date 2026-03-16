@@ -457,10 +457,10 @@ const Contact = () => {
       className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-black"
     >
       {/* Background Effects */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-red-600/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-orange-600/10 rounded-full blur-3xl"></div>
-      </div>
+      </div> */}
 
       {/* <div className="container mx-auto px-4 sm:px-6 relative z-10"> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -473,7 +473,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-red-600/10 border border-red-600/30 rounded-full mb-4 sm:mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-black mb-4 sm:mb-6 border border-gray-800"
             whileHover={{ scale: 1.05 }}
           >
             <GiCheckeredFlag className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" />
@@ -506,32 +506,61 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Contact Cards */}
-            <div className="space-y-3 sm:space-y-4">
+            {/* <div className="space-y-3 sm:space-y-4 bg-black">
               {contactInfo.map((info, index) => (
                 <motion.a
                   key={index}
                   href={info.href}
-                  className="group flex items-center gap-3 sm:gap-4 p-4 sm:p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl sm:rounded-2xl hover:border-red-600/50 transition-all duration-300"
+                  className="group flex items-center gap-3 sm:gap-4 p-4 sm:p-6  border border-gray-800 transition-all duration-300"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 * index }}
                   whileHover={{
                     x: 10,
-                    backgroundColor: "rgba(239, 68, 68, 0.1)",
+                    backgroundColor: "black",
                   }}
                 >
-                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-red-600 to-orange-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-red-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                     {info.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="block text-sm sm:text-md font-bold text-gray-400 mb-2">
+                    <p className="block text-sm sm:text-md font-bold text-white mb-2">
                       {info.label}
                     </p>
                     <p className="text-white text-sm sm:text-lg truncate">
                       {info.value}
                     </p>
                   </div>
+                  <FaArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-red-600 transition-colors flex-shrink-0" />
+                </motion.a>
+              ))}
+            </div> */}
+            <div className="space-y-3 sm:space-y-4 bg-black">
+              {contactInfo.map((info, index) => (
+                <motion.a
+                  key={index}
+                  href={info.href}
+                  className="group flex items-center gap-3 sm:gap-4 p-4 sm:p-6 bg-black border border-gray-800 transition-all duration-300 hover:bg-black"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * index }}
+                  whileHover={{ x: 10 }}
+                >
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-red-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                    {info.icon}
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <p className="block text-sm sm:text-md font-bold text-white mb-2">
+                      {info.label}
+                    </p>
+                    <p className="text-white text-sm sm:text-lg truncate">
+                      {info.value}
+                    </p>
+                  </div>
+
                   <FaArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-red-600 transition-colors flex-shrink-0" />
                 </motion.a>
               ))}
@@ -559,10 +588,10 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Form Container */}
-            <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 w-full">
+            <div className="relative bg-black backdrop-blur-sm border border-gray-800 p-6 sm:p-8 lg:p-10 w-full">
               {/* <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10"> */}
               {/* Gradient Border Effect */}
-              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-red-600 to-orange-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-black opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
 
               <form
                 onSubmit={handleSubmit}
@@ -587,7 +616,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border border-gray-700 rounded-lg sm:rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
+                      className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-700 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
                       placeholder="John Doe"
                       required
                     />
@@ -611,7 +640,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border border-gray-700 rounded-lg sm:rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
+                      className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-700 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
                       placeholder="john@example.com"
                       required
                     />
@@ -636,7 +665,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border border-gray-700 rounded-lg sm:rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
+                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-700 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
                     placeholder="+1 (555) 123-4567"
                   />
                 </motion.div>
@@ -659,7 +688,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-black/50 border border-gray-700 rounded-lg sm:rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-sans text-sm sm:text-lg"
+                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-700 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-sans text-sm sm:text-lg"
                     placeholder="Tell us about your racing needs..."
                     required
                   ></textarea>
@@ -667,7 +696,7 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold rounded-lg sm:rounded-xl hover:shadow-xl hover:shadow-red-600/25 transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full px-4 sm:px-6 py-2 sm:py-3 bg-red-600 text-white font-bold rounded-lg sm:rounded-xl hover:shadow-xl hover:shadow-red-600/25 transition-all duration-300 flex items-center justify-center gap-2 group"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={isSubmitting}
