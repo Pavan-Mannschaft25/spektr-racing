@@ -221,7 +221,7 @@ const PopularPicks = ({ products, openProductModal }) => {
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <span className="font-sans font-bold text-xl">
+            <span className="font-sans font-bold text:lg md:text-xl">
               EXPLORE FULL COLLECTION
             </span>
             <FaMotorcycle className="ml-3 text-xl" />
