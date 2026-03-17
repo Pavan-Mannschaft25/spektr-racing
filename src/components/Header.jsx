@@ -541,7 +541,7 @@ const Header = ({ isScrolled }) => {
 
             {/* Menu Panel - Improved Design */}
             <motion.div
-              className="absolute right-0 top-20 h-full w-72 sm:w-80 bg-gradient-to-b from-gray-900 to-black shadow-2xl"
+              className="absolute right-0 top-20 h-full w-72 sm:w-80 bg-black shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
