@@ -28,13 +28,13 @@ const PopularPicks = ({ products, openProductModal }) => {
       <div className="absolute inset-0">
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div
+          {/* <div
             className="h-full w-full bg-repeat"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
               backgroundSize: "60px 60px",
             }}
-          ></div>
+          ></div> */}
         </div>
 
         {/* Animated speed lines */}
@@ -156,7 +156,7 @@ const PopularPicks = ({ products, openProductModal }) => {
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              className="hidden md:inline-flex px-2 md:px-4 py-2 bg-red-600 text-white font-medium tracking-wide rounded-full
+              className="hidden md:inline-flex px-2 md:px-4 py-2 bg-red-600 text-white font-medium tracking-wide
                hover:bg-red-700 transition-all shadow-lg font-sans"
             >
               <span className="text-lg font-sans">SHOP NOW</span>
@@ -212,7 +212,7 @@ const PopularPicks = ({ products, openProductModal }) => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <motion.button
-            className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white text-sm md:text-md rounded-full flex items-center mx-auto shadow-2xl"
+            className="px-6 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white text-sm md:text-md flex items-center mx-auto shadow-2xl"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(220, 38, 38, 0.4)",

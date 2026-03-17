@@ -106,7 +106,7 @@ const RacingVideos = () => {
 
           <div
             ref={scrollContainerRef}
-            className="flex gap-2 overflow-x-auto scrollbar-hide pb-2"
+            className="flex gap-6 overflow-x-auto scrollbar-hide pb-2"
           >
             {videos.map((video, index) => (
               <motion.div

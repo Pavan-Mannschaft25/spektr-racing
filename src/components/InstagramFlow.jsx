@@ -60,13 +60,21 @@ const InstagramFlow = () => {
 
       {/* CTA */}
       <div className="text-center mt-8">
+        {/* <a
+          href="https://instagram.com/spectr_racing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-6 py-2 bg-red-600 text-white font-semibold hover:bg-red-700 transition font-sans text-lg"
+        >
+          Follow on Instagram
+        </a> */}
         <a
           href="https://instagram.com/spectr_racing"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition font-sans text-lg"
+          className="inline-flex items-center justify-center w-12 h-12 text-white transition"
         >
-          Follow on Instagram
+          <FaInstagram className="text-white text-3xl md:text-4xl" />
         </a>
       </div>
     </section>
