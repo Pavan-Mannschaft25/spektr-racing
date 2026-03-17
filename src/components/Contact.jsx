@@ -124,7 +124,7 @@
 //             </span>
 //           </h2>
 
-//           <p className="text-gray-400 text-md max-w-4xl mx-auto font-bold">
+//           <p className="text-white text-md max-w-4xl mx-auto font-bold">
 //             Ready to elevate your racing experience? Our team is here to help
 //             you find the perfect gear and answer all your questions.
 //           </p>
@@ -185,7 +185,7 @@
 //                   <motion.a
 //                     key={index}
 //                     href={social.href}
-//                     className="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-red-600 hover:bg-red-600/10 transition-all"
+//                     className="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center text-white hover:text-white hover:border-red-600 hover:bg-red-600/10 transition-all"
 //                     whileHover={{ scale: 1.1, rotate: 5 }}
 //                     whileTap={{ scale: 0.95 }}
 //                   >
@@ -230,7 +230,7 @@
 //                   >
 //                     <label
 //                       htmlFor="name"
-//                       className="block text-md font-bold text-gray-400 mb-2"
+//                       className="block text-md font-bold text-white mb-2"
 //                     >
 //                       Your Name
 //                     </label>
@@ -240,7 +240,7 @@
 //                       name="name"
 //                       value={formData.name}
 //                       onChange={handleChange}
-//                       className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
+//                       className="w-full px-4 py-3 bg-black/50 border border-gray-900 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
 //                       placeholder="John Doe"
 //                       required
 //                     />
@@ -254,7 +254,7 @@
 //                   >
 //                     <label
 //                       htmlFor="email"
-//                       className="block text-md font-bold text-gray-400 mb-2"
+//                       className="block text-md font-bold text-white mb-2"
 //                     >
 //                       Email Address
 //                     </label>
@@ -264,7 +264,7 @@
 //                       name="email"
 //                       value={formData.email}
 //                       onChange={handleChange}
-//                       className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
+//                       className="w-full px-4 py-3 bg-black/50 border border-gray-900 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
 //                       placeholder="john@example.com"
 //                       required
 //                     />
@@ -279,7 +279,7 @@
 //                 >
 //                   <label
 //                     htmlFor="phone"
-//                     className="block text-md font-bold text-gray-400 mb-2"
+//                     className="block text-md font-bold text-white mb-2"
 //                   >
 //                     Phone Number (Optional)
 //                   </label>
@@ -289,7 +289,7 @@
 //                     name="phone"
 //                     value={formData.phone}
 //                     onChange={handleChange}
-//                     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
+//                     className="w-full px-4 py-3 bg-black/50 border border-gray-900 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-lg"
 //                     placeholder="+1 (555) 123-4567"
 //                   />
 //                 </motion.div>
@@ -302,7 +302,7 @@
 //                 >
 //                   <label
 //                     htmlFor="message"
-//                     className="block text-md font-bold text-gray-400 mb-2"
+//                     className="block text-md font-bold text-white mb-2"
 //                   >
 //                     Your Message
 //                   </label>
@@ -312,7 +312,7 @@
 //                     value={formData.message}
 //                     onChange={handleChange}
 //                     rows={5}
-//                     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-sans text-lg"
+//                     className="w-full px-4 py-3 bg-black/50 border border-gray-900 rounded-xl focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-sans text-lg"
 //                     placeholder="Tell us about your racing needs..."
 //                     required
 //                   ></textarea>
@@ -473,7 +473,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-black mb-4 sm:mb-6 border border-gray-800"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-black mb-4 sm:mb-6 border border-gray-900"
             whileHover={{ scale: 1.05 }}
           >
             <GiCheckeredFlag className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" />
@@ -484,12 +484,12 @@ const Contact = () => {
 
           <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-black mb-4 sm:mb-6">
             <span className="text-white">LET'S</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 ml-2 sm:ml-4">
+            <span className="text-transparent bg-clip-text bg-red-600 ml-2 sm:ml-4">
               RACE TOGETHER
             </span>
           </h2>
 
-          <p className="text-gray-400 text-sm sm:text-lg max-w-4xl mx-auto font-bold px-2 font-sans ">
+          <p className="text-white text-sm sm:text-lg max-w-4xl mx-auto font-bold px-2 font-sans ">
             Ready to elevate your racing experience? Our team is here to help
             you find the perfect gear and answer all your questions.
           </p>
@@ -541,7 +541,7 @@ const Contact = () => {
                 <motion.a
                   key={index}
                   href={info.href}
-                  className="group flex items-center gap-3 sm:gap-4 p-4 sm:p-6 bg-black border border-gray-800 transition-all duration-300 hover:bg-black"
+                  className="group flex items-center gap-3 sm:gap-4 p-4 sm:p-6 bg-black border border-gray-900 transition-all duration-300 hover:bg-black"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -561,7 +561,7 @@ const Contact = () => {
                     </p>
                   </div>
 
-                  <FaArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-red-600 transition-colors flex-shrink-0" />
+                  <FaArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:text-red-600 transition-colors flex-shrink-0" />
                 </motion.a>
               ))}
             </div>
@@ -588,7 +588,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Form Container */}
-            <div className="relative bg-black backdrop-blur-sm border border-gray-800 p-6 sm:p-8 lg:p-10 w-full">
+            <div className="relative bg-black backdrop-blur-sm border border-gray-900 p-6 sm:p-8 lg:p-10 w-full">
               {/* <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10"> */}
               {/* Gradient Border Effect */}
               <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-black opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
@@ -606,7 +606,7 @@ const Contact = () => {
                   >
                     <label
                       htmlFor="name"
-                      className="block text-sm sm:text-md font-bold text-gray-400 mb-2"
+                      className="block text-sm sm:text-md font-bold text-white mb-2"
                     >
                       Your Name
                     </label>
@@ -616,7 +616,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-700 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
+                      className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-900 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
                       placeholder="John Doe"
                       required
                     />
@@ -630,7 +630,7 @@ const Contact = () => {
                   >
                     <label
                       htmlFor="email"
-                      className="block text-sm sm:text-md font-bold text-gray-400 mb-2"
+                      className="block text-sm sm:text-md font-bold text-white mb-2"
                     >
                       Email Address
                     </label>
@@ -640,7 +640,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-700 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
+                      className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-900 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
                       placeholder="john@example.com"
                       required
                     />
@@ -655,7 +655,7 @@ const Contact = () => {
                 >
                   <label
                     htmlFor="phone"
-                    className="block text-sm sm:text-md font-bold text-gray-400 mb-2"
+                    className="block text-sm sm:text-md font-bold text-white mb-2"
                   >
                     Phone Number (Optional)
                   </label>
@@ -665,7 +665,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-700 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
+                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-900 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 font-sans text-sm sm:text-lg"
                     placeholder="+1 (555) 123-4567"
                   />
                 </motion.div>
@@ -678,7 +678,7 @@ const Contact = () => {
                 >
                   <label
                     htmlFor="message"
-                    className="block text-sm sm:text-md font-bold text-gray-400 mb-2"
+                    className="block text-sm sm:text-md font-bold text-white mb-2"
                   >
                     Your Message
                   </label>
@@ -688,45 +688,46 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-700 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-sans text-sm sm:text-lg"
+                    className="w-full px-3 sm:px-4 py-1.5 sm:py-2 bg-black/50 border border-gray-900 focus:outline-none focus:border-red-600 focus:bg-black/70 transition-all duration-300 text-white placeholder-gray-600 resize-none font-sans text-sm sm:text-lg"
                     placeholder="Tell us about your racing needs..."
                     required
                   ></textarea>
                 </motion.div>
-
-                <motion.button
-                  type="submit"
-                  className="w-full px-4 sm:px-6 py-2 sm:py-3 bg-red-600 text-white font-bold rounded-lg sm:rounded-xl hover:shadow-xl hover:shadow-red-600/25 transition-all duration-300 flex items-center justify-center gap-2 group"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  disabled={isSubmitting}
-                >
-                  <AnimatePresence mode="wait">
-                    {isSubmitting ? (
-                      <motion.div
-                        key="loading"
-                        className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"
-                      />
-                    ) : isSubmitted ? (
-                      <motion.div
-                        key="success"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        exit={{ scale: 0 }}
-                      >
-                        <FaCheck className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </motion.div>
-                    ) : (
-                      <motion.span
-                        key="text"
-                        className="flex items-center gap-2 text-sm sm:text-base"
-                      >
-                        Send Message
-                        <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
-                      </motion.span>
-                    )}
-                  </AnimatePresence>
-                </motion.button>
+                <div className="flex flex-row justify-center items-center">
+                  <motion.button
+                    type="submit"
+                    className="w-1/2 px-4 sm:px-6 py-2 sm:py-3 bg-red-600 text-white font-bold hover:shadow-xl hover:shadow-red-600/25 transition-all duration-300 flex items-center justify-center gap-2 group"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    disabled={isSubmitting}
+                  >
+                    <AnimatePresence mode="wait">
+                      {isSubmitting ? (
+                        <motion.div
+                          key="loading"
+                          className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"
+                        />
+                      ) : isSubmitted ? (
+                        <motion.div
+                          key="success"
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          exit={{ scale: 0 }}
+                        >
+                          <FaCheck className="w-4 h-4 sm:w-5 sm:h-5" />
+                        </motion.div>
+                      ) : (
+                        <motion.span
+                          key="text"
+                          className="flex items-center gap-2 text-sm sm:text-base"
+                        >
+                          Send Message
+                          <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </motion.button>
+                </div>
               </form>
             </div>
           </motion.div>

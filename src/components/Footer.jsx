@@ -49,7 +49,7 @@ const Footer = () => {
                 </h2>
               </div>
             </motion.a>
-            <p className="text-gray-400 pt-4 md:pl-4 font-sans text-md">
+            <p className="text-white pt-4 md:pl-4 font-sans text-md">
               Wear Confidene. Ride Fearless
             </p>
           </motion.div>
@@ -63,37 +63,17 @@ const Footer = () => {
           >
             <h4 className="text-lg font-extralight mb-4">QUiICK LINKS</h4>
             <ul className="space-y-2 font-sans text-md">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Shop
-                </a>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <a href="#">Shop</a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  About Us
-                </a>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <a href="#">About Us</a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Racing Team
-                </a>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <a href="#">Racing Team</a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Events
-                </a>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <a href="#">Events</a>
               </li>
             </ul>
           </motion.div>
@@ -108,30 +88,20 @@ const Footer = () => {
             <h4 className="text-lg font-extralight mb-4">POLICIES</h4>
             {/* <h4 className="text-red-500 font-semibold mb-3">POLICIES</h4> */}
             <ul className="space-y-2 text-md font-sans">
-              <li>
-                <Link to="/privacy-policy" className="hover:text-white">
-                  Privacy Policy
-                </Link>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <Link to="/privacy-policy">Privacy Policy</Link>
               </li>
-              <li>
-                <Link to="/terms-of-service" className="hover:text-white">
-                  Terms of Service
-                </Link>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <Link to="/terms-of-service">Terms of Service</Link>
               </li>
-              <li>
-                <Link to="/shipping-policy" className="hover:text-white">
-                  Shipping Policy
-                </Link>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <Link to="/shipping-policy">Shipping Policy</Link>
               </li>
-              <li>
-                <Link to="/refund-return-policy" className="hover:text-white">
-                  Refund & Return
-                </Link>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <Link to="/refund-return-policy">Refund & Return</Link>
               </li>
-              <li>
-                <Link to="/warranty-policy" className="hover:text-white">
-                  Warranty Policy
-                </Link>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <Link to="/warranty-policy">Warranty Policy</Link>
               </li>
             </ul>
           </motion.div>

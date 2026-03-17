@@ -430,7 +430,7 @@ const Header = ({ isScrolled }) => {
                 <motion.button
                   onClick={() => handleNavigation(item.sectionId)}
                   key={item.name}
-                  className="relative px-4 py-2 text-white font-bold hover:bg-white/20 rounded-xl group md:text-md"
+                  className="relative px-4 py-2 text-white font-bold hover:bg-white/20 group md:text-md"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -469,7 +469,7 @@ const Header = ({ isScrolled }) => {
                 <motion.button
                   onClick={() => handleNavigation(item.sectionId)}
                   key={item.name}
-                  className="relative px-4 py-2 text-white hover:bg-white/20 rounded-xl group md:text-md"
+                  className="relative px-4 py-2 text-white hover:bg-white/20 group md:text-md"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{

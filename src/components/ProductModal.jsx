@@ -213,7 +213,7 @@
 // //                 onClick={() => setIsLiked((p) => !p)}
 // //                 className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-all backdrop-blur-xl ${
 // //                   isLiked
-// //                     ? "bg-red-500/20 text-red-400 border border-red-500/30"
+// //                     ? "bg-red-600 text-white border border-red-500/30"
 // //                     : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
 // //                 }`}
 // //               >
@@ -636,13 +636,13 @@
 // //                       <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-red-600 to-red-800 text-white text-xs sm:text-sm font-bold rounded-lg sm:rounded-xl uppercase shadow-lg inline-block w-fit">
 // //                         Limited Edition
 // //                       </span>
-// //                       <div className="flex items-center gap-2 bg-red-500/20 px-3 py-1.5 rounded-lg sm:rounded-xl w-fit">
+// //                       <div className="flex items-center gap-2 bg-red-600 px-3 py-1.5 rounded-lg sm:rounded-xl w-fit">
 // //                         <IoStar
 // //                           size={isMobile ? 14 : 18}
-// //                           className="text-red-400"
+// //                           className="text-white"
 // //                           fill="currentColor"
 // //                         />
-// //                         <span className="text-red-400 font-bold text-sm sm:text-base">
+// //                         <span className="text-white font-bold text-sm sm:text-base">
 // //                           4.9
 // //                         </span>
 // //                         <span className="text-gray-300 text-xs sm:text-sm">
@@ -676,17 +676,17 @@
 // //                         </span>
 // //                       )}
 // //                       {product.discount && (
-// //                         <span className="px-2 sm:px-3 py-1 bg-red-500/20 text-red-400 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold mb-2">
+// //                         <span className="px-2 sm:px-3 py-1 bg-red-600 text-white rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold mb-2">
 // //                           -{product.discount}%
 // //                         </span>
 // //                       )}
 // //                     </div>
 // //                     <div className="flex items-center gap-2 mt-2 sm:mt-3">
 // //                       <MdVerified
-// //                         className="text-red-400"
+// //                         className="text-white"
 // //                         size={isMobile ? 16 : 20}
 // //                       />
-// //                       <span className="text-red-400 text-xs sm:text-sm font-medium">
+// //                       <span className="text-white text-xs sm:text-sm font-medium">
 // //                         Best Price Guaranteed
 // //                       </span>
 // //                     </div>
@@ -696,9 +696,9 @@
 // //                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
 // //                     <div className="bg-gray-800/50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-700/50">
 // //                       <div className="flex items-center gap-2 sm:gap-3">
-// //                         <div className="p-1.5 sm:p-2 bg-red-500/20 rounded-md">
+// //                         <div className="p-1.5 sm:p-2 bg-red-600 rounded-md">
 // //                           <IoCube
-// //                             className="text-red-400"
+// //                             className="text-white"
 // //                             size={isMobile ? 16 : 20}
 // //                           />
 // //                         </div>
@@ -714,9 +714,9 @@
 // //                     </div>
 // //                     <div className="bg-gray-800/50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-700/50">
 // //                       <div className="flex items-center gap-2 sm:gap-3">
-// //                         <div className="p-1.5 sm:p-2 bg-red-500/20 rounded-lg">
+// //                         <div className="p-1.5 sm:p-2 bg-red-600 rounded-lg">
 // //                           <MdLocalShipping
-// //                             className="text-red-400"
+// //                             className="text-white"
 // //                             size={isMobile ? 16 : 20}
 // //                           />
 // //                         </div>
@@ -735,7 +735,7 @@
 // //                   {/* Product Description */}
 // //                   <div className="bg-gray-800/30 rounded-lg sm:rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-700/30">
 // //                     <h3 className="font-bold text-white mb-3 sm:mb-4 flex items-center gap-2 text-lg sm:text-xl">
-// //                       <IoInformationCircle className="text-red-400" />
+// //                       <IoInformationCircle className="text-white" />
 // //                       Product Details
 // //                     </h3>
 // //                     <p className="text-gray-300 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
@@ -743,15 +743,15 @@
 // //                     </p>
 // //                     <ul className="space-y-1.5 sm:space-y-2 text-gray-300 text-sm sm:text-base">
 // //                       <li className="flex items-start gap-2">
-// //                         <span className="text-red-400 mt-0.5">•</span>
+// //                         <span className="text-white mt-0.5">•</span>
 // //                         <span>Handcrafted with premium materials</span>
 // //                       </li>
 // //                       <li className="flex items-start gap-2">
-// //                         <span className="text-red-400 mt-0.5">•</span>
+// //                         <span className="text-white mt-0.5">•</span>
 // //                         <span>Limited edition with unique design</span>
 // //                       </li>
 // //                       <li className="flex items-start gap-2">
-// //                         <span className="text-red-400 mt-0.5">•</span>
+// //                         <span className="text-white mt-0.5">•</span>
 // //                         <span>Certified quality and authenticity</span>
 // //                       </li>
 // //                     </ul>
@@ -763,10 +763,10 @@
 // //                     <div>
 // //                       <div className="flex items-center justify-between mb-2 sm:mb-3">
 // //                         <p className="text-white font-semibold flex items-center gap-2 text-base sm:text-lg">
-// //                           <IoShirt className="text-red-400" />
+// //                           <IoShirt className="text-white" />
 // //                           Select Size
 // //                         </p>
-// //                         <button className="text-red-400 text-xs sm:text-sm hover:text-red-300">
+// //                         <button className="text-white text-xs sm:text-sm hover:text-red-300">
 // //                           Size Guide
 // //                         </button>
 // //                       </div>
@@ -792,7 +792,7 @@
 // //                     {/* Color Selection */}
 // //                     <div>
 // //                       <p className="text-white font-semibold mb-2 sm:mb-3 flex items-center gap-2 text-base sm:text-lg">
-// //                         <IoColorPalette className="text-red-400" />
+// //                         <IoColorPalette className="text-white" />
 // //                         Choose Color
 // //                       </p>
 // //                       <div className="flex gap-2 sm:gap-3">
@@ -864,13 +864,13 @@
 // //                   {/* Premium Features */}
 // //                   <div className="space-y-3 sm:space-y-4">
 // //                     <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-// //                       <FaAward className="text-red-400" />
+// //                       <FaAward className="text-white" />
 // //                       Premium Benefits
 // //                     </h3>
 // //                     <div className="space-y-2 sm:space-y-3">
 // //                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
 // //                         <FaTruck
-// //                           className="text-red-400"
+// //                           className="text-white"
 // //                           size={isMobile ? 18 : 24}
 // //                         />
 // //                         <div className="flex-1">
@@ -884,7 +884,7 @@
 // //                       </div>
 // //                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
 // //                         <IoShieldCheckmark
-// //                           className="text-red-400"
+// //                           className="text-white"
 // //                           size={isMobile ? 18 : 24}
 // //                         />
 // //                         <div className="flex-1">
@@ -898,7 +898,7 @@
 // //                       </div>
 // //                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
 // //                         <MdRefresh
-// //                           className="text-red-400"
+// //                           className="text-white"
 // //                           size={isMobile ? 18 : 24}
 // //                         />
 // //                         <div className="flex-1">
@@ -939,7 +939,7 @@
 // //                   <div className="flex items-center justify-between p-3 sm:p-4 bg-red-500/10 rounded-lg sm:rounded-xl border border-red-500/20">
 // //                     <div className="flex items-center gap-2">
 // //                       <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-// //                       <span className="text-red-400 font-medium text-sm sm:text-base">
+// //                       <span className="text-white font-medium text-sm sm:text-base">
 // //                         In Stock
 // //                       </span>
 // //                     </div>
@@ -1092,7 +1092,7 @@
 //                 onClick={() => setIsLiked((p) => !p)}
 //                 className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-all backdrop-blur-xl ${
 //                   isLiked
-//                     ? "bg-red-500/20 text-red-400 border border-red-500/30"
+//                     ? "bg-red-600 text-white border border-red-500/30"
 //                     : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
 //                 }`}
 //               >
@@ -1196,12 +1196,12 @@
 //                       <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-red-600 to-red-800 text-white text-xs sm:text-sm font-bold rounded-lg sm:rounded-xl uppercase shadow-lg inline-block w-fit">
 //                         Limited Edition
 //                       </span>
-//                       <div className="flex items-center gap-2 bg-red-500/20 px-3 py-1.5 rounded-lg sm:rounded-xl w-fit">
+//                       <div className="flex items-center gap-2 bg-red-600 px-3 py-1.5 rounded-lg sm:rounded-xl w-fit">
 //                         <IoDiamond
 //                           size={isMobile ? 14 : 18}
-//                           className="text-red-400"
+//                           className="text-white"
 //                         />
-//                         <span className="text-red-400 font-bold text-sm sm:text-base">
+//                         <span className="text-white font-bold text-sm sm:text-base">
 //                           4.9
 //                         </span>
 //                         <span className="text-gray-300 text-xs sm:text-sm">
@@ -1235,17 +1235,17 @@
 //                         </span>
 //                       )}
 //                       {product.discount && (
-//                         <span className="px-2 sm:px-3 py-1 bg-red-500/20 text-red-400 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold mb-2">
+//                         <span className="px-2 sm:px-3 py-1 bg-red-600 text-white rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold mb-2">
 //                           -{product.discount}%
 //                         </span>
 //                       )}
 //                     </div>
 //                     <div className="flex items-center gap-2 mt-2 sm:mt-3">
 //                       <MdVerified
-//                         className="text-red-400"
+//                         className="text-white"
 //                         size={isMobile ? 16 : 20}
 //                       />
-//                       <span className="text-red-400 text-xs sm:text-sm font-medium">
+//                       <span className="text-white text-xs sm:text-sm font-medium">
 //                         Best Price Guaranteed
 //                       </span>
 //                     </div>
@@ -1255,9 +1255,9 @@
 //                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
 //                     <div className="bg-gray-800/50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-700/50">
 //                       <div className="flex items-center gap-2 sm:gap-3">
-//                         <div className="p-1.5 sm:p-2 bg-red-500/20 rounded-md">
+//                         <div className="p-1.5 sm:p-2 bg-red-600 rounded-md">
 //                           <IoShieldCheckmark
-//                             className="text-red-400"
+//                             className="text-white"
 //                             size={isMobile ? 16 : 20}
 //                           />
 //                         </div>
@@ -1273,9 +1273,9 @@
 //                     </div>
 //                     <div className="bg-gray-800/50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-700/50">
 //                       <div className="flex items-center gap-2 sm:gap-3">
-//                         <div className="p-1.5 sm:p-2 bg-red-500/20 rounded-lg">
+//                         <div className="p-1.5 sm:p-2 bg-red-600 rounded-lg">
 //                           <MdLocalShipping
-//                             className="text-red-400"
+//                             className="text-white"
 //                             size={isMobile ? 16 : 20}
 //                           />
 //                         </div>
@@ -1294,7 +1294,7 @@
 //                   {/* Product Description */}
 //                   <div className="bg-gray-800/30 rounded-lg sm:rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-700/30">
 //                     <h3 className="font-bold text-white mb-3 sm:mb-4 flex items-center gap-2 text-lg sm:text-xl">
-//                       <IoInformationCircle className="text-red-400" />
+//                       <IoInformationCircle className="text-white" />
 //                       Product Details
 //                     </h3>
 //                     <p className="text-gray-300 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
@@ -1302,15 +1302,15 @@
 //                     </p>
 //                     <ul className="space-y-1.5 sm:space-y-2 text-gray-300 text-sm sm:text-base">
 //                       <li className="flex items-start gap-2">
-//                         <span className="text-red-400 mt-0.5">•</span>
+//                         <span className="text-white mt-0.5">•</span>
 //                         <span>Handcrafted with premium materials</span>
 //                       </li>
 //                       <li className="flex items-start gap-2">
-//                         <span className="text-red-400 mt-0.5">•</span>
+//                         <span className="text-white mt-0.5">•</span>
 //                         <span>Limited edition with unique design</span>
 //                       </li>
 //                       <li className="flex items-start gap-2">
-//                         <span className="text-red-400 mt-0.5">•</span>
+//                         <span className="text-white mt-0.5">•</span>
 //                         <span>Certified quality and authenticity</span>
 //                       </li>
 //                     </ul>
@@ -1322,10 +1322,10 @@
 //                     <div>
 //                       <div className="flex items-center justify-between mb-2 sm:mb-3">
 //                         <p className="text-white font-semibold flex items-center gap-2 text-base sm:text-lg">
-//                           <IoShirt className="text-red-400" />
+//                           <IoShirt className="text-white" />
 //                           Select Size
 //                         </p>
-//                         <button className="text-red-400 text-xs sm:text-sm hover:text-red-300">
+//                         <button className="text-white text-xs sm:text-sm hover:text-red-300">
 //                           Size Guide
 //                         </button>
 //                       </div>
@@ -1351,7 +1351,7 @@
 //                     {/* Color Selection */}
 //                     <div>
 //                       <p className="text-white font-semibold mb-2 sm:mb-3 flex items-center gap-2 text-base sm:text-lg">
-//                         <IoColorPalette className="text-red-400" />
+//                         <IoColorPalette className="text-white" />
 //                         Choose Color
 //                       </p>
 //                       <div className="flex gap-2 sm:gap-3">
@@ -1423,13 +1423,13 @@
 //                   {/* Premium Features */}
 //                   <div className="space-y-3 sm:space-y-4">
 //                     <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-//                       <FaAward className="text-red-400" />
+//                       <FaAward className="text-white" />
 //                       Premium Benefits
 //                     </h3>
 //                     <div className="space-y-2 sm:space-y-3">
 //                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
 //                         <FaTruck
-//                           className="text-red-400"
+//                           className="text-white"
 //                           size={isMobile ? 18 : 24}
 //                         />
 //                         <div className="flex-1">
@@ -1443,7 +1443,7 @@
 //                       </div>
 //                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
 //                         <IoShieldCheckmark
-//                           className="text-red-400"
+//                           className="text-white"
 //                           size={isMobile ? 18 : 24}
 //                         />
 //                         <div className="flex-1">
@@ -1457,7 +1457,7 @@
 //                       </div>
 //                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
 //                         <MdRefresh
-//                           className="text-red-400"
+//                           className="text-white"
 //                           size={isMobile ? 18 : 24}
 //                         />
 //                         <div className="flex-1">
@@ -1488,7 +1488,7 @@
 //                   <div className="flex items-center justify-between p-3 sm:p-4 bg-red-500/10 rounded-lg sm:rounded-xl border border-red-500/20">
 //                     <div className="flex items-center gap-2">
 //                       <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-//                       <span className="text-red-400 font-medium text-sm sm:text-base">
+//                       <span className="text-white font-medium text-sm sm:text-base">
 //                         In Stock
 //                       </span>
 //                     </div>
@@ -1640,7 +1640,7 @@ const ProductModal = ({ product, onClose }) => {
                 onClick={() => setIsLiked((p) => !p)}
                 className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-all backdrop-blur-xl ${
                   isLiked
-                    ? "bg-red-500/20 text-red-400 border border-red-500/30"
+                    ? "bg-red-600 text-white border border-red-500/30"
                     : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
                 }`}
               >
@@ -1740,8 +1740,8 @@ const ProductModal = ({ product, onClose }) => {
                   w-full 
                   lg:w-auto lg:max-w-[480px] xl:max-w-[520px] 
                   flex-1 lg:flex-none
-                  bg-gradient-to-b from-gray-900/95 to-black/95 backdrop-blur-2xl 
-                  border-l border-white/10 
+                  bg-black backdrop-blur-2xl 
+                  border-l border-white/20 
                   p-4 sm:p-6 md:p-8 overflow-y-auto
                   max-h-[50vh] lg:max-h-full
                 `}
@@ -1754,15 +1754,15 @@ const ProductModal = ({ product, onClose }) => {
                       animate={{ opacity: 1, y: 0 }}
                       className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
                     >
-                      <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-red-600 to-red-800 text-white text-xs sm:text-sm font-bold rounded-lg sm:rounded-xl uppercase shadow-lg inline-block w-fit">
+                      <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-red-600 text-white text-xs sm:text-sm font-bold rounded-lg sm:rounded-xl uppercase shadow-lg inline-block w-fit">
                         Limited Edition
                       </span>
-                      <div className="flex items-center gap-2 bg-red-500/20 px-3 py-1.5 rounded-lg sm:rounded-xl w-fit">
+                      <div className="flex items-center gap-2 bg-red-600 px-3 py-1.5 rounded-lg sm:rounded-xl w-fit">
                         <IoDiamond
                           size={isMobile ? 14 : 18}
-                          className="text-red-400"
+                          className="text-white"
                         />
-                        <span className="text-red-400 font-bold text-sm sm:text-base">
+                        <span className="text-white font-bold text-sm sm:text-base">
                           4.9
                         </span>
                         <span className="text-gray-300 text-xs sm:text-sm">
@@ -1781,12 +1781,12 @@ const ProductModal = ({ product, onClose }) => {
                   </div>
 
                   {/* Price Section */}
-                  <div className="bg-gradient-to-r from-red-900/30 to-red-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-red-500/20">
+                  <div className="bg-red-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-red-500/20">
                     <div className="flex items-end gap-3 sm:gap-4">
                       <motion.span
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600"
+                        className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-red-600 text-white"
                       >
                         ${product.price || "299"}
                       </motion.span>
@@ -1796,17 +1796,17 @@ const ProductModal = ({ product, onClose }) => {
                         </span>
                       )}
                       {product.discount && (
-                        <span className="px-2 sm:px-3 py-1 bg-red-500/20 text-red-400 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold mb-2">
+                        <span className="px-2 sm:px-3 py-1 bg-red-600 text-white rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold mb-2">
                           -{product.discount}%
                         </span>
                       )}
                     </div>
                     <div className="flex items-center gap-2 mt-2 sm:mt-3">
                       <MdVerified
-                        className="text-red-400"
+                        className="text-white"
                         size={isMobile ? 16 : 20}
                       />
-                      <span className="text-red-400 text-xs sm:text-sm font-medium">
+                      <span className="text-white text-xs sm:text-sm font-medium">
                         Best Price Guaranteed
                       </span>
                     </div>
@@ -1816,9 +1816,9 @@ const ProductModal = ({ product, onClose }) => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div className="bg-gray-800/50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-700/50">
                       <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="p-1.5 sm:p-2 bg-red-500/20 rounded-md">
+                        <div className="p-1.5 sm:p-2 bg-red-600 rounded-md">
                           <IoShieldCheckmark
-                            className="text-red-400"
+                            className="text-white"
                             size={isMobile ? 16 : 20}
                           />
                         </div>
@@ -1834,9 +1834,9 @@ const ProductModal = ({ product, onClose }) => {
                     </div>
                     <div className="bg-gray-800/50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-gray-700/50">
                       <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="p-1.5 sm:p-2 bg-red-500/20 rounded-lg">
+                        <div className="p-1.5 sm:p-2 bg-red-600 rounded-lg">
                           <MdLocalShipping
-                            className="text-red-400"
+                            className="text-white"
                             size={isMobile ? 16 : 20}
                           />
                         </div>
@@ -1855,7 +1855,7 @@ const ProductModal = ({ product, onClose }) => {
                   {/* Product Description */}
                   <div className="bg-gray-800/30 rounded-lg sm:rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-700/30">
                     <h3 className="font-bold text-white mb-3 sm:mb-4 flex items-center gap-2 text-lg sm:text-xl">
-                      <IoInformationCircle className="text-red-400" />
+                      <IoInformationCircle className="text-white" />
                       Product Details
                     </h3>
                     <p className="text-gray-300 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
@@ -1863,15 +1863,15 @@ const ProductModal = ({ product, onClose }) => {
                     </p>
                     <ul className="space-y-1.5 sm:space-y-2 text-gray-300 text-sm sm:text-base">
                       <li className="flex items-start gap-2">
-                        <span className="text-red-400 mt-0.5">•</span>
+                        <span className="text-white mt-0.5">•</span>
                         <span>Handcrafted with premium materials</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-red-400 mt-0.5">•</span>
+                        <span className="text-white mt-0.5">•</span>
                         <span>Limited edition with unique design</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-red-400 mt-0.5">•</span>
+                        <span className="text-white mt-0.5">•</span>
                         <span>Certified quality and authenticity</span>
                       </li>
                     </ul>
@@ -1883,10 +1883,10 @@ const ProductModal = ({ product, onClose }) => {
                     <div>
                       <div className="flex items-center justify-between mb-2 sm:mb-3">
                         <p className="text-white font-semibold flex items-center gap-2 text-base sm:text-lg">
-                          <IoShirt className="text-red-400" />
+                          <IoShirt className="text-white" />
                           Select Size
                         </p>
-                        <button className="text-red-400 text-xs sm:text-sm hover:text-red-300">
+                        <button className="text-white text-xs sm:text-sm hover:text-red-300">
                           Size Guide
                         </button>
                       </div>
@@ -1912,10 +1912,10 @@ const ProductModal = ({ product, onClose }) => {
                     {/* Color Selection */}
                     <div>
                       <p className="text-white font-semibold mb-2 sm:mb-3 flex items-center gap-2 text-base sm:text-lg">
-                        <IoColorPalette className="text-red-400" />
+                        <IoColorPalette className="text-white" />
                         Choose Color
                       </p>
-                      <div className="flex gap-2 sm:gap-3">
+                      <div className="flex gap-2 sm:gap-3 bg-gray-800/30 rounded-lg sm:rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-700/30">
                         {[
                           { color: "#000000", name: "Black" },
                           { color: "#FFFFFF", name: "White" },
@@ -1930,7 +1930,7 @@ const ProductModal = ({ product, onClose }) => {
                             onClick={() => setSelectedColor(color)}
                             className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 transition-all ${
                               selectedColor === color
-                                ? "border-red-400 shadow-lg shadow-red-500/50"
+                                ? "border-red-600 shadow-lg shadow-red-500/50"
                                 : "border-gray-600"
                             }`}
                             style={{ backgroundColor: color }}
@@ -1984,13 +1984,13 @@ const ProductModal = ({ product, onClose }) => {
                   {/* Premium Features */}
                   <div className="space-y-3 sm:space-y-4">
                     <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                      <FaAward className="text-red-400" />
+                      <FaAward className="text-white" />
                       Premium Benefits
                     </h3>
                     <div className="space-y-2 sm:space-y-3">
                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
                         <FaTruck
-                          className="text-red-400"
+                          className="text-white"
                           size={isMobile ? 18 : 24}
                         />
                         <div className="flex-1">
@@ -2004,7 +2004,7 @@ const ProductModal = ({ product, onClose }) => {
                       </div>
                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
                         <IoShieldCheckmark
-                          className="text-red-400"
+                          className="text-white"
                           size={isMobile ? 18 : 24}
                         />
                         <div className="flex-1">
@@ -2018,7 +2018,7 @@ const ProductModal = ({ product, onClose }) => {
                       </div>
                       <div className="flex items-center gap-3 p-3 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
                         <MdRefresh
-                          className="text-red-400"
+                          className="text-white"
                           size={isMobile ? 18 : 24}
                         />
                         <div className="flex-1">
@@ -2038,7 +2038,7 @@ const ProductModal = ({ product, onClose }) => {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full py-3 sm:py-4 md:py-5 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-red-500/50 transition-all"
+                      className="w-full py-3 sm:py-4 md:py-5 bg-red-600 text-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-red-500/50 transition-all"
                     >
                       <IoFlash size={isMobile ? 20 : 28} />
                       Buy Now
@@ -2046,10 +2046,10 @@ const ProductModal = ({ product, onClose }) => {
                   </div>
 
                   {/* Stock Information */}
-                  <div className="flex items-center justify-between p-3 sm:p-4 bg-red-500/10 rounded-lg sm:rounded-xl border border-red-500/20">
+                  <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-800/30 rounded-lg sm:rounded-xl border border-gray-700/30">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-                      <span className="text-red-400 font-medium text-sm sm:text-base">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                      <span className="text-white font-medium text-sm sm:text-base">
                         In Stock
                       </span>
                     </div>
