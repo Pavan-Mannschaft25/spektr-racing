@@ -165,6 +165,7 @@
 
 // components/ProductCard.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiEye, FiShoppingCart, FiHeart, FiZap } from "react-icons/fi";
 import { FaStar, FaTrophy } from "react-icons/fa";
@@ -200,18 +201,20 @@ const ProductCard = ({ product, index, openProductModal }) => {
         <div className="relative h-85 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
 
-          <motion.img
-            src={product.image}
-            alt={product.name}
-            whileHover={{ y: 20 }}
-            className="w-full h-full object-cover"
-            initial={{ scale: 1 }}
-            animate={{
-              scale: isHovered ? 1.06 : 1,
-              opacity: 1, // Keep image fully visible
-            }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          />
+          <Link to="/contact-us">
+            <motion.img
+              src={product.image}
+              alt={product.name}
+              whileHover={{ y: 20 }}
+              className="w-full h-full object-cover"
+              initial={{ scale: 1 }}
+              animate={{
+                scale: isHovered ? 1.06 : 1,
+                opacity: 1, // Keep image fully visible
+              }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            />
+          </Link>
 
           {/* Premium badges */}
           <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
@@ -288,12 +291,13 @@ const ProductCard = ({ product, index, openProductModal }) => {
         </div>
 
         {/* Product info with premium styling */}
-        <div className="p-5 relative z-20 bg-black">
-          <div className="flex justify-between items-start mb-3">
-            <h3 className="text-md font-normal text-white tracking-wide font-sans uppercase">
-              {product.name}
-            </h3>
-            <motion.div
+        <Link to="/contact-us">
+          <div className="p-5 relative z-20 bg-black">
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="text-lg md:text-2xl font-normal text-white tracking-wide font-sans uppercase">
+                {product.name}
+              </h3>
+              {/* <motion.div
               className="flex items-center gap-1 text-yellow-500"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -303,33 +307,34 @@ const ProductCard = ({ product, index, openProductModal }) => {
               <span className="text-md font-sans">
                 {product.rating || "4.8"}
               </span>
-            </motion.div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-baseline gap-2">
-              <p className="text-lg md:text-2xl font-bold font-sans text-red-500">
-                ${product.price}
-              </p>
-              {product.originalPrice && (
-                <p className="text-gray-500 line-through text-sm">
-                  ${product.originalPrice}
-                </p>
-              )}
+            </motion.div> */}
             </div>
 
-            {product.isFastShipping && (
-              <motion.div
-                className="flex items-center gap-1 text-green-500 text-xs font-medium"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
-              >
-                <FiZap /> Fast Ship
-              </motion.div>
-            )}
+            <div className="flex items-center justify-between">
+              <div className="flex items-baseline gap-2">
+                <p className="text-md md:text-xl font-bold font-sans text-white">
+                  ${product.price}
+                </p>
+                {product.originalPrice && (
+                  <p className="text-gray-500 line-through text-sm">
+                    ${product.originalPrice}
+                  </p>
+                )}
+              </div>
+
+              {product.isFastShipping && (
+                <motion.div
+                  className="flex items-center gap-1 text-green-500 text-xs font-medium"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                >
+                  <FiZap /> Fast Ship
+                </motion.div>
+              )}
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     </motion.div>
   );

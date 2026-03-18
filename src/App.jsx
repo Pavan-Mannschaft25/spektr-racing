@@ -201,6 +201,7 @@ import TermsOfService from "./pages/TermsOfService";
 import ShippingPolicy from "./pages/ShippingPolicy";
 import RefundReturnPolicy from "./pages/RefundReturnPolicy";
 import WarrantyPolicy from "./pages/WarrantyPolicy";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -230,6 +231,7 @@ function App() {
             element={<RefundReturnPolicy />}
           />
           <Route path="/warranty-policy" element={<WarrantyPolicy />} />
+          <Route path="/contact-us" element={<ContactPage />} />
         </Route>
       </Routes>
     </Router>

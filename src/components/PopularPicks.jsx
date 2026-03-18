@@ -142,14 +142,11 @@ const PopularPicks = ({ products, openProductModal }) => {
           >
             {/* LEFT: Heading */}
             <div className="flex items-center">
-              <FaFire className="text-2xl md:text-3xl text-red-500" />
+              {/* <FaFire className="text-2xl md:text-3xl text-red-500" /> */}
               <h2 className="text-xl md:text-3xl font-normal tracking-wider text-white">
-                SPEKTR
-                <span className="text-red-500 ml-2 font-black text-2xl md:text-4xl">
-                  SELEKT
-                </span>
+                SPEKTR SELEKT
               </h2>
-              <FaFire className="text-xl md:text-3xl ml-1 text-red-500" />
+              {/* <FaFire className="text-xl md:text-3xl ml-1 text-red-500" /> */}
             </div>
 
             {/* RIGHT: Shop Button */}
@@ -204,7 +201,7 @@ const PopularPicks = ({ products, openProductModal }) => {
         </div>
 
         {/* Premium CTA section */}
-        <motion.div
+        {/* <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -227,7 +224,7 @@ const PopularPicks = ({ products, openProductModal }) => {
             <FaMotorcycle className="ml-3 text-xl" />
           </motion.button>
 
-          {/* Racing flag decoration */}
+          
           <motion.div
             className="flex justify-center mt-6"
             initial={{ opacity: 0 }}
@@ -243,7 +240,7 @@ const PopularPicks = ({ products, openProductModal }) => {
               <FaFlagCheckered className="text-2xl" />
             </div>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
