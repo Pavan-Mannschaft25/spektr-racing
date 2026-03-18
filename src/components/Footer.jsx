@@ -35,7 +35,7 @@ const Footer = () => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-10 h-10 md:w-14 md:h-14 object-contain"
+                    className="w-10 h-10 md:w-16 md:h-16 object-contain"
                   />
                 </div>
               </div>
@@ -44,7 +44,7 @@ const Footer = () => {
                 <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                 </h1>
-                <h2 className="font-myfont text-xs md:text-sm font-bold tracking-[0.12em] text-white text-center">
+                <h2 className="font-myfont text-lg md:text-2xl font-bold tracking-[0.12em] text-white text-center">
                   - RACING -
                 </h2>
               </div>
@@ -74,6 +74,9 @@ const Footer = () => {
               </li>
               <li className="text-white hover:text-red-600 transition-colors">
                 <a href="#">Events</a>
+              </li>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <Link to="/contact-us">Contact Us</Link>
               </li>
             </ul>
           </motion.div>

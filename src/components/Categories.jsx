@@ -36,11 +36,11 @@ const Categories = ({ products, openProductModal }) => {
               </motion.div>
 
               <div
-                className="flex gap-6 overflow-x-auto pb-4"
+                className="flex gap-4 overflow-x-auto pb-4"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {categoryProducts.map((product, index) => (
-                  <div key={product.id} className="flex-shrink-0 w-70">
+                  <div key={product.id} className="flex-shrink-0 w-80 md:w-90">
                     <ProductCard
                       product={product}
                       index={index}

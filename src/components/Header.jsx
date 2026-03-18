@@ -317,7 +317,7 @@
 
 // components/Header.jsx
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import { GiSteeringWheel, GiCheckeredFlag } from "react-icons/gi";
@@ -333,7 +333,7 @@ const Header = ({ isScrolled }) => {
   // Navigation items split into left and right sections
   const leftNavItems = [
     { name: "STORE", sectionId: "store" },
-    { name: "Contact", sectionId: "contact" },
+    // { name: "Contact", sectionId: "contact" },
   ];
 
   const rightNavItems = [
@@ -408,17 +408,17 @@ const Header = ({ isScrolled }) => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-10 h-10 md:w-16 md:h-16 object-contain"
+                    className="w-10 h-10 md:w-17 md:h-17 object-contain"
                   />
                 </div>
               </div>
 
               {/* Brand Text - Hidden on small mobile, visible on larger screens */}
-              <div className="sm:flex flex-col leading-none">
-                <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
+              <div className="sm:flex flex-col leading-none py-6">
+                <h1 className="text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                 </h1>
-                <h2 className="font-myfont text-xs md:text-sm font-bold tracking-[0.12em] text-white text-center">
+                <h2 className="text-lg md:text-2xl font-bold tracking-[0.12em] text-white text-center">
                   - RACING -
                 </h2>
               </div>
@@ -461,6 +461,14 @@ const Header = ({ isScrolled }) => {
                   />
                 </motion.button>
               ))}
+              <motion.button
+                // onClick={() => handleNavigation({ path: "/contact-us" })}
+                className="px-6 py-2 border border-red-600 text-white font-bold hover:bg-red-600 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/contact-us">Contact Us</Link>
+              </motion.button>
             </nav>
 
             {/* Desktop Right Navigation - Hidden on mobile/tablet */}

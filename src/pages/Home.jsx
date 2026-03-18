@@ -281,7 +281,7 @@ const Home = () => {
         <RacingVideos />
         <Categories products={products} openProductModal={openProductModal} />
         <InstagramFlow />
-        <Contact />
+        {/* <Contact /> */}
       </main>
 
       {/* Footer Component */}
