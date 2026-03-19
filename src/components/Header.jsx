@@ -327,13 +327,27 @@ import logo from "../assets/images/white-spectr-logo.png";
 const Header = ({ isScrolled }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [isLocked, setIsLocked] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   // Navigation items split into left and right sections
+  // const leftNavItems = [
+  //   { name: "STORE", sectionId: "store" },
+  //   // { name: "Contact", sectionId: "contact" },
+  // ];
   const leftNavItems = [
-    { name: "STORE", sectionId: "store" },
-    // { name: "Contact", sectionId: "contact" },
+    {
+      name: "STORE",
+      sectionId: "store",
+      dropdown: [
+        { name: "Popular Products", sectionId: "store" },
+        { name: "stickers", sectionId: "stickers" },
+        { name: "Accessories", sectionId: "accessories" },
+        { name: "gloves", sectionId: "gloves" },
+      ],
+    },
   ];
 
   const rightNavItems = [
@@ -343,6 +357,13 @@ const Header = ({ isScrolled }) => {
 
   // Combine all items for mobile menu
   const allNavItems = [...leftNavItems, ...rightNavItems];
+
+  useEffect(() => {
+    const handleClickOutside = () => setOpenDropdown(null);
+
+    window.addEventListener("click", handleClickOutside);
+    return () => window.removeEventListener("click", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     setScrolled(isScrolled);
@@ -356,18 +377,42 @@ const Header = ({ isScrolled }) => {
     },
   };
 
+  // const handleNavigation = (sectionId) => {
+  //   if (location.pathname !== "/") {
+  //     navigate("/");
+  //     setTimeout(() => {
+  //       document
+  //         .getElementById(sectionId)
+  //         ?.scrollIntoView({ behavior: "smooth" });
+  //     }, 100);
+  //   } else {
+  //     document
+  //       .getElementById(sectionId)
+  //       ?.scrollIntoView({ behavior: "smooth" });
+  //   }
+
+  //   setIsMobileMenuOpen(false);
+  // };
   const handleNavigation = (sectionId) => {
+    const scrollToSection = () => {
+      const element = document.getElementById(sectionId);
+
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // retry until element loads
+        setTimeout(scrollToSection, 100);
+      }
+    };
+
     if (location.pathname !== "/") {
       navigate("/");
+
       setTimeout(() => {
-        document
-          .getElementById(sectionId)
-          ?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+        scrollToSection();
+      }, 300); // safe delay
     } else {
-      document
-        .getElementById(sectionId)
-        ?.scrollIntoView({ behavior: "smooth" });
+      scrollToSection();
     }
 
     setIsMobileMenuOpen(false);
@@ -425,7 +470,7 @@ const Header = ({ isScrolled }) => {
             </motion.div>
 
             {/* Desktop Left Navigation - Hidden on mobile/tablet */}
-            <nav className="hidden lg:flex items-center space-x-1 flex-1 uppercase">
+            {/* <nav className="hidden lg:flex items-center space-x-1 flex-1 uppercase">
               {leftNavItems.map((item, index) => (
                 <motion.button
                   onClick={() => handleNavigation(item.sectionId)}
@@ -463,7 +508,71 @@ const Header = ({ isScrolled }) => {
               ))}
               <motion.button
                 // onClick={() => handleNavigation({ path: "/contact-us" })}
-                className="px-6 py-2 border border-red-600 text-white font-bold hover:bg-red-600 transition-all duration-300"
+                className="relative px-4 py-2 text-white hover:bg-white/20 group md:text-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/contact-us">Contact Us</Link>
+              </motion.button>
+            </nav> */}
+            <nav className="hidden lg:flex items-center space-x-1 flex-1 uppercase">
+              {leftNavItems.map((item, index) => (
+                <div
+                  className="relative"
+                  onMouseEnter={() => {
+                    if (!isLocked) setOpenDropdown(item.name); // hover works only if not locked
+                  }}
+                  onMouseLeave={() => {
+                    if (!isLocked) setOpenDropdown(null); // prevent closing when locked
+                  }}
+                >
+                  {/* Button */}
+                  <motion.button
+                    onClick={(e) => {
+                      e.stopPropagation();
+
+                      if (openDropdown === item.name && isLocked) {
+                        // close if already open
+                        setOpenDropdown(null);
+                        setIsLocked(false);
+                      } else {
+                        // open and lock
+                        setOpenDropdown(item.name);
+                        setIsLocked(true);
+                      }
+                    }}
+                    className="px-4 py-2 text-white font-bold hover:bg-white/20"
+                  >
+                    {item.name}
+                  </motion.button>
+
+                  {/* Dropdown */}
+                  {item.dropdown && openDropdown === item.name && (
+                    <motion.div
+                      className="absolute left-0 top-full w-58 bg-black/90 rounded-lg shadow-lg z-50"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                    >
+                      {item.dropdown.map((subItem) => (
+                        <button
+                          onClick={() => {
+                            handleNavigation(subItem.sectionId);
+                            setOpenDropdown(null);
+                            setIsLocked(false); // unlock after click
+                          }}
+                          className="block w-full text-left px-4 py-2 text-white hover:bg-red-600/30"
+                        >
+                          {subItem.name}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </div>
+              ))}
+
+              {/* Contact Button */}
+              <motion.button
+                className="relative px-4 py-2 text-white hover:bg-white/20"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

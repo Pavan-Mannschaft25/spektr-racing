@@ -59,7 +59,7 @@ const PopularPicks = ({ products, openProductModal }) => {
       </div>
 
       {/* Floating decorative elements */}
-      <motion.div
+      {/* <motion.div
         className="absolute top-16 left-16 text-6xl opacity-10"
         animate={{
           rotate: 360,
@@ -71,9 +71,9 @@ const PopularPicks = ({ products, openProductModal }) => {
         }}
       >
         <FaMotorcycle style={{ color: racingColors.primary }} />
-      </motion.div>
+      </motion.div> */}
 
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-16 right-16 text-6xl opacity-10"
         animate={{
           rotate: -360,
@@ -85,7 +85,7 @@ const PopularPicks = ({ products, openProductModal }) => {
         }}
       >
         <FaTrophy style={{ color: racingColors.accent }} />
-      </motion.div>
+      </motion.div> */}
 
       <div className="container mx-auto relative z-10 max-w-7xl">
         {/* Premium header section */}
