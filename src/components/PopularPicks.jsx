@@ -23,7 +23,7 @@ const PopularPicks = ({ products, openProductModal }) => {
   };
 
   return (
-    <section id="store" className="py-4 px-4 relative overflow-hidden bg-black">
+    <section id="store" className="pt-4 px-4 relative overflow-hidden bg-black">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {/* Subtle grid pattern */}
@@ -189,7 +189,7 @@ const PopularPicks = ({ products, openProductModal }) => {
         </motion.div>
 
         {/* Product grid with enhanced spacing */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {featuredProducts.map((product, index) => (
             <ProductCard
               key={product.id}
