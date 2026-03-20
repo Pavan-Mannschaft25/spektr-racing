@@ -183,7 +183,6 @@ const ProductCard = ({ product, index, openProductModal }) => {
       transition={{ duration: 0.6, delay: index * 0.15 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      onClick={() => openProductModal(product)}
     >
       {/* Card with premium styling */}
       <div className="relative bg-black overflow-hidden shadow-2xl font-sans border border-gray-900">
@@ -199,102 +198,48 @@ const ProductCard = ({ product, index, openProductModal }) => {
 
         {/* Product image with sophisticated hover effect */}
         <div className="relative h-85 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
-
-          <Link to="/contact-us">
+          {/* ✅ IMAGE CLICK → PAGE */}
+          <Link to={`/product-overview/${product.id}`} state={{ product }}>
             <motion.img
               src={product.image}
               alt={product.name}
-              whileHover={{ y: 20 }}
               className="w-full h-full object-cover"
-              initial={{ scale: 1 }}
-              animate={{
-                scale: isHovered ? 1.06 : 1,
-                opacity: 1, // Keep image fully visible
-              }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              whileHover={{ y: 20 }}
+              animate={{ scale: isHovered ? 1.06 : 1 }}
+              transition={{ duration: 0.7 }}
             />
           </Link>
 
-          {/* Premium badges */}
-          <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
-            {product.isNew && (
-              <motion.div
-                className="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-extralight px-3 py-1.5 rounded-full shadow-lg"
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
-              >
-                NEW
-              </motion.div>
-            )}
-            {product.isTopRated && (
-              <motion.div
-                className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-extralight px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1"
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-              >
-                <FaTrophy className="text-xs" /> TOP RATED
-              </motion.div>
-            )}
-          </div>
-
-          {/* Quick actions overlay with light black background */}
+          {/* ✅ OVERLAY */}
           <motion.div
-            className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center gap-3 z-30"
+            className="absolute inset-0 bg-black/30 flex items-center justify-center pointer-events-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
           >
+            {/* ✅ BUTTON (clickable) */}
             <motion.button
-              className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold flex items-center gap-2 shadow-xl"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 10px 30px rgba(255, 30, 30, 0.4)",
+              className="px-4 py-2 bg-red-600 text-white flex items-center gap-2 pointer-events-auto"
+              whileHover={{ scale: 1.05 }}
+              onClick={(e) => {
+                e.stopPropagation();
+                openProductModal(product);
               }}
-              whileTap={{ scale: 0.95 }}
             >
               <FiEye /> Quick View
             </motion.button>
-
-            {/* <div className="flex gap-3">
-              <motion.button
-                className="p-3 bg-gray-800 text-white rounded-lg shadow-xl"
-                whileHover={{ scale: 1.1, backgroundColor: "#333" }}
-                whileTap={{ scale: 0.9 }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  // Add to cart functionality
-                }}
-              >
-                <FiShoppingCart />
-              </motion.button>
-
-              <motion.button
-                className="p-3 bg-gray-800 text-white rounded-lg shadow-xl"
-                whileHover={{
-                  scale: 1.1,
-                  color: "#ef4444",
-                  backgroundColor: "#333",
-                }}
-                whileTap={{ scale: 0.9 }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  // Add to wishlist functionality
-                }}
-              >
-                <FiHeart />
-              </motion.button>
-            </div> */}
           </motion.div>
         </div>
 
         {/* Product info with premium styling */}
-        <Link to="/contact-us">
+        <Link to={`/product-overview/${product.id}`} state={{ product }}>
           <div className="p-5 relative z-20 bg-black">
             <div className="flex justify-between items-start mb-3">
-              <h3 className="text-lg md:text-2xl font-normal text-white tracking-wide font-sans uppercase">
+              <h3
+                className="text-lg md:text-2xl font-sans font-medium
+  leading-tight md:leading-[1.05]
+  text-white
+  tracking-tight uppercase"
+              >
                 {product.name}
               </h3>
               {/* <motion.div

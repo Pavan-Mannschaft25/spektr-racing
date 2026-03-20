@@ -202,6 +202,7 @@ import ShippingPolicy from "./pages/ShippingPolicy";
 import RefundReturnPolicy from "./pages/RefundReturnPolicy";
 import WarrantyPolicy from "./pages/WarrantyPolicy";
 import ContactPage from "./pages/ContactPage";
+import ProductOverviewPage from "./pages/ProductOverviewPage";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -221,7 +222,6 @@ function App() {
       <Routes>
         <Route element={<Layout isScrolled={isScrolled} />}>
           <Route path="/" element={<Home />} />
-
           {/* Policies */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -232,6 +232,10 @@ function App() {
           />
           <Route path="/warranty-policy" element={<WarrantyPolicy />} />
           <Route path="/contact-us" element={<ContactPage />} />
+          <Route
+            path="/product-overview/:id"
+            element={<ProductOverviewPage />}
+          />
         </Route>
       </Routes>
     </Router>

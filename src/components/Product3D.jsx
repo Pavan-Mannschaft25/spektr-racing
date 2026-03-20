@@ -191,7 +191,7 @@ export default function Product3D({ model }) {
 
   return (
     <Canvas
-      camera={{ position: [0, 0, 4], fov: 45 }}
+      camera={{ position: [0, 0, 8], fov: 45 }}
       style={{ width: "100%", height: "100%" }}
     >
       {/* Lighting Setup for consistent look */}
@@ -213,7 +213,7 @@ export default function Product3D({ model }) {
            'observe' updates if the model changes.
            margin={1.2} adds 20% breathing room around the model.
         */}
-        <Bounds fit clip observe margin={0.8}>
+        <Bounds fit clip observe margin={0.5}>
           <Model model={modelUrl} />
         </Bounds>
       </Suspense>
@@ -221,11 +221,19 @@ export default function Product3D({ model }) {
       {/* Soft shadows below the product */}
       <ContactShadows position={[0, -0.5, 0]} opacity={0.5} blur={2} />
 
-      <OrbitControls
+      {/* <OrbitControls
         enableZoom={true}
         enablePan={false}
         autoRotate
         autoRotateSpeed={5}
+      /> */}
+      <OrbitControls
+        enableZoom={true}
+        enablePan={false}
+        minDistance={2} // 🔥 perfect zoom stop (your desired look)
+        // maxDistance={10} // 🔥 default zoom-out range
+        autoRotate
+        autoRotateSpeed={2}
       />
     </Canvas>
   );

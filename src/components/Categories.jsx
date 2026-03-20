@@ -82,7 +82,7 @@ const Categories = ({ products, openProductModal }) => {
           <section
             key={category.id}
             id={category.id} // ✅ correct id for navigation
-            className="py-16 px-4"
+            className="pt-18 px-4"
           >
             <div className="container mx-auto">
               {/* Heading */}
