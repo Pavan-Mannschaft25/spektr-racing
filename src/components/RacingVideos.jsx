@@ -74,7 +74,7 @@ const RacingVideos = () => {
     <section id="clips" className="pt-22 px-2 bg-black">
       <div className="mx-auto">
         <motion.h2
-          className="text-xl md:text-3xl font-bold mb-12 text-center text-white"
+          className="text-xl md:text-3xl font-bold mb-4 text-center text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

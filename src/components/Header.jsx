@@ -1,342 +1,23 @@
-// // // components/Header.jsx
-// // import React, { useState, useEffect } from "react";
-// // import { motion, AnimatePresence } from "framer-motion";
-// // import { FiMenu, FiX } from "react-icons/fi";
-// // import { GiSteeringWheel, GiCheckeredFlag } from "react-icons/gi";
-// // import logo from "../assets/images/white-spectr-logo.png";
-
-// // const Header = ({ isScrolled }) => {
-// //   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-// //   const [scrolled, setScrolled] = useState(false);
-
-// //   // Navigation items split into left and right sections
-// //   const leftNavItems = [
-// //     { name: "STORE", href: "#store" },
-// //     // { name: "Accessories", href: "#accessories" },
-// //     { name: "Contact", href: "#contact" },
-// //   ];
-
-// //   const rightNavItems = [
-// //     { name: "Racing Clips", href: "#clips" },
-// //     { name: "Stickers", href: "#stickers" },
-// //   ];
-
-// //   // Combine all items for mobile menu
-// //   const allNavItems = [...leftNavItems, ...rightNavItems];
-
-// //   useEffect(() => {
-// //     setScrolled(isScrolled);
-// //   }, [isScrolled]);
-
-// //   const logoVariants = {
-// //     initial: { rotate: 0 },
-// //     hover: {
-// //       rotate: 360,
-// //       transition: { duration: 0.6, ease: "easeInOut" },
-// //     },
-// //   };
-
-// //   return (
-// //     <>
-// //       <motion.header
-// //         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-// //           scrolled
-// //             ? "bg-black/80 backdrop-blur-xl py-2 shadow-2xl shadow-black/20"
-// //             : "py-2 bg-black/10"
-// //         }`}
-// //         initial={{ y: -100 }}
-// //         animate={{ y: 0 }}
-// //         transition={{
-// //           duration: 0.8,
-// //           ease: [0.25, 1, 0.5, 1],
-// //           staggerChildren: 0.1,
-// //         }}
-// //       >
-// //         <div className="container mx-auto">
-// //           <div className="flex items-center justify-between relative">
-// //             {/* Left Navigation */}
-// //             <nav className="hidden xl:flex items-center space-x-1 flex-1 uppercase">
-// //               {leftNavItems.map((item, index) => (
-// //                 <motion.a
-// //                   key={item.name}
-// //                   href={item.href}
-// //                   className="relative px-4 py-2 text-white font-bold hover:bg-white/20 rounded-xl group md:text-lg"
-// //                   initial={{ opacity: 0, y: -20 }}
-// //                   animate={{ opacity: 1, y: 0 }}
-// //                   transition={{
-// //                     delay: 0.1 * index,
-// //                     duration: 0.5,
-// //                     type: "spring",
-// //                   }}
-// //                   whileHover={{ y: -2 }}
-// //                   whileTap={{ y: 0 }}
-// //                 >
-// //                   <span className="relative z-10">{item.name}</span>
-// //                   <motion.div
-// //                     className="absolute inset-0 bg-red-600/20 rounded-lg -z-10"
-// //                     initial={{ scale: 0, opacity: 0 }}
-// //                     whileHover={{
-// //                       scale: 1,
-// //                       opacity: 1,
-// //                       transition: { duration: 0.2 },
-// //                     }}
-// //                   />
-// //                   <motion.div
-// //                     className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-red-600 to-transparent"
-// //                     whileHover={{
-// //                       width: "100%",
-// //                       left: 0,
-// //                       transition: { duration: 0.3 },
-// //                     }}
-// //                   />
-// //                 </motion.a>
-// //               ))}
-// //             </nav>
-
-// //             {/* Logo - Centered */}
-// //             <motion.a
-// //               href="/"
-// //               className="flex items-center gap-2 group select-none absolute left-1/2 transform -translate-x-1/2"
-// //               initial={{ opacity: 0, y: -10 }}
-// //               animate={{ opacity: 1, y: 0 }}
-// //               transition={{ duration: 0.6, ease: "easeOut" }}
-// //               whileHover={{ scale: 1.05 }}
-// //             >
-// //               {/* Logo Container */}
-// //               <div className="relative">
-// //                 {/* Glow */}
-// //                 <div className="absolute inset-0 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-
-// //                 {/* Logo */}
-// //                 <div className="relative rounded-xl">
-// //                   <img
-// //                     src={logo}
-// //                     alt="Spektr Racing"
-// //                     className="w-14 h-12 object-contain"
-// //                   />
-// //                 </div>
-// //               </div>
-
-// //               {/* Brand Text */}
-// //               <div className="flex flex-col leading-none">
-// //                 <h1 className="font-myfont text-3xl font-extrabold tracking-[0.12em] text-white">
-// //                   SPEKTR
-// //                   <span className="text-red-600 ml-1 font-myfont">RACING</span>
-// //                 </h1>
-// //                 <span className="text-[10px] tracking-[0.35em] text-gray-400 uppercase mt-1">
-// //                   Built For Speed
-// //                 </span>
-// //               </div>
-// //             </motion.a>
-
-// //             {/* Right Navigation */}
-// //             <nav className="hidden xl:flex items-center space-x-1 flex-1 justify-end uppercase">
-// //               {rightNavItems.map((item, index) => (
-// //                 <motion.a
-// //                   key={item.name}
-// //                   href={item.href}
-// //                   className="relative px-4 py-2 text-white font-extrabold hover:bg-white/20 rounded-xl group md:text-lg"
-// //                   initial={{ opacity: 0, y: -20 }}
-// //                   animate={{ opacity: 1, y: 0 }}
-// //                   transition={{
-// //                     delay: 0.1 * (index + leftNavItems.length),
-// //                     duration: 0.5,
-// //                     type: "spring",
-// //                   }}
-// //                   whileHover={{ y: -2 }}
-// //                   whileTap={{ y: 0 }}
-// //                 >
-// //                   <span className="relative z-10">{item.name}</span>
-// //                   <motion.div
-// //                     className="absolute inset-0 bg-red-600/20 rounded-lg -z-10"
-// //                     initial={{ scale: 0, opacity: 0 }}
-// //                     whileHover={{
-// //                       scale: 1,
-// //                       opacity: 1,
-// //                       transition: { duration: 0.2 },
-// //                     }}
-// //                   />
-// //                   <motion.div
-// //                     className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-red-600 to-transparent"
-// //                     whileHover={{
-// //                       width: "100%",
-// //                       left: 0,
-// //                       transition: { duration: 0.3 },
-// //                     }}
-// //                   />
-// //                 </motion.a>
-// //               ))}
-// //             </nav>
-
-// //             {/* Shop Now Button */}
-// //             <div className="flex items-center gap-4">
-// //               {/* <motion.button
-// //                 className="hidden md:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-600 text-white font-bold rounded-full shadow-lg shadow-red-600/25 hover:shadow-xl hover:shadow-red-600/40 transition-all duration-300"
-// //                 whileHover={{ scale: 1.05 }}
-// //                 whileTap={{ scale: 0.95 }}
-// //                 initial={{ opacity: 0, x: 20 }}
-// //                 animate={{ opacity: 1, x: 0 }}
-// //                 transition={{ delay: 0.5, duration: 0.5 }}
-// //               >
-// //                 <span>Shop Now</span>
-// //                 <GiCheckeredFlag className="w-4 h-4" />
-// //               </motion.button> */}
-
-// //               {/* Mobile Menu Toggle */}
-// //               <motion.button
-// //                 className="relative p-3 xl:hidden text-white/80 hover:text-white transition-colors"
-// //                 whileHover={{ scale: 1.1 }}
-// //                 whileTap={{ scale: 0.9 }}
-// //                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-// //               >
-// //                 <AnimatePresence mode="wait">
-// //                   {isMobileMenuOpen ? (
-// //                     <FiX key="close" className="text-xl" />
-// //                   ) : (
-// //                     <FiMenu key="menu" className="text-4xl" />
-// //                   )}
-// //                 </AnimatePresence>
-// //               </motion.button>
-// //             </div>
-// //           </div>
-// //         </div>
-// //       </motion.header>
-
-// //       {/* Mobile Menu */}
-// //       <AnimatePresence>
-// //         {isMobileMenuOpen && (
-// //           <motion.div
-// //             className="fixed inset-0 z-40 xl:hidden"
-// //             initial={{ opacity: 0 }}
-// //             animate={{ opacity: 1 }}
-// //             exit={{ opacity: 0 }}
-// //           >
-// //             {/* Backdrop */}
-// //             <motion.div
-// //               className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-// //               initial={{ opacity: 0 }}
-// //               animate={{ opacity: 1 }}
-// //               exit={{ opacity: 0 }}
-// //               onClick={() => setIsMobileMenuOpen(false)}
-// //             />
-
-// //             {/* Menu Panel */}
-// //             <motion.div
-// //               className="absolute right-0 top-0 h-full w-80 bg-gray-900 shadow-2xl"
-// //               initial={{ x: "100%" }}
-// //               animate={{ x: 0 }}
-// //               exit={{ x: "100%" }}
-// //               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-// //             >
-// //               <div className="p-6 border-b border-gray-800">
-// //                 <div className="flex items-center justify-between">
-// //                   <div className="flex items-center gap-3">
-// //                     <div className="bg-gradient-to-br from-red-600 to-orange-600 p-2 rounded-xl">
-// //                       <GiSteeringWheel className="w-6 h-6 text-white" />
-// //                     </div>
-// //                     <span className="text-xl font-black">SPEKTR RACING</span>
-// //                   </div>
-// //                   <button
-// //                     className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
-// //                     onClick={() => setIsMobileMenuOpen(false)}
-// //                   >
-// //                     <FiX className="text-xl" />
-// //                   </button>
-// //                 </div>
-// //               </div>
-
-// //               <nav className="p-6">
-// //                 <div className="space-y-2">
-// //                   {/* Left Section */}
-// //                   <div className="mb-4">
-// //                     <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">
-// //                       Menu
-// //                     </p>
-// //                     {leftNavItems.map((item, index) => (
-// //                       <motion.a
-// //                         key={item.name}
-// //                         href={item.href}
-// //                         className="flex items-center justify-between p-4 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors group"
-// //                         initial={{ opacity: 0, x: 50 }}
-// //                         animate={{ opacity: 1, x: 0 }}
-// //                         transition={{ delay: 0.05 * index }}
-// //                         onClick={() => setIsMobileMenuOpen(false)}
-// //                       >
-// //                         <span>{item.name}</span>
-// //                         <GiCheckeredFlag className="w-4 h-4 text-gray-600 group-hover:text-red-600 transition-colors" />
-// //                       </motion.a>
-// //                     ))}
-// //                   </div>
-
-// //                   {/* Right Section */}
-// //                   <div>
-// //                     <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">
-// //                       Media
-// //                     </p>
-// //                     {rightNavItems.map((item, index) => (
-// //                       <motion.a
-// //                         key={item.name}
-// //                         href={item.href}
-// //                         className="flex items-center justify-between p-4 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors group"
-// //                         initial={{ opacity: 0, x: 50 }}
-// //                         animate={{ opacity: 1, x: 0 }}
-// //                         transition={{
-// //                           delay: 0.05 * (index + leftNavItems.length),
-// //                         }}
-// //                         onClick={() => setIsMobileMenuOpen(false)}
-// //                       >
-// //                         <span>{item.name}</span>
-// //                         <GiCheckeredFlag className="w-4 h-4 text-gray-600 group-hover:text-red-600 transition-colors" />
-// //                       </motion.a>
-// //                     ))}
-// //                   </div>
-// //                 </div>
-
-// //                 {/* Shop Now Button in Mobile Menu */}
-// //                 <div className="mt-8 pt-8 border-t border-gray-800">
-// //                   <motion.button
-// //                     className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold rounded-full shadow-lg shadow-red-600/25 hover:shadow-xl hover:shadow-red-600/40 transition-all duration-300"
-// //                     whileHover={{ scale: 1.02 }}
-// //                     whileTap={{ scale: 0.98 }}
-// //                     onClick={() => setIsMobileMenuOpen(false)}
-// //                   >
-// //                     <span>Shop Now</span>
-// //                     <GiCheckeredFlag className="w-4 h-4" />
-// //                   </motion.button>
-// //                 </div>
-// //               </nav>
-// //             </motion.div>
-// //           </motion.div>
-// //         )}
-// //       </AnimatePresence>
-// //     </>
-// //   );
-// // };
-
-// // export default Header;
-
 // // components/Header.jsx
 // import React, { useState, useEffect } from "react";
 // import { useNavigate, useLocation, Link } from "react-router-dom";
 // import { motion, AnimatePresence } from "framer-motion";
-// import { FiMenu, FiX } from "react-icons/fi";
+// import { FiMenu, FiX, FiChevronDown } from "react-icons/fi"; // Added FiChevronDown
 // import { GiSteeringWheel, GiCheckeredFlag } from "react-icons/gi";
 // import logo from "../assets/images/white-spectr-logo.png";
-// // import logo from "../assets/images/sp-l2.png";
 
 // const Header = ({ isScrolled }) => {
 //   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 //   const [scrolled, setScrolled] = useState(false);
 //   const [openDropdown, setOpenDropdown] = useState(null);
 //   const [isLocked, setIsLocked] = useState(false);
+
+//   // State for mobile accordion menu
+//   const [expandedMobileDropdown, setExpandedMobileDropdown] = useState(null);
+
 //   const navigate = useNavigate();
 //   const location = useLocation();
 
-//   // Navigation items split into left and right sections
-//   // const leftNavItems = [
-//   //   { name: "STORE", sectionId: "store" },
-//   //   // { name: "Contact", sectionId: "contact" },
-//   // ];
 //   const leftNavItems = [
 //     {
 //       name: "STORE",
@@ -355,12 +36,10 @@
 //     { name: "Stickers", sectionId: "stickers" },
 //   ];
 
-//   // Combine all items for mobile menu
 //   const allNavItems = [...leftNavItems, ...rightNavItems];
 
 //   useEffect(() => {
 //     const handleClickOutside = () => setOpenDropdown(null);
-
 //     window.addEventListener("click", handleClickOutside);
 //     return () => window.removeEventListener("click", handleClickOutside);
 //   }, []);
@@ -369,60 +48,40 @@
 //     setScrolled(isScrolled);
 //   }, [isScrolled]);
 
-//   const logoVariants = {
-//     initial: { rotate: 0 },
-//     hover: {
-//       rotate: 360,
-//       transition: { duration: 0.6, ease: "easeInOut" },
-//     },
-//   };
-
-//   // const handleNavigation = (sectionId) => {
-//   //   if (location.pathname !== "/") {
-//   //     navigate("/");
-//   //     setTimeout(() => {
-//   //       document
-//   //         .getElementById(sectionId)
-//   //         ?.scrollIntoView({ behavior: "smooth" });
-//   //     }, 100);
-//   //   } else {
-//   //     document
-//   //       .getElementById(sectionId)
-//   //       ?.scrollIntoView({ behavior: "smooth" });
-//   //   }
-
-//   //   setIsMobileMenuOpen(false);
-//   // };
 //   const handleNavigation = (sectionId) => {
 //     const scrollToSection = () => {
 //       const element = document.getElementById(sectionId);
-
 //       if (element) {
 //         element.scrollIntoView({ behavior: "smooth" });
 //       } else {
-//         // retry until element loads
 //         setTimeout(scrollToSection, 100);
 //       }
 //     };
 
 //     if (location.pathname !== "/") {
 //       navigate("/");
-
 //       setTimeout(() => {
 //         scrollToSection();
-//       }, 300); // safe delay
+//       }, 300);
 //     } else {
 //       scrollToSection();
 //     }
 
+//     // Close everything on navigation
 //     setIsMobileMenuOpen(false);
+//     setExpandedMobileDropdown(null);
+//   };
+
+//   // Helper to toggle mobile dropdown
+//   const toggleMobileDropdown = (name) => {
+//     setExpandedMobileDropdown((prev) => (prev === name ? null : name));
 //   };
 
 //   return (
 //     <>
 //       <motion.header
 //         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-//           scrolled ? "bg-black/70 py-4" : "py-4 bg-black/10"
+//           scrolled ? "bg-black/70 py-3 md:py-4" : "py-3 md:py-4 bg-black/10"
 //         }`}
 //         initial={{ y: -100 }}
 //         animate={{ y: 0 }}
@@ -434,7 +93,7 @@
 //       >
 //         <div className="container mx-auto px-4">
 //           <div className="flex items-center justify-between relative">
-//             {/* Logo - Left on mobile, Centered on desktop */}
+//             {/* Logo */}
 //             <motion.div
 //               onClick={() => navigate("/")}
 //               className="flex items-center gap-2 group select-none lg:absolute lg:left-1/2 xl:transform lg:-translate-x-1/2"
@@ -443,12 +102,8 @@
 //               transition={{ duration: 0.6, ease: "easeOut" }}
 //               whileHover={{ scale: 1.05 }}
 //             >
-//               {/* Logo Container */}
 //               <div className="relative">
-//                 {/* Glow */}
 //                 <div className="absolute inset-0 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-
-//                 {/* Logo */}
 //                 <div className="relative rounded-xl">
 //                   <img
 //                     src={logo}
@@ -457,86 +112,36 @@
 //                   />
 //                 </div>
 //               </div>
-
-//               {/* Brand Text - Hidden on small mobile, visible on larger screens */}
 //               <div className="sm:flex flex-col leading-none lg:py-6">
-//                 <h1 className="text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
+//                 <h1 className="text-lg md:text-3xl font-bold tracking-[0.12em] text-white">
 //                   SPEKTR
 //                 </h1>
-//                 <h2 className="text-lg md:text-2xl font-bold tracking-[0.12em] text-white text-center">
+//                 <h2 className="text-md md:text-2xl font-bold tracking-[0.12em] text-white text-center">
 //                   - RACING -
 //                 </h2>
 //               </div>
 //             </motion.div>
 
-//             {/* Desktop Left Navigation - Hidden on mobile/tablet */}
-//             {/* <nav className="hidden lg:flex items-center space-x-1 flex-1 uppercase">
-//               {leftNavItems.map((item, index) => (
-//                 <motion.button
-//                   onClick={() => handleNavigation(item.sectionId)}
-//                   key={item.name}
-//                   className="relative px-4 py-2 text-white font-bold hover:bg-white/20 group md:text-md"
-//                   initial={{ opacity: 0, y: -20 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                   transition={{
-//                     delay: 0.1 * index,
-//                     duration: 0.5,
-//                     type: "spring",
-//                   }}
-//                   whileHover={{ y: -2 }}
-//                   whileTap={{ y: 0 }}
-//                 >
-//                   <span className="relative z-10">{item.name}</span>
-//                   <motion.div
-//                     className="absolute inset-0 bg-red-600/20 rounded-lg -z-10"
-//                     initial={{ scale: 0, opacity: 0 }}
-//                     whileHover={{
-//                       scale: 1,
-//                       opacity: 1,
-//                       transition: { duration: 0.2 },
-//                     }}
-//                   />
-//                   <motion.div
-//                     className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-red-600 to-transparent"
-//                     whileHover={{
-//                       width: "100%",
-//                       left: 0,
-//                       transition: { duration: 0.3 },
-//                     }}
-//                   />
-//                 </motion.button>
-//               ))}
-//               <motion.button
-//                 // onClick={() => handleNavigation({ path: "/contact-us" })}
-//                 className="relative px-4 py-2 text-white hover:bg-white/20 group md:text-md"
-//                 whileHover={{ scale: 1.05 }}
-//                 whileTap={{ scale: 0.95 }}
-//               >
-//                 <Link to="/contact-us">Contact Us</Link>
-//               </motion.button>
-//             </nav> */}
+//             {/* Desktop Left Navigation */}
 //             <nav className="hidden lg:flex items-center space-x-1 flex-1 font-sans text-md md:text-lg uppercase">
 //               {leftNavItems.map((item, index) => (
 //                 <div
+//                   key={item.name}
 //                   className="relative"
 //                   onMouseEnter={() => {
-//                     if (!isLocked) setOpenDropdown(item.name); // hover works only if not locked
+//                     if (!isLocked) setOpenDropdown(item.name);
 //                   }}
 //                   onMouseLeave={() => {
-//                     if (!isLocked) setOpenDropdown(null); // prevent closing when locked
+//                     if (!isLocked) setOpenDropdown(null);
 //                   }}
 //                 >
-//                   {/* Button */}
 //                   <motion.button
 //                     onClick={(e) => {
 //                       e.stopPropagation();
-
 //                       if (openDropdown === item.name && isLocked) {
-//                         // close if already open
 //                         setOpenDropdown(null);
 //                         setIsLocked(false);
 //                       } else {
-//                         // open and lock
 //                         setOpenDropdown(item.name);
 //                         setIsLocked(true);
 //                       }
@@ -546,7 +151,7 @@
 //                     {item.name}
 //                   </motion.button>
 
-//                   {/* Dropdown */}
+//                   {/* Desktop Dropdown */}
 //                   {item.dropdown && openDropdown === item.name && (
 //                     <motion.div
 //                       className="absolute left-0 top-full w-58 text-md bg-black/90 shadow-lg z-50 font-sans"
@@ -555,10 +160,11 @@
 //                     >
 //                       {item.dropdown.map((subItem) => (
 //                         <button
+//                           key={subItem.name}
 //                           onClick={() => {
 //                             handleNavigation(subItem.sectionId);
 //                             setOpenDropdown(null);
-//                             setIsLocked(false); // unlock after click
+//                             setIsLocked(false);
 //                           }}
 //                           className="block w-full text-left px-4 py-2 text-white hover:bg-red-600/30 uppercase"
 //                         >
@@ -570,7 +176,6 @@
 //                 </div>
 //               ))}
 
-//               {/* Contact Button */}
 //               <motion.button
 //                 className="relative px-4 py-2 text-white hover:bg-white/20 text-lg uppercase"
 //                 whileHover={{ scale: 1.05 }}
@@ -580,7 +185,7 @@
 //               </motion.button>
 //             </nav>
 
-//             {/* Desktop Right Navigation - Hidden on mobile/tablet */}
+//             {/* Desktop Right Navigation */}
 //             <nav className="hidden lg:flex items-center space-x-1 flex-1 justify-end uppercase">
 //               {rightNavItems.map((item, index) => (
 //                 <motion.button
@@ -621,7 +226,7 @@
 //               ))}
 //             </nav>
 
-//             {/* Mobile Menu Toggle - Right side on mobile, hidden on desktop */}
+//             {/* Mobile Menu Toggle */}
 //             <motion.button
 //               className="relative p-3 lg:hidden text-white/80 hover:text-white transition-colors"
 //               whileHover={{ scale: 1.1 }}
@@ -640,7 +245,7 @@
 //         </div>
 //       </motion.header>
 
-//       {/* Mobile Menu - Improved Design */}
+//       {/* Mobile Menu */}
 //       <AnimatePresence>
 //         {isMobileMenuOpen && (
 //           <motion.div
@@ -658,7 +263,7 @@
 //               onClick={() => setIsMobileMenuOpen(false)}
 //             />
 
-//             {/* Menu Panel - Improved Design */}
+//             {/* Menu Panel */}
 //             <motion.div
 //               className="absolute right-0 top-20 h-full w-72 sm:w-80 bg-black shadow-2xl"
 //               initial={{ x: "100%" }}
@@ -666,48 +271,102 @@
 //               exit={{ x: "100%" }}
 //               transition={{ type: "spring", damping: 25, stiffness: 200 }}
 //             >
-//               {/* Menu Header */}
-//               {/* <div className="p-6 border-b border-gray-800">
-//                 <div className="flex items-center justify-between">
-//                   <div className="flex items-center gap-3">
-//                     <div className="bg-gradient-to-br from-red-600 to-orange-600 p-2 rounded-xl">
-//                       <GiSteeringWheel className="w-6 h-6 text-white" />
-//                     </div>
-//                     <div>
-//                       <span className="text-xl font-black text-white">
-//                         SPEKTR
-//                       </span>
-//                       <span className="text-xl font-black text-red-600 ml-1">
-//                         RACING
-//                       </span>
-//                     </div>
-//                   </div>
-//                   <button
-//                     className="p-2 hover:bg-gray-800 rounded-lg transition-colors text-white"
-//                     onClick={() => setIsMobileMenuOpen(false)}
-//                   >
-//                     <FiX className="text-xl" />
-//                   </button>
-//                 </div>
-//               </div> */}
-
-//               {/* Menu Items - Improved Layout */}
-//               <nav className="p-6 overflow-y-auto h-full pb-32">
+//               <nav className="p-6 overflow-y-auto h-full pb-32 font-sans">
 //                 <div className="space-y-6">
-//                   {/* Left Section */}
+//                   {/* Left Section (Contains Dropdowns) */}
 //                   <div>
 //                     <p className="text-gray-500 text-sm uppercase tracking-wider mb-3 font-bold">
 //                       Menu
 //                     </p>
 //                     <div className="space-y-1">
 //                       {leftNavItems.map((item, index) => (
+//                         <div key={item.name}>
+//                           {/* Parent Button */}
+//                           <motion.button
+//                             onClick={() => {
+//                               if (item.dropdown) {
+//                                 toggleMobileDropdown(item.name);
+//                               } else {
+//                                 handleNavigation(item.sectionId);
+//                               }
+//                             }}
+//                             className="flex items-center justify-between w-full p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
+//                             initial={{ opacity: 0, x: 50 }}
+//                             animate={{ opacity: 1, x: 0 }}
+//                             transition={{ delay: 0.05 * index }}
+//                           >
+//                             <span className="text-md">{item.name}</span>
+
+//                             {/* Icon Logic: Show Chevron if Dropdown, else Flag */}
+//                             {item.dropdown ? (
+//                               <motion.div
+//                                 animate={{
+//                                   rotate:
+//                                     expandedMobileDropdown === item.name
+//                                       ? 180
+//                                       : 0,
+//                                 }}
+//                                 transition={{ duration: 0.3 }}
+//                               >
+//                                 <FiChevronDown className="w-5 h-5 text-gray-400" />
+//                               </motion.div>
+//                             ) : (
+//                               <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-red-600 transition-colors">
+//                                 <GiCheckeredFlag className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+//                               </div>
+//                             )}
+//                           </motion.button>
+
+//                           {/* Mobile Dropdown Content (Accordion) */}
+//                           {item.dropdown && (
+//                             <AnimatePresence>
+//                               {expandedMobileDropdown === item.name && (
+//                                 <motion.div
+//                                   initial={{ height: 0, opacity: 0 }}
+//                                   animate={{ height: "auto", opacity: 1 }}
+//                                   exit={{ height: 0, opacity: 0 }}
+//                                   transition={{
+//                                     duration: 0.3,
+//                                     ease: "easeInOut",
+//                                   }}
+//                                   className="overflow-hidden bg-white/5 rounded-lg ml-4 mt-1"
+//                                 >
+//                                   {item.dropdown.map((subItem) => (
+//                                     <button
+//                                       key={subItem.name}
+//                                       onClick={() =>
+//                                         handleNavigation(subItem.sectionId)
+//                                       }
+//                                       className="flex items-center justify-between w-full p-3 pl-6 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors uppercase"
+//                                     >
+//                                       {subItem.name}
+//                                     </button>
+//                                   ))}
+//                                 </motion.div>
+//                               )}
+//                             </AnimatePresence>
+//                           )}
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+
+//                   {/* Right Section (Simple Links) */}
+//                   <div>
+//                     <p className="text-gray-500 text-sm uppercase tracking-wider mb-3 font-bold">
+//                       Media
+//                     </p>
+//                     <div className="space-y-1">
+//                       {rightNavItems.map((item, index) => (
 //                         <motion.button
 //                           key={item.name}
 //                           onClick={() => handleNavigation(item.sectionId)}
-//                           className="flex items-center justify-between p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
+//                           className="flex items-center justify-between w-full p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
 //                           initial={{ opacity: 0, x: 50 }}
 //                           animate={{ opacity: 1, x: 0 }}
-//                           transition={{ delay: 0.05 * index }}
+//                           transition={{
+//                             delay: 0.05 * (index + leftNavItems.length),
+//                           }}
 //                         >
 //                           <span className="text-md">{item.name}</span>
 //                           <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-red-600 transition-colors">
@@ -717,36 +376,9 @@
 //                       ))}
 //                     </div>
 //                   </div>
-
-//                   {/* Right Section */}
-//                   <div>
-//                     <p className="text-gray-500 text-sm uppercase tracking-wider mb-3 font-bold">
-//                       Media
-//                     </p>
-//                     <div className="space-y-1">
-//                       {rightNavItems.map((item, index) => (
-//                         <motion.a
-//                           key={item.name}
-//                           href={item.href}
-//                           className="flex items-center justify-between p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
-//                           initial={{ opacity: 0, x: 50 }}
-//                           animate={{ opacity: 1, x: 0 }}
-//                           transition={{
-//                             delay: 0.05 * (index + leftNavItems.length),
-//                           }}
-//                           onClick={() => setIsMobileMenuOpen(false)}
-//                         >
-//                           <span className="text-md">{item.name}</span>
-//                           <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-red-600 transition-colors">
-//                             <GiCheckeredFlag className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
-//                           </div>
-//                         </motion.a>
-//                       ))}
-//                     </div>
-//                   </div>
 //                 </div>
 
-//                 {/* Shop Now Button in Mobile Menu - Improved Design */}
+//                 {/* Shop Now Button */}
 //                 <div className="mt-8 pt-8 border-t border-gray-800">
 //                   <motion.button
 //                     className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold rounded-full shadow-lg shadow-red-600/25 hover:shadow-xl hover:shadow-red-600/40 transition-all duration-300"
@@ -852,7 +484,9 @@ const Header = ({ isScrolled }) => {
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-black/70 py-3 md:py-4" : "py-3 md:py-4 bg-black/10"
+          scrolled
+            ? "bg-black/70 py-3 md:py-4 px-2 md:px-8"
+            : "py-3 md:py-4 bg-black/10 px-2 md:px-8"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -864,10 +498,10 @@ const Header = ({ isScrolled }) => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between relative">
-            {/* Logo */}
+            {/* Logo - Left Aligned */}
             <motion.div
               onClick={() => navigate("/")}
-              className="flex items-center gap-2 group select-none lg:absolute lg:left-1/2 xl:transform lg:-translate-x-1/2"
+              className="flex items-center gap-2 group select-none"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -879,22 +513,23 @@ const Header = ({ isScrolled }) => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-10 h-10 md:w-17 md:h-17 object-contain"
+                    className="w-10 h-10 md:w-13 md:h-13 object-contain"
                   />
                 </div>
               </div>
-              <div className="sm:flex flex-col leading-none lg:py-6">
-                <h1 className="text-lg md:text-3xl font-bold tracking-[0.12em] text-white">
+              <div className="sm:flex flex-col leading-none">
+                <h1 className="text-lg md:text-2xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                 </h1>
-                <h2 className="text-md md:text-2xl font-bold tracking-[0.12em] text-white text-center">
+                <h2 className="text-xs md:text-md font-bold tracking-[0.12em] text-white text-center mt-0">
                   - RACING -
                 </h2>
               </div>
             </motion.div>
 
-            {/* Desktop Left Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1 flex-1 font-sans text-md md:text-lg uppercase">
+            {/* Desktop Navigation - Right Aligned */}
+            <nav className="hidden lg:flex items-center space-x-1 font-sans text-sm md:text-md uppercase">
+              {/* Left Nav Items (with dropdowns) */}
               {leftNavItems.map((item, index) => (
                 <div
                   key={item.name}
@@ -947,17 +582,7 @@ const Header = ({ isScrolled }) => {
                 </div>
               ))}
 
-              <motion.button
-                className="relative px-4 py-2 text-white hover:bg-white/20 text-lg uppercase"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to="/contact-us">Contact Us</Link>
-              </motion.button>
-            </nav>
-
-            {/* Desktop Right Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1 flex-1 justify-end uppercase">
+              {/* Right Nav Items */}
               {rightNavItems.map((item, index) => (
                 <motion.button
                   onClick={() => handleNavigation(item.sectionId)}
@@ -966,14 +591,14 @@ const Header = ({ isScrolled }) => {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: 0.1 * (index + leftNavItems.length),
+                    delay: 0.1 * (index + leftNavItems.length + 1),
                     duration: 0.5,
                     type: "spring",
                   }}
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                 >
-                  <span className="relative z-10 font-sans text-md md:text-lg uppercase">
+                  <span className="relative z-10 font-sans text-sm md:text-md uppercase">
                     {item.name}
                   </span>
                   <motion.div
@@ -995,6 +620,15 @@ const Header = ({ isScrolled }) => {
                   />
                 </motion.button>
               ))}
+
+              {/* Contact Us Link */}
+              <motion.button
+                className="relative px-4 py-2 text-white hover:bg-white/20 text-md uppercase"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/contact-us">Contact Us</Link>
+              </motion.button>
             </nav>
 
             {/* Mobile Menu Toggle */}
@@ -1132,7 +766,7 @@ const Header = ({ isScrolled }) => {
                         <motion.button
                           key={item.name}
                           onClick={() => handleNavigation(item.sectionId)}
-                          className="flex items-center justify-between w-full p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group"
+                          className="flex items-center justify-between w-full p-4 text-white font-extralight rounded-lg hover:bg-gradient-to-r hover:from-red-600/20 hover:to-transparent transition-all duration-300 group uppercase"
                           initial={{ opacity: 0, x: 50 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{
@@ -1140,12 +774,17 @@ const Header = ({ isScrolled }) => {
                           }}
                         >
                           <span className="text-md">{item.name}</span>
-                          <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center group-hover:bg-red-600 transition-colors">
-                            <GiCheckeredFlag className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
-                          </div>
                         </motion.button>
                       ))}
                     </div>
+                    {/* Contact Us Link */}
+                    <motion.button
+                      className="relative px-4 py-2 text-white hover:bg-white/20 text-md font-extralight uppercase"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Link to="/contact-us">Contact Us</Link>
+                    </motion.button>
                   </div>
                 </div>
 

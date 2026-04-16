@@ -90,7 +90,7 @@ const PopularPicks = ({ products, openProductModal }) => {
       <div className="container mx-auto relative z-10 max-w-7xl">
         {/* Premium header section */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-4"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -134,7 +134,7 @@ const PopularPicks = ({ products, openProductModal }) => {
           </motion.div> */}
 
           <motion.div
-            className="flex items-center justify-between mb-6 w-full"
+            className="flex items-center justify-between mt-6 w-full"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

@@ -39,7 +39,7 @@ const posts = [
 
 const InstagramFlow = () => {
   return (
-    <section id="insta" className="py-16 overflow-hidden">
+    <section id="insta" className="py-10 overflow-hidden">
       {/* Slider */}
       <div className="relative w-full overflow-hidden">
         <motion.div
@@ -68,14 +68,14 @@ const InstagramFlow = () => {
         >
           Follow on Instagram
         </a> */}
-        <a
+        {/* <a
           href="https://instagram.com/spectr_racing"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center w-12 h-12 text-white transition"
         >
           <FaInstagram className="text-white text-3xl md:text-4xl" />
-        </a>
+        </a> */}
       </div>
     </section>
   );
