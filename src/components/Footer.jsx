@@ -10,7 +10,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-gray-900 py-12 px-4">
+    <footer className="bg-black border-t border-gray-900 py-6 px-4 md:px-8">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo & Tagline */}
@@ -35,16 +35,16 @@ const Footer = () => {
                   <img
                     src={logo}
                     alt="Spektr Racing"
-                    className="w-10 h-10 md:w-16 md:h-16 object-contain"
+                    className="w-10 h-10 md:w-13 md:h-13 object-contain"
                   />
                 </div>
               </div>
 
               <div className="sm:flex flex-col leading-none">
-                <h1 className="font-myfont text-xl md:text-3xl font-bold tracking-[0.12em] text-white">
+                <h1 className="font-myfont text-xl md:text-2xl font-bold tracking-[0.12em] text-white">
                   SPEKTR
                 </h1>
-                <h2 className="font-myfont text-lg md:text-2xl font-bold tracking-[0.12em] text-white text-center">
+                <h2 className="font-myfont text-md md:text-lg font-bold tracking-[0.12em] text-white text-center">
                   - RACING -
                 </h2>
               </div>

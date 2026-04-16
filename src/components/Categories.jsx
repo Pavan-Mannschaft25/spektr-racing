@@ -82,12 +82,12 @@ const Categories = ({ products, openProductModal }) => {
           <section
             key={category.id}
             id={category.id} // ✅ correct id for navigation
-            className="pt-18 px-4"
+            className="pt-10 px-4"
           >
             <div className="container mx-auto">
               {/* Heading */}
               <motion.div
-                className="flex items-center justify-between mb-8"
+                className="flex items-center justify-between mb-4"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}

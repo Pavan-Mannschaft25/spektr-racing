@@ -235,7 +235,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
           <div className="p-5 relative z-20 bg-black">
             <div className="flex justify-between items-start mb-3">
               <h3
-                className="text-lg md:text-2xl font-sans font-medium
+                className="text-sm md:text-md font-sans font-medium
   leading-tight md:leading-[1.05]
   text-white
   tracking-tight uppercase"
@@ -257,7 +257,7 @@ const ProductCard = ({ product, index, openProductModal }) => {
 
             <div className="flex items-center justify-between">
               <div className="flex items-baseline gap-2">
-                <p className="text-md md:text-xl font-bold font-sans text-white">
+                <p className="text-md md:text-lg font-bold font-sans text-white">
                   ${product.price}
                 </p>
                 {product.originalPrice && (
