@@ -134,14 +134,14 @@ const PopularPicks = ({ products, openProductModal }) => {
           </motion.div> */}
 
           <motion.div
-            className="flex items-center justify-between mt-6 w-full"
+            className="flex items-center justify-between mt-8 w-full"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* LEFT: Heading */}
-            <div className="flex items-center">
+            <div className="flex items-center mb-2">
               {/* <FaFire className="text-2xl md:text-3xl text-red-500" /> */}
               <h2 className="text-xl md:text-3xl font-normal tracking-wider text-white">
                 SPEKTR SELEKT
@@ -153,7 +153,7 @@ const PopularPicks = ({ products, openProductModal }) => {
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              className="hidden md:inline-flex px-2 md:px-4 py-2 bg-red-600 text-white font-medium tracking-wide
+              className="hidden md:inline-flex px-2 md:px-4 py-1 bg-red-600 text-white font-medium tracking-wide
                hover:bg-red-700 transition-all shadow-lg font-sans"
             >
               <span className="text-lg font-sans">SHOP NOW</span>
