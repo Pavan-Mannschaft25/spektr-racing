@@ -497,7 +497,7 @@ const Header = ({ isScrolled }) => {
         }}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between relative">
+          <div className="flex items-center relative">
             {/* Logo - Left Aligned */}
             <motion.div
               onClick={() => navigate("/")}
@@ -528,7 +528,7 @@ const Header = ({ isScrolled }) => {
             </motion.div>
 
             {/* Desktop Navigation - Right Aligned */}
-            <nav className="hidden lg:flex items-center space-x-1 font-sans text-sm md:text-md uppercase">
+            <nav className="hidden lg:flex items-center space-x-1 font-sans text-sm md:text-md uppercase px-10">
               {/* Left Nav Items (with dropdowns) */}
               {leftNavItems.map((item, index) => (
                 <div

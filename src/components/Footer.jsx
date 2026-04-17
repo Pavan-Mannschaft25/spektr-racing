@@ -64,16 +64,16 @@ const Footer = () => {
             <h4 className="text-lg font-extralight mb-4">QUiICK LINKS</h4>
             <ul className="space-y-2 font-sans text-md">
               <li className="text-white hover:text-red-600 transition-colors">
-                <a href="#">Shop</a>
+                <a href="#store">Store</a>
+              </li>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <a href="#clips">Racing Clips</a>
+              </li>
+              <li className="text-white hover:text-red-600 transition-colors">
+                <a href="#stickers">Stickers</a>
               </li>
               <li className="text-white hover:text-red-600 transition-colors">
                 <a href="#">About Us</a>
-              </li>
-              <li className="text-white hover:text-red-600 transition-colors">
-                <a href="#">Racing Team</a>
-              </li>
-              <li className="text-white hover:text-red-600 transition-colors">
-                <a href="#">Events</a>
               </li>
               <li className="text-white hover:text-red-600 transition-colors">
                 <Link to="/contact-us">Contact Us</Link>

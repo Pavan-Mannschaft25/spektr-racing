@@ -280,7 +280,7 @@ const Home = () => {
         <PopularPicks products={products} openProductModal={openProductModal} />
         <RacingVideos />
         <Categories products={products} openProductModal={openProductModal} />
-        <InstagramFlow />
+        {/* <InstagramFlow /> */}
         {/* <Contact /> */}
       </main>
 
