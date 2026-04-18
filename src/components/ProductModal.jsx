@@ -300,21 +300,23 @@ const ProductModal = ({ product, onClose }) => {
                         </button>
                       </div>
                       <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
-                        {["XS", "S", "M", "L", "XL"].map((size) => (
-                          <motion.button
-                            key={size}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => setSelectedSize(size)}
-                            className={`py-2 sm:py-3 rounded-lg sm:rounded-xl font-bold transition-all text-xs sm:text-sm ${
-                              selectedSize === size
-                                ? "bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg"
-                                : "bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700"
-                            }`}
-                          >
-                            {size}
-                          </motion.button>
-                        ))}
+                        {["Small", "Medium", "Large", "XL", "XXL"].map(
+                          (size) => (
+                            <motion.button
+                              key={size}
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              onClick={() => setSelectedSize(size)}
+                              className={`py-2 sm:py-3 rounded-lg sm:rounded-xl font-bold transition-all text-xs sm:text-sm ${
+                                selectedSize === size
+                                  ? "bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg"
+                                  : "bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700"
+                              }`}
+                            >
+                              {size}
+                            </motion.button>
+                          ),
+                        )}
                       </div>
                     </div>
 

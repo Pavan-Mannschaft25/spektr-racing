@@ -38,50 +38,50 @@ export const products = [
   //Popular Pics
   {
     id: 1,
-    name: "Racing Jacket",
+    name: "Riding Zipper Hoodie",
     price: 299.99,
     image: sp1,
     category: "",
     model: "/models/racer.glb",
     description:
       "Professional racing helmet with advanced aerodynamics and maximum safety features.",
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   {
     id: 2,
-    name: "Racing Jacket",
+    name: "Riding Zipper Hoodie",
     price: 89.99,
     image: sp2,
     category: "",
     model: "/models/racer.glb",
     description:
       "High-performance racing gloves with enhanced grip and protection.",
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000"],
   },
   {
     id: 3,
-    name: "Racing Jacket",
+    name: "Riding Zipper Hoodie",
     price: 19.99,
     image: sp4,
     category: "",
     model: "/models/racer.glb",
     description:
       "Premium vinyl sticker pack featuring exclusive racing designs.",
-    sizes: ["One Size"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000"],
   },
   {
     id: 4,
-    name: "Racing Jacket",
+    name: "Riding Zipper Hoodie",
     price: 399.99,
     image: sp3,
     category: "",
     model: "/models/racer.glb",
     description:
       "Lightweight racing jacket with weather protection and team branding.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF", "#0066CC"],
   },
   //stickers
@@ -94,7 +94,7 @@ export const products = [
     model: "/models/stickr1.glb",
     description:
       "Custom racing decal set for personalizing your vehicle or gear.",
-    sizes: ["One Size"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   {
@@ -106,7 +106,7 @@ export const products = [
     model: "/models/stickr1.glb",
     description:
       "Custom racing decal set for personalizing your vehicle or gear.",
-    sizes: ["One Size"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   {
@@ -118,7 +118,7 @@ export const products = [
     model: "/models/gloves.glb",
     description:
       "Professional racing gloves with carbon fiber knuckle protection.",
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   {
@@ -129,7 +129,7 @@ export const products = [
     category: "accessories",
     model: "/models/stickers.glb",
     description: "Adjustable racing cap with embroidered team logo.",
-    sizes: ["One Size"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   {
@@ -140,7 +140,7 @@ export const products = [
     category: "accessories",
     model: "/models/stickers.glb",
     description: "Adjustable racing cap with embroidered team logo.",
-    sizes: ["One Size"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   // {
@@ -151,7 +151,7 @@ export const products = [
   //   category: "stickers",
   //   description:
   //     "Limited edition racing sticker collection from our latest series.",
-  //   sizes: ["One Size"],
+  // sizes: ["Small", "Medium", "Large", "XL", "XXL"],
   //   colors: ["#000000"],
   // },
   {
@@ -163,7 +163,7 @@ export const products = [
     model: "/models/gloves.glb",
     description:
       "Limited edition racing gloves with exclusive design and premium materials.",
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000"],
   },
   {
@@ -175,7 +175,7 @@ export const products = [
     model: "/models/stickers.glb",
     description:
       "Professional racing helmet with advanced aerodynamics and maximum safety features.",
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   {
@@ -187,7 +187,7 @@ export const products = [
     model: "/models/gloves.glb",
     description:
       "High-performance racing gloves with enhanced grip and protection.",
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000"],
   },
   {
@@ -199,7 +199,7 @@ export const products = [
     model: "/models/stickr1.glb",
     description:
       "Premium vinyl sticker pack featuring exclusive racing designs.",
-    sizes: ["One Size"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000"],
   },
   {
@@ -211,7 +211,7 @@ export const products = [
     model: "/models/stickers.glb",
     description:
       "Professional racing helmet with advanced aerodynamics and maximum safety features.",
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000", "#FFFFFF"],
   },
   {
@@ -223,7 +223,7 @@ export const products = [
     model: "/models/gloves.glb",
     description:
       "High-performance racing gloves with enhanced grip and protection.",
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000", "#FF0000"],
   },
   {
@@ -235,7 +235,7 @@ export const products = [
     model: "/models/stickr1.glb",
     description:
       "Premium vinyl sticker pack featuring exclusive racing designs.",
-    sizes: ["One Size"],
+    sizes: ["Small", "Medium", "Large", "XL", "XXL"],
     colors: ["#000000"],
   },
 ];
