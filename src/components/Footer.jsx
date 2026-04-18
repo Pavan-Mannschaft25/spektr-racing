@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 // import logo from "../assets/images/spektr.jpeg";
-import logo from "../assets/images/white-spectr-logo.png";
+// import logo from "../assets/images/white-spectr-logo.png";
+import logo1 from "../assets/images/white-spectr-logo.png";
+import logo from "../assets/images/sp_logo1_white2.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,7 +30,7 @@ const Footer = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="relative">
+              {/* <div className="relative">
                 <div className="absolute inset-0  blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <div className="relative">
@@ -47,9 +49,24 @@ const Footer = () => {
                 <h2 className="font-myfont text-md md:text-lg font-bold tracking-[0.12em] text-white text-center">
                   - RACING -
                 </h2>
+              </div> */}
+              <div className="relative">
+                <div className="absolute inset-0 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative rounded-xl flex items-center">
+                  <img
+                    src={logo1}
+                    alt="Spektr Racing"
+                    className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                  />
+                  <img
+                    src={logo}
+                    alt="Spektr Racing"
+                    className="w-10 h-10 ml-1 md:w-36 md:h-14 object-contain"
+                  />
+                </div>
               </div>
             </motion.a>
-            <p className="text-white pt-4 md:pl-4 font-sans text-md">
+            <p className="text-white md:pl-4 font-sans text-md">
               Wear Confidene. Ride Fearless
             </p>
           </motion.div>
