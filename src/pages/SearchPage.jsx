@@ -119,7 +119,7 @@ const SearchPage = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for racing gear, stickers, accessories..."
-              className="w-full pl-14 pr-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white text-lg placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+              className="w-full pl-14 pr-6 py-4 bg-white/5 border border-white/20 rounded-2xl text-white text-lg placeholder-gray-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all"
             />
           </form>
         </motion.div>
@@ -142,7 +142,7 @@ const SearchPage = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-2 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                className="px-4 py-2 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-red-500"
               >
                 <option value="relevance">Relevance</option>
                 <option value="price-low">Price: Low to High</option>
