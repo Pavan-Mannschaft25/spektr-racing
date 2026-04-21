@@ -66,9 +66,12 @@ import ProductCard from "./ProductCard";
 
 const Categories = ({ products, openProductModal }) => {
   const categories = [
-    { name: "Stickers", id: "stickers" },
+    // { name: "Stickers", id: "stickers" },
+    // { name: "Gloves", id: "gloves" },
+    { name: "Hoodies", id: "hoodies" },
+    { name: "Riding Pants", id: "riding-pants" },
     { name: "Accessories", id: "accessories" },
-    { name: "Gloves", id: "gloves" },
+    { name: "Merchandise", id: "merchandise" },
   ];
 
   return (
