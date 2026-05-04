@@ -246,6 +246,7 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiUser, FiMail, FiPhone, FiArrowLeft } from "react-icons/fi";
 import logo from "../assets/images/white-spectr-logo.png";
+import { registerUser } from "../services/authservices/authservice";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -307,52 +308,71 @@ const RegisterPage = () => {
         return;
       }
 
-      // Check if user already exists with this phone
-      const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
-      const existingUser = existingUsers.find(
-        (u) => u.phone === formData.phone,
-      );
-
-      if (existingUser) {
-        setError(
-          "An account with this phone number already exists. Please login instead.",
-        );
-        return;
-      }
-
-      // Create new user object
-      const newUser = {
-        id: Date.now(),
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        createdAt: new Date().toISOString(),
-      };
-
-      // Save to users list in localStorage
-      existingUsers.push(newUser);
-      localStorage.setItem("users", JSON.stringify(existingUsers));
-
-      // Set as current logged-in user
-      localStorage.setItem("token", "mock-jwt-token-12345");
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          ...newUser,
-          isLoggedIn: true,
-        }),
-      );
-
-      setSuccessMessage("Account created successfully! Redirecting...");
-
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
+      // register user
+      registerUserDetails();
     } catch (err) {
       setError("Registration failed. Please try again.");
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const registerUserDetails = async (e) => {
+    try {
+      const response = await registerUser(
+        formData.name,
+        formData.email,
+        formData.phone,
+        "WEB",
+      );
+      console.log('Register succ resp ', response);
+      if(response.status == true) {
+        validateUser();
+      }
+    } catch (error) {
+
+    }
+  };
+  const validateUser = async (e) => {
+    // Check if user already exists with this phone
+    const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
+    const existingUser = existingUsers.find((u) => u.phone === formData.phone);
+
+    if (existingUser) {
+      setError(
+        "An account with this phone number already exists. Please login instead.",
+      );
+      return;
+    }
+
+    // Create new user object
+    const newUser = {
+      id: Date.now(),
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      createdAt: new Date().toISOString(),
+    };
+
+    // Save to users list in localStorage
+    existingUsers.push(newUser);
+    localStorage.setItem("users", JSON.stringify(existingUsers));
+
+    // Set as current logged-in user
+    localStorage.setItem("token", "mock-jwt-token-12345");
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        ...newUser,
+        isLoggedIn: true,
+      }),
+    );
+
+    setSuccessMessage("Account created successfully! Redirecting...");
+
+    setTimeout(() => {
+      navigate("/");
+    }, 1500);
   };
 
   return (

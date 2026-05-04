@@ -238,6 +238,11 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiPhone, FiArrowLeft } from "react-icons/fi";
 import logo from "../assets/images/white-spectr-logo.png";
+import Header from "../components/Header";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { auth } from "../firebasebase/firebase";
+import { removeWhitespaces } from "../utils/stringUtils";
+import { checkUser } from "../services/authservices/authservice";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -282,24 +287,42 @@ const LoginPage = () => {
     }
   }, [otp, showOtpInput]);
 
+  const setupRecaptcha = (containerId) => {
+    if (!window.recaptchaVerifier) {
+      window.recaptchaVerifier = new RecaptchaVerifier(auth, containerId, {
+        size: "invisible", // or 'normal'
+        callback: (response) => {},
+      });
+    } else {
+      console.log("error launching !window.recaptchaVerifier");
+    }
+  };
+
   const handlePhoneSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
 
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+    setupRecaptcha("recaptcha-container");
+    const appVerifier = window.recaptchaVerifier;
+    const phNumber = "+91" + phoneNumber;
 
-      // Mock API call to send OTP
+    try {
       if (phoneNumber.length >= 10) {
+        const confirmationResult = await signInWithPhoneNumber(
+          auth,
+          phNumber,
+          appVerifier,
+        );
+        window.confirmationResult = confirmationResult;
         setShowOtpInput(true);
         setTimer(60); // 60 seconds timer
-        setCanResend(false);
         setOtp(["", "", "", "", "", ""]);
       } else {
         setError("Please enter a valid phone number");
       }
-    } catch (err) {
+    } catch (error) {
+      console.error("SMS not sent", error);
       setError("Failed to send OTP. Please try again.");
     } finally {
       setIsLoading(false);
@@ -364,27 +387,14 @@ const LoginPage = () => {
       const otpString = otp.join("");
 
       if (otpString.length === 6) {
-        // Mock OTP verification - check if user exists
-        const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
-        const existingUser = existingUsers.find((u) => u.phone === phoneNumber);
-
-        if (existingUser) {
-          // User exists - login successful
-          localStorage.setItem("token", "mock-jwt-token-12345");
-          localStorage.setItem(
-            "user",
-            JSON.stringify({
-              ...existingUser,
-              isLoggedIn: true,
-            }),
-          );
-          navigate("/");
-        } else {
-          // User doesn't exist - redirect to register with phone number
-          setError("Number not registered. Please sign up first.");
-          setTimeout(() => {
-            navigate("/register", { state: { phone: phoneNumber } });
-          }, 1500);
+        try {
+          const result = await window.confirmationResult.confirm(otpString);
+          const user = result.user;
+          console.log("User signed in successfully:", user);
+          validateUser();
+        } catch (error) {
+          console.error("Invalid verification code", error);
+          setError("Invalid OTP. Please try again.");
         }
       } else {
         setError("Please enter complete OTP");
@@ -402,6 +412,88 @@ const LoginPage = () => {
     setOtp(["", "", "", "", "", ""]);
   };
 
+  const validateUser = async () => {
+    const fullPhoneNumber = phoneNumber;
+    const phoneNum = removeWhitespaces(fullPhoneNumber);
+    setIsLoading(true);
+    try {
+      const response = await checkUser(phoneNum);
+      console.log(
+        "check user Resp",
+        response,
+        response.result?.email ?? "",
+        response.result?.name ?? "",
+      );
+      updateUser(response);
+    } catch (error) {
+      // The error is already logged by our api.js interceptor
+      // We just need to display a message to the user
+      if (error.response?.data?.message == "User does not exist") {
+        // User doesn't exist - redirect to register with phone number
+        setError("Number not registered. Please sign up first.");
+        setTimeout(() => {
+          navigate("/register", { state: { phone: phoneNumber } });
+        }, 1500);
+      } else {
+        setError(
+          error.response?.data?.message || "Login failed. Please try again.",
+        );
+        // setShowOtpInput(false);
+        // setOtpCode("");
+        handleEditPhone();
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const updateUser = async (e) => {
+    // Check if user already exists with this phone
+    // Mock OTP verification - check if user exists
+    const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
+    const existingUser = existingUsers.find((u) => u.phone === phoneNumber);
+
+    console.log(e, 'the user resp');
+    if (existingUser) {
+      localStorage.setItem("@auth_token", "mock-jwt-token-12345");
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          ...existingUser,
+          isLoggedIn: true,
+        }),
+      );
+      navigate("/");
+
+      return;
+    }
+
+    // Create new user object
+    const newUser = {
+      id: e.result?.id ?? "",
+      name: e.result?.name ?? "",
+      email: e?.result.email ?? "",
+      phone: phoneNumber,
+      createdAt: new Date().toISOString(),
+    };
+
+    // Save to users list in localStorage
+    existingUsers.push(newUser);
+    localStorage.setItem("users", JSON.stringify(existingUsers));
+
+    // Set as current logged-in user
+    localStorage.setItem("@auth_token", "mock-jwt-token-12345");
+
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        ...newUser,
+        isLoggedIn: true,
+      }),
+    );
+    navigate("/");
+  };
+
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -410,6 +502,8 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center p-4 font-sans">
+      <Header isScrolled={false} />
+      <div id="recaptcha-container"></div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

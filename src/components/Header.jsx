@@ -702,8 +702,8 @@ const Header = ({ isScrolled }) => {
   const loadUserFromStorage = () => {
     try {
       const savedUser = localStorage.getItem("user");
-      const token = localStorage.getItem("token");
-
+      const token = localStorage.getItem("@auth_token");
+      console.log("Toke is ", token);
       if (savedUser && token) {
         const parsedUser = JSON.parse(savedUser);
         setUser({
@@ -872,8 +872,9 @@ const Header = ({ isScrolled }) => {
 
   // Logout - Navigate to /login page
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("@auth_token");
     localStorage.removeItem("user");
+    // localStorage.removeItem("users");
 
     // Reset user state immediately
     setUser({

@@ -150,14 +150,14 @@ const PopularPicks = ({ products, openProductModal }) => {
             </div>
 
             {/* RIGHT: Shop Button */}
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               className="hidden md:inline-flex px-2 md:px-4 py-1 bg-red-600 text-white font-medium tracking-wide
                hover:bg-red-700 transition-all shadow-lg font-sans"
             >
               <span className="text-lg font-sans">SHOP NOW</span>
-            </motion.button>
+            </motion.button> */}
           </motion.div>
 
           {/* Subtitle with animation */}
